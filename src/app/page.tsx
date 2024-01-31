@@ -1,11 +1,7 @@
-import { InputData, InputSearch } from "@/components";
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
-  return (
-    <>
-      
-      <InputData className=" w-[350px] h-[50px] " type="password" placeholder="Search"/>
-    </>
-  );
-}
+const Homepage = () => {
+  return <div>Homepage</div>;
+};
+
+export default Homepage;

@@ -1,4 +1,3 @@
-import { InputData } from "./InputData";
-import { InputSearch } from "./InputSearch";
-
-export { InputSearch, InputData };
+import { Button } from "./Button";
+import { ButtonIcon } from "./ButtonIcon";
+export { Button, ButtonIcon };
