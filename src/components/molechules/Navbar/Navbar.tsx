@@ -27,7 +27,7 @@ const Navbar = () => {
               height={30}
             />
           }
-          className="flex justify-center items-center align-middle bg-inherit border-r-4 p-3 hover:bg-white"
+          className=" bg-inherit border-r-4 p-5 rounded-none hover:bg-white"
         >
           <Typography variant="normal" fontSize="h6">
             KH
