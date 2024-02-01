@@ -69,7 +69,7 @@ const Typography: FC<TypographyProps> = ({
   return (
     <div>
       <p
-      className={`${typographyVariantStyles}
+        className={`${typographyVariantStyles}
       ${typographyFontSizeStyles}
       ${typographyAlignStyles}
       ${className}`}
@@ -80,5 +80,4 @@ const Typography: FC<TypographyProps> = ({
   );
 };
 
-export { Typography};
-
+export { Typography };

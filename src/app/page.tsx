@@ -1,9 +1,13 @@
+import { Button, ButtonIcon, InputSearch, Navbar } from "@/components";
+import Image from "next/image";
 import React from "react";
-import { InputSearch, Navbar } from "@/components";
+
 const Homepage = () => {
-  return <div>Homepage
-   <Navbar/>
-  </div>;
+  return (
+    <div>
+      <Navbar/>
+    </div>
+  );
 };
 
 export default Homepage;
