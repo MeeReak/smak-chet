@@ -6,14 +6,16 @@ interface TypographyProps {
   align?: "left" | "justify" | "right" | "center";
   fontSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   variant?: "normal" | "semibold" | "bold";
+  color?: "black" | "red" | "blue" | "grey";
 }
 
 const Typography: FC<TypographyProps> = ({
   children,
   className,
-  align = "left",
-  fontSize = "h4",
-  variant = "semibold",
+  align = "",
+  fontSize = "",
+  variant = "",
+  color = "",
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -45,7 +47,7 @@ const Typography: FC<TypographyProps> = ({
       case "h6":
         return "text-[16px]";
       default:
-        return "text-[20px]";
+        return "text-[16px]";
     }
   };
 
@@ -58,10 +60,25 @@ const Typography: FC<TypographyProps> = ({
       case "bold":
         return "font-bold";
       default:
-        return "font-semibold";
+        return "font-normal";
     }
   };
 
+  const typographyColor = (color: string) => {
+    switch (color) {
+      case "red":
+        return "text-[#FF2020]";
+
+      case "blue":
+        return "text-[#207BFF]";
+      case "grey":
+        return "text-[#00000099]";
+      default:
+        return "text-[#000000]";
+    }
+  };
+
+  const typographyColorStyle = typographyColor(color);
   const typographyAlignStyles = typographyAlign(align);
   const typographyFontSizeStyles = typographyFontSize(fontSize);
   const typographyVariantStyles = typographyVariant(variant);
@@ -69,9 +86,10 @@ const Typography: FC<TypographyProps> = ({
   return (
     <div>
       <p
-      className={`${typographyVariantStyles}
+        className={`${typographyVariantStyles}
       ${typographyFontSizeStyles}
       ${typographyAlignStyles}
+      ${typographyColorStyle}
       ${className}`}
       >
         {children}
@@ -80,5 +98,4 @@ const Typography: FC<TypographyProps> = ({
   );
 };
 
-export { Typography};
-
+export { Typography };
