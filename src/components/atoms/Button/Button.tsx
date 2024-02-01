@@ -30,9 +30,9 @@ const Button: FC<ButtonProps> = ({
 
   return (
     <button className={combinedClassName}>
-      {leftIcon}
+      {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
-      {rightIcon}
+      {rightIcon && <span className="ml-2">{rightIcon}</span>}
     </button>
   );
 };
