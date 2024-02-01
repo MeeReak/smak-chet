@@ -2,7 +2,7 @@
 import React, { ReactNode } from "react";
 
 interface ButtonProps {
-  icon?: ReactNode;
+  icon: ReactNode;
   className?: string;
   colorScheme?: "primary" | "secondary";
 }
