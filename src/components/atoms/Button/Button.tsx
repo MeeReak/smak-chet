@@ -13,8 +13,8 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({
   children,
   className = "",
-  colorScheme = "primary",
-  size = "medium", // default size set to medium
+  colorScheme = "",
+  size = "", // default size set to medium
   isDisabled = false,
   leftIcon,
   rightIcon,
@@ -22,11 +22,11 @@ const Button: FC<ButtonProps> = ({
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
       case "primary":
-        return "bg-amber-600 hover:bg-amber-400 text-white";
+        return "bg-[#207BFF] text-white";
       case "secondary":
-        return "bg-cyan-600 hover:bg-cyan-400 text-white";
+        return "bg-white hover:bg-[#bdd8ff] hover:text-[#207BFF] hover:border-[#207BFF]";
       default:
-        return "bg-amber-600 hover:bg-amber-400 text-white";
+        return "bg-white";
     }
   };
 
@@ -48,7 +48,7 @@ const Button: FC<ButtonProps> = ({
   const disableStyle = isDisabled
     ? "cursor-not-allowed opacity-50"
     : "cursor-pointer";
-  const combinedClassName = `flex items-center justify-center rounded-lg ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
+  const combinedClassName = `flex items-center justify-start ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
 
   return (
     <button disabled={isDisabled} className={combinedClassName}>

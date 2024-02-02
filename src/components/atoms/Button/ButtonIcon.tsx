@@ -8,7 +8,7 @@ interface ButtonIconProps {
 const ButtonIcon: React.FC<ButtonIconProps> = ({ icon, className }) => {
   return (
     <button
-      className={`rounded-full flex items-center justify-center cursor-pointer ${className}`}
+      className={` flex items-center justify-center cursor-pointer rounded-full ${className}`}
     >
       {icon}
     </button>
