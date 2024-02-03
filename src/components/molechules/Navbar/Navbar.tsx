@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { FaFlagUsa, FaUser } from "react-icons/fa";
 import { InputSearch, ButtonIcon, Button, Typography } from "@/components";
-import { BiFlag } from "react-icons/bi";
-const imgurl = "assets/icons/icon.svg";
+
 const Navbar = () => {
   return (
     <div className=" h-[100px] flex flex-row justify-between aligns-center mx-[200px] ">

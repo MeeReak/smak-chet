@@ -4,7 +4,7 @@ interface ButtonProps {
   children: ReactNode;
   className?: string;
   colorScheme?: "primary" | "secondary";
-  size?: "small" | "medium" | "large"
+  size?: "small" | "medium" | "large";
   isDisabled?: boolean;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
@@ -14,7 +14,7 @@ const Button: FC<ButtonProps> = ({
   children,
   className = "",
   colorScheme = "",
-  size = "", // default size set to medium
+  size = "medium",
   isDisabled = false,
   leftIcon,
   rightIcon,
@@ -43,6 +43,7 @@ const Button: FC<ButtonProps> = ({
     }
   };
 
+  const sizeClass = getSizeClass(size)
   const colorSchemeClass = getColorSchemeClass(colorScheme);
 
   const disableStyle = isDisabled
@@ -50,8 +51,6 @@ const Button: FC<ButtonProps> = ({
     : "cursor-pointer";
 
   const combinedClassName = `flex items-center justify-start ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
-
-
 
   return (
     <button disabled={isDisabled} className={combinedClassName}>
