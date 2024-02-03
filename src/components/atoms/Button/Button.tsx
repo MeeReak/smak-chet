@@ -52,6 +52,7 @@ const Button: FC<ButtonProps> = ({
   const combinedClassName = `flex items-center justify-start ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
 
 
+
   return (
     <button disabled={isDisabled} className={combinedClassName}>
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
