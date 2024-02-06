@@ -1,7 +1,7 @@
 import { Button, Trending } from "@/components";
 import React from "react";
-import Image from "next/image";
-const Homepage = () => {
+
+export const Homepage = () => {
   return (
     <>
       <Button
@@ -36,17 +36,7 @@ const Homepage = () => {
       >
         Sign up
       </Button>
-      <Trending
-        className="flex gap-4"
-        topEvent={
-          <Image src="./volunteer.svg" alt="" width={350} height={100}></Image>
-        }
-        secondEvent={
-          <Image src="./volunteer.svg" alt="" width={350} height={100}></Image>
-        }
-      ></Trending>
+      <Trending>hi</Trending>
     </>
   );
 };
-
-export default Homepage;
