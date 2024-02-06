@@ -3,3 +3,4 @@ export * from "./Navbar";
 export * from  "./UserOption"
 export * from './ReqInfo'
 export * from './Footer'
+export * from './Trending'
