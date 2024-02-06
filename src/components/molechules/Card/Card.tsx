@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   location,
 }) => {
   return (
-    <div className="flex justify-center items-center h-[100vh]">
+    <>
       <div className="h-[375px] w-[320px] space-y-2 rounded-[10px]  shadow-lg relative">
         <Image
           className="rounded-t-[10px]"
@@ -87,7 +87,7 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
