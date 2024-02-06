@@ -4,7 +4,7 @@ import { InputSearch, ButtonIcon, Button, Typography } from "@/components";
 
 const Navbar = () => {
   return (
-    <div className=" h-[100px] flex flex-row justify-between aligns-center mx-[200px] ">
+    <div className=" h-[100px] flex flex-row justify-between aligns-center w-[1024px] m-auto ">
       <div className="flex flex-row justify-right items-center">
         <Image
           className="pb-2"
@@ -15,7 +15,7 @@ const Navbar = () => {
         />
         <InputSearch />
       </div>
-      <div className=" flex flex-row justify-center items-center ">
+      <div className=" flex flex-row justify-center items-center">
         <Button
           leftIcon={
             <Image
@@ -25,21 +25,27 @@ const Navbar = () => {
               height={30}
             />
           }
-          className=" bg-inherit border-r-4 p-5 rounded-none hover:bg-white"
+          className="border-[#cccccc] border-r-2"
         >
-          <Typography variant="normal" fontSize="h6">
+          <Typography className=" px-[5px]" variant="normal" fontSize="h6">
             KH
           </Typography>
         </Button>
 
         <ButtonIcon
-          className=" bg-[#207BFF]/30 rounded-full  flex align-middle justify-center items-center ml-[17px]"
-          icon={<Image src={"assets/icons/user-profile.svg"} alt="user profile" width={50} height={50}/>}
-          />
-          
+          className=" bg-[bdd8ff] rounded-full  flex align-middle justify-center items-center ml-[17px]"
+          icon={
+            <Image
+              src={"assets/icons/user-profile.svg"}
+              alt="user profile"
+              width={50}
+              height={50}
+            />
+          }
+        />
       </div>
     </div>
   );
-};            
+};
 
 export { Navbar };
