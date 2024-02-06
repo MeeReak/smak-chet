@@ -6,11 +6,13 @@ const Footer = () => {
   return (
     <>
       <footer className="w-screen bg-black pt-8 pb-6 text-white bottom-0 fixed ">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap text-left lg:text-left">
+        <div className="container mx-auto px-4 w-[1024px]">
+          <div className="flex flex-wrap text-left lg:text-left ">
             <div className="w-full lg:w-6/12 px-4">
-              <Typography fontSize="h3">Smakchet</Typography>
-              <Typography fontSize="h5">
+              <Typography fontSize="h3" className="text-white">
+                Smakchet
+              </Typography>
+              <Typography fontSize="h5" className="text-white">
                 SmakChet is Cambodia's #1 Volunteer seeking
               </Typography>
               <div className=" mt-6 lg:mb-0 mb-6 flex">
@@ -157,38 +159,91 @@ const Footer = () => {
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
-              <div className="flex flex-wrap items-top mb-6">
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
-                  <Typography fontSize="h4">Company</Typography>
+              <div className="flex flex-wrap justify-evenly">
+                <div className="w-full lg:w-4/12 px-4">
+                  <Typography fontSize="h4" className="text-white">
+                    Company
+                  </Typography>
+                  <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6" />
                   <ul className="list-unstyled">
                     <li>
-                      <Typography fontSize="h6" variant="normal">About us</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        About us
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">Contact us</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        Contact us
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">Our Service</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        Our Service
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">Privacy Policy</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        Privacy Policy
+                      </Typography>
                     </li>
                   </ul>
                 </div>
-                <div className="w-full lg:w-4/12 px-4">
-                  <Typography fontSize="h4">Find Us</Typography>
+                <div className="w-full lg:w-5/12 px-4">
+                  <Typography fontSize="h4" className="text-white">
+                    Find Us
+                  </Typography>
+                  <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6" />
                   <ul className="list-unstyled">
                     <li>
-                      <Typography className="text-[14px]" variant="normal">1295 Aphiwat BLVO, Phnom Penh</Typography>
+                      <Typography
+                        className="text-[14px] text-white"
+                        variant="normal"
+                      >
+                        1295 Aphiwat BLVO, Phnom Penh
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">@SmakChet.co</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        @SmakChet.co
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">+885-465-876-43</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        +885-465-876-43
+                      </Typography>
                     </li>
                     <li>
-                      <Typography fontSize="h6" variant="normal">+885-465-876-43</Typography>
+                      <Typography
+                        fontSize="h6"
+                        variant="normal"
+                        className="text-white"
+                      >
+                        +885-465-876-43
+                      </Typography>
                     </li>
                   </ul>
                 </div>
@@ -199,7 +254,9 @@ const Footer = () => {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-blueGray-500 font-semibold py-1">
-                <Typography fontSize="h6">Copyright © 2024 | By Smakchet</Typography>
+                <Typography fontSize="h6" className="text-white">
+                  Copyright © 2024 | By Smakchet
+                </Typography>
               </div>
             </div>
           </div>
