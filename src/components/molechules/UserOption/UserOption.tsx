@@ -5,7 +5,7 @@ interface UserOptionProps {
   imgUrl: string;
   text: string;
 }
-const UserOption = ({ imgUrl, text }) => {
+const UserOption = ({ imgUrl = "", text = "" }) => {
   return (
     <div className="flex w-fit h-[230px] px-[35px] flex-col justify-evenly shadow-md rounded-[20px] hover:cursor-pointer hover:border-b-2 hover:border-gray-300 hover:border-r-2">
       <div className="flex flex-row">
