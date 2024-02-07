@@ -9,7 +9,7 @@ interface TrendingProps {
 const Trending: React.FC<TrendingProps> = ({ topEvent, secondEvent ,className }) => {
   return (
     <div>
-      <Typography fontSize="h3" variant="bold">Trending in <span className="text-red-500">Smakchet</span></Typography>
+       <Typography fontSize="h3" variant="bold">Trending in <span className="text-red-500">Smakchet</span></Typography>
       <div className={`${className}`}>
         {topEvent}
         {secondEvent}
