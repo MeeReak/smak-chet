@@ -57,10 +57,10 @@ export const Buttontaps = () => {
       </div>
 
       <ButtonIcon
-        className=" rounded-full w-[22px] h-[22px] border-[1px] border-[#cccccc]"
+        className=" rounded-full w-[20px] h-[20px] border-[1px] border-[#cccccc]"
         icon={
           <svg
-            width="8"
+            width="12"
             height="12"
             viewBox="0 0 8 12"
             fill="none"

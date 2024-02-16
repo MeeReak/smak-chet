@@ -4,4 +4,4 @@ export * from  "./UserOption"
 export * from "./ReqInfo"
 export * from "./Footer"
 export * from "./Tabs"
-export * from './Trending'|
+export * from './Trending'
