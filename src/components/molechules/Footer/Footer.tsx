@@ -1,19 +1,18 @@
 import React from "react";
 import { Typography, ButtonIcon } from "@/components";
-import Image from "next/image";
 
 const Footer = () => {
   return (
     <>
-      <footer className="w-screen bg-black pt-8 pb-6 text-white bottom-0 fixed ">
-        <div className="container mx-auto px-4 w-[1024px]">
+      <footer className="w-screen bg-black pt-8 pb-6 text-white mt-20 bottom-0 ">
+        <div className=" container mx-auto w-[1024px]">
           <div className="flex flex-wrap text-left lg:text-left ">
-            <div className="w-full lg:w-6/12 px-4">
-              <Typography fontSize="h3" className="text-white">
+            <div className="w-full lg:w-6/12 ">
+              <Typography fontSize="h4" className="text-white">
                 Smakchet
               </Typography>
-              <Typography fontSize="h5" className="text-white">
-                SmakChet is Cambodia's #1 Volunteer seeking
+              <Typography fontSize="h6" className="text-white">
+                SmakChet is Cambodia&apos;s Volunteer seeking
               </Typography>
               <div className=" mt-6 lg:mb-0 mb-6 flex">
                 <div className="group">
@@ -161,16 +160,16 @@ const Footer = () => {
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap justify-evenly">
                 <div className="w-full lg:w-4/12 px-4">
-                  <Typography fontSize="h4" className="text-white">
+                  <Typography fontSize="h5" className="text-white">
                     Company
                   </Typography>
-                  <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6" />
+                  <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6 rounded-full" />
                   <ul className="list-unstyled">
                     <li>
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         About us
                       </Typography>
@@ -179,7 +178,7 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         Contact us
                       </Typography>
@@ -188,7 +187,7 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         Our Service
                       </Typography>
@@ -197,22 +196,22 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         Privacy Policy
                       </Typography>
                     </li>
                   </ul>
                 </div>
-                <div className="w-full lg:w-5/12 px-4">
-                  <Typography fontSize="h4" className="text-white">
+                <div className="w-full lg:w-8/12 px-4">
+                  <Typography fontSize="h5" className="text-white">
                     Find Us
                   </Typography>
-                  <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6" />
+                  <hr className="w-[90px] h-[5px] rounded-full bg-red-500 border-0 mb-6" />
                   <ul className="list-unstyled">
                     <li>
                       <Typography
-                        className="text-[14px] text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                         variant="normal"
                       >
                         1295 Aphiwat BLVO, Phnom Penh
@@ -222,7 +221,7 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         @SmakChet.co
                       </Typography>
@@ -231,7 +230,7 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         +885-465-876-43
                       </Typography>
@@ -240,7 +239,7 @@ const Footer = () => {
                       <Typography
                         fontSize="h6"
                         variant="normal"
-                        className="text-white"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
                       >
                         +885-465-876-43
                       </Typography>

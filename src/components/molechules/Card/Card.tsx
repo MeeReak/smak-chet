@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({
           />
         </svg>
 
-        <div className="px-[10px] space-y-2">
+        <div className="px-[10px] space-y-1">
           <Typography fontSize="h5" variant="bold">
             {title}
           </Typography>
