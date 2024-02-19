@@ -4,7 +4,7 @@ import { Typography, ButtonIcon } from "@/components";
 const Footer = () => {
   return (
     <>
-      <footer className="w-screen bg-black pt-8 pb-6 text-white mt-20 bottom-0 ">
+      <footer className="bg-black pt-8 pb-6 text-white mt-20 bottom-0 ">
         <div className=" container mx-auto w-[1024px]">
           <div className="flex flex-wrap text-left lg:text-left ">
             <div className="w-full lg:w-6/12 ">
