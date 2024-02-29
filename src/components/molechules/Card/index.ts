@@ -1,2 +1,3 @@
 import { Card } from "./Card";
-export { Card };
+import ReqCard from "./ReqCard";
+export { Card, ReqCard };
