@@ -1,9 +1,7 @@
-import { ReqCard, ReqInfo } from "@/components";
-import ReqCards from "@/components/organisms/ReqCards/ReqCards";
-import React from "react";
+import React, { useState } from "react";
 
 const Homepage = () => {
-  return <ReqCards />;
+  return <></>;
 };
 
 export default Homepage;

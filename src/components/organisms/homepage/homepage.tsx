@@ -9,54 +9,42 @@ const FirstPage = () => {
     {
       src: "/assets/image/cambodiaBookFair.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
     {
       src: "/assets/image/volunteeer.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
     {
       src: "/assets/image/international-camp.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
     {
       src: "/assets/image/cambodiaBookFair.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
     {
       src: "/assets/image/volunteeer.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
     {
       src: "/assets/image/international-camp.svg",
       alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
+      title: "National day of Science, Technology and Innovation",
       date: "Dec 12 2024",
       location: "Phnom Penh",
     },
@@ -77,7 +65,7 @@ const FirstPage = () => {
         }
         secondEvent={
           <Image
-            src="./volunteer.svg"
+            src="/assets/image/volunteer.svg"
             alt=""
             width={500}
             height={250}
@@ -93,7 +81,6 @@ const FirstPage = () => {
             src={item.src}
             alt={item.alt}
             title={item.title}
-            description={item.description}
             date={item.date}
             location={item.location}
           />
