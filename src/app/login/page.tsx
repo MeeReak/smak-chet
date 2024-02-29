@@ -63,7 +63,7 @@ const page = () => {
           {/* signup if don't ahve account */}
           <Typography align="center" className="mt-4">
             Don&apos;t have an account?
-            <Link href={"#"} className="text-blue-500">
+            <Link href={"../signup"} className="text-blue-500">
               {" "}
               Sign up
             </Link>
@@ -95,7 +95,6 @@ const page = () => {
             <ButtonIcon
               icon={
                 <Image src={"google.svg"} alt={""} width={20} height={20} />
-              
               }
             />
             <Typography align="center" fontSize="h6">
