@@ -41,7 +41,7 @@ const page = () => {
           <InputData
             type="password"
             placeholder={"password"}
-            className={"w-[350px] border border-gray-500 h-12 mt-2 mb-2"}
+            className={"w-[350px] border border-gray-500 h-12 mt-2 mb-3"}
           />
           <br />
           {/* forget password ? link */}
@@ -70,7 +70,7 @@ const page = () => {
           </Typography>
           {/* ----- or ----- */}
           <div className="inline-flex items-center justify-center w-full">
-            <hr className="w-64 h-px my-8 " />
+            <hr className="w-64 h-px my-8" />
             <span className="absolute px-3 text-gray-500 -translate-x-1/2  left-1/2 bg-white">
               Or
             </span>
@@ -85,7 +85,7 @@ const page = () => {
               }
             />
             <Typography align="center" fontSize="h6">
-              Countines with Facebook
+              Continues with Facebook
             </Typography>
           </div>
 
@@ -98,7 +98,7 @@ const page = () => {
               }
             />
             <Typography align="center" fontSize="h6">
-              Countines with Google
+              Continues with Google
             </Typography>
           </div>
         </form>

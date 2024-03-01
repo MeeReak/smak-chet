@@ -65,7 +65,7 @@ const page = () => {
           <Typography align="center" className="mt-4">
             Already have an account?
             <Link href={"../login"} className="text-blue-500">
-            
+              {" "}
               Login
             </Link>
           </Typography>
@@ -86,7 +86,7 @@ const page = () => {
               }
             />
             <Typography align="center" fontSize="h6">
-              Countines with Facebook
+              Continues with Facebook
             </Typography>
           </div>
 
@@ -99,7 +99,7 @@ const page = () => {
               }
             />
             <Typography align="center" fontSize="h6">
-              Countines with Google
+              Continues with Google
             </Typography>
           </div>
         </form>
