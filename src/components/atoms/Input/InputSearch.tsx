@@ -4,7 +4,7 @@ import React from "react";
 
 const InputSearch = () => {
   return (
-    <div className="w-[325px] relative">
+    <div className="w-[325px] relative xl:block max-[640px]:hidden">
       <input
         className="text-black border outline-none  border-[#828282] h-[50px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full"
         type="text"

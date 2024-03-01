@@ -4,7 +4,7 @@ import { Typography, ButtonIcon } from "@/components";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black pt-8 pb-6 text-white mt-20 bottom-0 ">
+      <footer className="mt-5 bottom-0 w-full bg-black text-white py-6">
         <div className=" container mx-auto w-[1024px]">
           <div className="flex flex-wrap text-left lg:text-left ">
             <div className="w-full lg:w-6/12 ">
@@ -12,7 +12,7 @@ const Footer = () => {
                 Smakchet
               </Typography>
               <Typography fontSize="h6" className="text-white">
-                SmakChet is Cambodia&apos;s Volunteer seeking
+                SmakChet is Cambodia's Volunteer seeking
               </Typography>
               <div className=" mt-6 lg:mb-0 mb-6 flex">
                 <div className="group">
