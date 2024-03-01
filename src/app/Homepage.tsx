@@ -1,7 +1,7 @@
 import { Button, Trending } from "@/components";
 import React from "react";
 
-export const Homepage = () => {
+export const Hpage = () => {
   return (
     <>
       <Button

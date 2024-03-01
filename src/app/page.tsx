@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { FirstPage } from "@/components";
 
 const Homepage = () => {
-  return <></>;
-
+  return (
+    <>
+      {" "}
+      <FirstPage />/
+    </>
+  );
 };
 
 export default Homepage;
