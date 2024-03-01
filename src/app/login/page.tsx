@@ -4,8 +4,6 @@ import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 
-const facebook = "facebook.svg";
-const google = "";
 const page = () => {
   return (
     <div>
@@ -45,22 +43,19 @@ const page = () => {
           />
           <br />
           {/* forget password ? link */}
-          <Link href={"#"}>
+          <Link href={"../forget"}>
             <Typography color="blue" fontSize="h6" align="right">
               Forget password ?
             </Typography>
           </Link>
           <br />
-          {/*  submit button */}
-          <InputData
-            type="submit"
-            placeholder={""}
-            className={
-              "bg-blue-500 w-full text-white border-none hover:cursor-pointer"
-            }
-          />
+          {/*  continue button */}
+
+          <Button className="!bg-blue-500 w-full align-middle justify-center text-white py-4 rounded-[10px]  hover:cursor-pointer">
+            Continue
+          </Button>
           <br />
-          {/* signup if don't ahve account */}
+          {/* signup if don't have account */}
           <Typography align="center" className="mt-4">
             Don&apos;t have an account?
             <Link href={"../signup"} className="text-blue-500">
