@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 interface CardProps {
+  id: string;
   src: string;
   alt: string;
   title: string;
@@ -11,10 +12,10 @@ interface CardProps {
   location: string;
 }
 
-const Card: React.FC<CardProps> = ({ src, alt, title, date, location }) => {
+const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
   return (
     <>
-      <Link href={`/${title}`}>
+      <Link href={`/${id}`}>
         <div className="h-[340px] w-[320px] space-y-2 p-3 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image
