@@ -7,6 +7,7 @@ interface TypographyProps {
   fontSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   variant?: "normal" | "semibold" | "bold";
   color?: "black" | "red" | "blue" | "grey";
+  screensize?: "xl" | "sm";
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -16,6 +17,7 @@ const Typography: FC<TypographyProps> = ({
   fontSize = "",
   variant = "",
   color = "",
+  screensize = "",
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -32,7 +34,7 @@ const Typography: FC<TypographyProps> = ({
     }
   };
 
-  const typographyFontSize = (fontSize: string) => {
+  const typographyFontSize = (fontSize: string,screensize:string) => {
     switch (fontSize) {
       case "h1":
         return "text-[40px]";
@@ -79,7 +81,7 @@ const Typography: FC<TypographyProps> = ({
 
   const typographyColorStyle = typographyColor(color);
   const typographyAlignStyles = typographyAlign(align);
-  const typographyFontSizeStyles = typographyFontSize(fontSize);
+  const typographyFontSizeStyles = typographyFontSize(fontSize,screensize);
   const typographyVariantStyles = typographyVariant(variant);
 
   return (

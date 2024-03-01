@@ -85,7 +85,6 @@ const FirstPage = () => {
             location={item.location}
           />
         ))}
-      </div>
     </div>
   );
 };
