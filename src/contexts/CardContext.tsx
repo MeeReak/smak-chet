@@ -3,6 +3,7 @@
 import React, { createContext, useState, ReactNode } from "react";
 
 interface CardModal {
+  id: string;
   src: string;
   alt: string;
   title: string;
@@ -35,7 +36,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     },
     {
       id: "2",
-      src: "/assets/image/ace_volunteer.png",
+      src: "/assets/image/cambodia_book_fair.png",
       alt: "Cambodia Book Fair",
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
@@ -59,7 +60,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     },
     {
       id: "5",
-      src: "/assets/image/ace_volunteer.png",
+      src: "/assets/image/cambodia_book_fair.png",
       alt: "Cambodia Book Fair",
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
@@ -72,7 +73,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
-    },
+    }
   ]);
 
   const Contextvalue = {

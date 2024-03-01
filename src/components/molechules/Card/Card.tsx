@@ -18,11 +18,11 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location }) => {
         <div className="h-[340px] w-[320px] space-y-2 p-3 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image
-              className="rounded-t-[10px]"
+              className="w-[300px] h-[200px] object-cover rounded-[10px]"
               src={src}
               alt={alt}
               width={320}
-              height={200}
+              height={340}
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
