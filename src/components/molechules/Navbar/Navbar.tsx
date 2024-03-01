@@ -18,22 +18,6 @@ const Navbar = () => {
           <InputSearch />
         </div>
         <div className=" flex flex-row justify-center items-center">
-          <Button
-            leftIcon={
-              <Image
-                alt="cambodia-flag"
-                src={"assets/icons/cambodia-flag.svg"}
-                width={30}
-                height={30}
-              />
-            }
-            className="border-[#cccccc] border-r-2"
-          >
-            <Typography className=" px-[5px]" variant="normal" fontSize="h6">
-              KH
-            </Typography>
-          </Button>
-
           <ButtonIcon
             className=" bg-[bdd8ff] rounded-full  flex align-middle justify-center items-center ml-[17px]"
             icon={

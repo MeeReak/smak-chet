@@ -37,27 +37,17 @@ const Typography: FC<TypographyProps> = ({
   const typographyFontSize = (fontSize: string,screensize:string) => {
     switch (fontSize) {
       case "h1":
-        return "text-[48px]";
-      case "h2":
         return "text-[40px]";
+      case "h2":
+        return "text-[32px]";
       case "h3":
-        if(screensize == "xl"){
-          return "text-[32px]";
-        }
-        if(screensize == "sm"){
-          return "text-[20px]";
-        }
+        return "text-[24px]";
       case "h4":
-        if(screensize == "xl"){
-          return "text-[24px]";
-        }
-        if(screensize == "sm"){
-          return "text-[16px]";
-        }
-      case "h5":
         return "text-[20px]";
-      case "h6":
+      case "h5":
         return "text-[16px]";
+      case "h6":
+        return "text-[14px]";
       default:
         return "text-[16px]";
     }
@@ -80,7 +70,6 @@ const Typography: FC<TypographyProps> = ({
     switch (color) {
       case "red":
         return "text-[#FF2020]";
-
       case "blue":
         return "text-[#207BFF]";
       case "grey":

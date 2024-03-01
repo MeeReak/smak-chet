@@ -7,9 +7,6 @@ import { Typography } from "./Typography";
 const meta: Meta<typeof Typography> = {
   title: "SmakChet/Atoms/Typography",
   component: Typography,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
 };
 
