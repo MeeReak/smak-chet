@@ -32,7 +32,7 @@ const page = () => {
           <InputData
             type="email"
             placeholder={"email"}
-            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-2"}
+            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-4"}
           />
           <br />
           {/* password input */}
@@ -56,7 +56,7 @@ const page = () => {
           </Button>
           <br />
           {/* signup if don't have account */}
-          <Typography align="center" className="mt-4">
+          <Typography align="center">
             Don&apos;t have an account?
             <Link href={"../signup"} className="text-blue-500">
               {" "}

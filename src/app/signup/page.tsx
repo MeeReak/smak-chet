@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 
-
 const page = () => {
   return (
     <div>
@@ -33,7 +32,7 @@ const page = () => {
           <InputData
             type="text"
             placeholder={"name"}
-            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-2"}
+            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-4"}
           />
           <br />
           {/* email input */}
