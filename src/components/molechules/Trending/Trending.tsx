@@ -32,9 +32,11 @@ const Trending: React.FC<TrendingProps> = ({
   }, []);
   return (
     <div>
+
       <Typography fontSize="h3" variant="bold" className="my-5" screensize={ScreenSize}>
         Trending in <span className="text-red-500">Smakchet</span>
       </Typography>
+
       <div className={`${className}`}>
         {topEvent}
         {secondEvent}
