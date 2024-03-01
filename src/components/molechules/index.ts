@@ -5,3 +5,5 @@ export * from "./ReqInfo"
 export * from "./Footer"
 export * from "./Tabs"
 export * from './Trending'
+export * from './Filter'
+export * from "./Map"
