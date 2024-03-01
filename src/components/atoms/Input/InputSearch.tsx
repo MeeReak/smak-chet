@@ -6,7 +6,7 @@ const InputSearch = () => {
   return (
     <div className="w-[325px] relative">
       <input
-        className="text-black border outline-none  border-[#828282] h-[50px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full"
+        className="placeholder-gray-500 border outline-none border-gray-300 h-[50px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full"
         type="text"
         placeholder="Search"
       />
@@ -16,7 +16,7 @@ const InputSearch = () => {
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="text-[#828282] w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 "
+        className="text-gray-500 w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 "
       >
         <path
           strokeLinecap="round"
