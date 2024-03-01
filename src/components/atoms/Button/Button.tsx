@@ -8,6 +8,7 @@ interface ButtonProps {
   isDisabled?: boolean;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  onclick?: () => void;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -18,6 +19,7 @@ const Button: FC<ButtonProps> = ({
   isDisabled = false,
   leftIcon,
   rightIcon,
+  onclick,
 }) => {
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
@@ -53,7 +55,7 @@ const Button: FC<ButtonProps> = ({
   const combinedClassName = `flex items-center justify-start ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
 
   return (
-    <button disabled={isDisabled} className={combinedClassName}>
+    <button disabled={isDisabled} className={combinedClassName} onClick={onclick}>
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
       {rightIcon && <span className="ml-2">{rightIcon}</span>}

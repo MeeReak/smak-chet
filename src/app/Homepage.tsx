@@ -36,7 +36,7 @@ export const Homepage = () => {
       >
         Sign up
       </Button>
-      <Trending>hi</Trending>
+      <Trending />
     </>
   );
 };
