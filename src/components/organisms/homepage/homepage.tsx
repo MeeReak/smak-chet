@@ -36,6 +36,7 @@ const FirstPage = () => {
         {CardInfo.map((item, index) => (
           <Card
             key={index}
+            id={item.id}
             src={item.src}
             alt={item.alt}
             title={item.title}
