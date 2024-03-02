@@ -1,17 +1,22 @@
-import React from 'react'
+import React from "react";
 
-interface InputDateProp{
-    placeholder ?: string
-    id ?: string
-    className : string
+interface InputDateProp {
+  placeholder?: string;
+  id?: string;
+  className: string;
 }
 
-const InputDate:React.FC<InputDateProp> = ({placeholder,id,className}) => {
+const InputDate: React.FC<InputDateProp> = ({ placeholder, id, className }) => {
   return (
     <div>
-      <input type="date" placeholder={placeholder} id={id} className={className}/>
+      <input
+        type="date"
+        placeholder={placeholder}
+        id={id}
+        className={className}
+      />
     </div>
-  )
-}
+  );
+};
 
-export {InputDate}
+export { InputDate };

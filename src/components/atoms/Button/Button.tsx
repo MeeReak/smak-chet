@@ -3,9 +3,8 @@ import React, { FC, ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  colorScheme?: "primary" | "secondary";
-  size?: "small" | "medium" | "large";
-  isDisabled?: boolean;
+  colorScheme?: "primary" | "secondary" | "Success" | "Error" | "Warning";
+  size?: "h1" | "h2" | "h3" | "h4" | "h5";
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   onclick?: () => void;
@@ -15,8 +14,7 @@ const Button: FC<ButtonProps> = ({
   children,
   className = "",
   colorScheme = "",
-  size = "medium",
-  isDisabled = false,
+  size = "h4",
   leftIcon,
   rightIcon,
   onclick,
@@ -24,38 +22,44 @@ const Button: FC<ButtonProps> = ({
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
       case "primary":
-        return "bg-[#207BFF] text-white";
+        return "text-[#207BFF]";
       case "secondary":
-        return "bg-white hover:bg-[#bdd8ff] hover:text-[#207BFF] hover:border-[#207BFF]";
+        return "text-[#FF2020]";
+      case "Success":
+        return "text-[#27AE60]";
+      case "Error":
+        return "text-[#EB5757]";
+      case "Warning":
+        return "text-[#E2B93B]";
       default:
-        return "bg-white";
+        return "bg-[#1F1F1F]";
     }
   };
 
   const getSizeClass = (size: string) => {
     switch (size) {
-      case "small":
-        return "text-sm px-3 py-1"; // Adjust these values as needed
-      case "medium":
-        return "text-md px-4 py-2"; // Adjust these values as needed
-      case "large":
-        return "text-lg px-5 py-3"; // Adjust these values as needed
+      case "h1":
+        return "text-4xl"; 
+      case "h2":
+        return "text-2xl";
+      case "h3":
+        return "text-xl";
+      case "h4":
+        return "text-base";
+      case "h5":
+        return "text-sm"; 
       default:
-        return "text-md px-4 py-2"; // Default to medium size
+        return "text-base"; 
     }
   };
 
-  const sizeClass = getSizeClass(size)
+  const sizeClass = getSizeClass(size);
   const colorSchemeClass = getColorSchemeClass(colorScheme);
 
-  const disableStyle = isDisabled
-    ? "cursor-not-allowed opacity-50"
-    : "cursor-pointer";
-
-  const combinedClassName = `flex items-center justify-start ${disableStyle} ${colorSchemeClass} ${sizeClass} ${className}`;
+  const combinedClassName = `flex items-center justify-start ${colorSchemeClass} ${sizeClass} ${className}`;
 
   return (
-    <button disabled={isDisabled} className={combinedClassName} onClick={onclick}>
+    <button className={combinedClassName} onClick={onclick}>
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
       {rightIcon && <span className="ml-2">{rightIcon}</span>}

@@ -7,7 +7,6 @@ interface CardModal {
   src: string;
   alt: string;
   title: string;
-  description: string;
   date: string;
   location: string;
 }
@@ -73,7 +72,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
-    }
+    },
   ]);
 
   const Contextvalue = {

@@ -25,7 +25,7 @@ const FilterButton = () => {
             />
           </svg>
         }
-        className=" border-[#cccccc] border-[1px] text-black-900 rounded-full"
+        className="px-6 py-3 border-[#cccccc] border-[1px] text-black-900 rounded-full"
       >
         Filter
       </Button>

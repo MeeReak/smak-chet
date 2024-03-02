@@ -1,4 +1,3 @@
-import FirstPage from "./homepage/homepage";
-import ReqCards from "./ReqCards/ReqCards";
-
-export { FirstPage, ReqCards };
+export * from "./ReqCards"
+export * from "./cardList"
+export * from "./homepage"
