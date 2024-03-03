@@ -5,7 +5,6 @@ import { Buttontaps, CardList, Trending } from "@/components";
 import Image from "next/image";
 
 const Homepage = () => {
-
   return (
     <>
       {" "}
