@@ -12,17 +12,17 @@ interface CardProps {
   location: string;
 }
 
-const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
+const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
   return (
     <>
       <Link href={`/${id}`}>
-        <div className="h-[340px] w-[320px] space-y-2 p-3 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <div className="h-[340px] w-[320px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image
-              className="w-[300px] h-[200px] object-cover rounded-[10px]"
+              className="w-[310px] h-[200px] object-cover rounded-[10px]"
               src={src}
               alt={alt}
-              width={320}
+              width={330}
               height={340}
             />
             <svg
@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 absolute top-4 right-4 fill-white"
+              className="w-6 h-6 absolute top-3 right-3 fill-white"
             >
               <path
                 strokeLinecap="round"
@@ -42,8 +42,12 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
               />
             </svg>
           </div>
-          <div className=" space-y-2">
-            <Typography fontSize="h5" variant="bold">
+          <div className="space-y-1 pl-[10px]">
+            <Typography
+              className="line-clamp-2"
+              fontSize="h3"
+              fontWeight="semibold"
+            >
               {title}
             </Typography>
 
@@ -52,18 +56,18 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-6 h-6 text-gray-500"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
 
-              <Typography fontSize="h6" color="blue" className="pl-[5px]">
+              <Typography fontSize="h4" color="blue" className="pl-[5px]">
                 {date}
               </Typography>
             </div>
@@ -72,23 +76,23 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location ,id}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6 "
+                className="w-6 h-6  text-gray-500"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                 />
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                 />
               </svg>
 
-              <Typography fontSize="h6" color="red" className="pl-[5px]">
+              <Typography fontSize="h4" color="red" className="pl-[5px]">
                 {location}
               </Typography>
             </div>
