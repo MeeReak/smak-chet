@@ -12,6 +12,7 @@ const CardList = () => {
        <div className="grid grid-cols-3 gap-[22px]">
         {CardInfo.map((item, index) => (
           <Card
+            id={item.id}
             key={index}
             src={item.src}
             alt={item.alt}

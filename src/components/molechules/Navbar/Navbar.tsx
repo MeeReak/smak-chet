@@ -8,7 +8,8 @@ const Navbar = () => {
   const [login, setLogin] = useState(true);
 
   return (
-    <div className="shadow-md">
+    <header>
+        <div className="shadow-md">
       {" "}
       <div className=" h-[80px] flex flex-row justify-between aligns-center w-[1024px] m-auto ">
         <div className="flex flex-row justify-right items-center">
@@ -110,6 +111,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    </header>
   );
 };
 
