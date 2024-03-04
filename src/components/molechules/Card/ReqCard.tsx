@@ -19,8 +19,10 @@ const ReqCard: React.FC<ReqCardProp> = ({
       <div className="flex items-start space-x-4">
         <Image src={imageSrc} alt="age" width={24} height={24}></Image>
         <div>
-          <Typography fontSize="h4">{title}</Typography>
-          <Typography className="line-clamp-1" fontSize="h6">
+          <Typography fontWeight="medium" fontSize="h3">
+            {title}
+          </Typography>
+          <Typography className="line-clamp-1" fontSize="h4">
             {description}
           </Typography>
         </div>
