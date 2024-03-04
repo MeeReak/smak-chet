@@ -5,7 +5,7 @@ import Image from "next/image";
 import { InputSearch, Button, ButtonIcon } from "@/components";
 
 const Navbar = () => {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState<boolean>(false);
 
   return (
     <header>

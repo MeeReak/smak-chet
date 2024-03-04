@@ -17,10 +17,11 @@ interface CardContextProp {
 
 interface ContextProps {
   CardInfo: CardModal[];
+
 }
 
 export const MyContext = createContext<ContextProps>({
-  CardInfo: [],
+  CardInfo: []
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
@@ -74,6 +75,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       location: "Phnom Penh",
     },
   ]);
+
+  
 
   const Contextvalue = {
     CardInfo,
