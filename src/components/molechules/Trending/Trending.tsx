@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { Typography } from "@/components";
 import React, { ReactNode } from "react";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 
 interface TrendingProps {
   topEvent?: ReactNode;
@@ -32,8 +32,12 @@ const Trending: React.FC<TrendingProps> = ({
   }, []);
   return (
     <div>
-
-      <Typography fontSize="h3" variant="bold" className="my-5" screensize={ScreenSize}>
+      <Typography
+        fontSize="h2"
+        fontWeight="bold"
+        className="my-5"
+        screensize="xl"
+      >
         Trending in <span className="text-red-500">Smakchet</span>
       </Typography>
 
