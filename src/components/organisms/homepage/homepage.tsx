@@ -1,66 +1,12 @@
 "use client";
 
 import { Buttontaps, Trending, Card } from "@/components";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
+import { MyContext } from "@/contexts/CardContext";
 
 const FirstPage = () => {
-  const [infoCard, setCardInfo] = useState([
-    {
-      src: "/assets/image/cambodiaBookFair.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-    {
-      src: "/assets/image/volunteeer.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-    {
-      src: "/assets/image/international-camp.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-    {
-      src: "/assets/image/cambodiaBookFair.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-    {
-      src: "/assets/image/volunteeer.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-    {
-      src: "/assets/image/international-camp.svg",
-      alt: "Cambodia Book Fair",
-      title: "Cambodia Book Fair",
-      description:
-        "Grab a chance to be this special National Event's Volunteer...",
-      date: "Dec 12 2024",
-      location: "Phnom Penh",
-    },
-  ]);
+  const { CardInfo } = useContext(MyContext);
 
   return (
     <div className="w-[1024px] m-auto space-y-5">
@@ -68,7 +14,7 @@ const FirstPage = () => {
         className="flex gap-4"
         topEvent={
           <Image
-            src="/assets/image/cambodiaBookFair.svg"
+            src="/assets/image/volunteer.svg"
             alt=""
             width={500}
             height={250}
@@ -77,7 +23,7 @@ const FirstPage = () => {
         }
         secondEvent={
           <Image
-            src="./volunteer.svg"
+            src="/assets/image/volunteer.svg"
             alt=""
             width={500}
             height={250}
@@ -87,13 +33,13 @@ const FirstPage = () => {
       ></Trending>
       <Buttontaps />
       <div className="grid grid-cols-3 gap-[22px]">
-        {infoCard.map((item, index) => (
+        {CardInfo.map((item, index) => (
           <Card
             key={index}
+            id={item.id}
             src={item.src}
             alt={item.alt}
             title={item.title}
-            description={item.description}
             date={item.date}
             location={item.location}
           />

@@ -4,15 +4,15 @@ import { Typography, ButtonIcon } from "@/components";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black pt-8 pb-6 text-white mt-20 bottom-0 ">
+      <footer className="mt-5 bottom-0 w-full bg-black text-white py-6">
         <div className=" container mx-auto w-[1024px]">
           <div className="flex flex-wrap text-left lg:text-left ">
             <div className="w-full lg:w-6/12 ">
-              <Typography fontSize="h4" className="text-white">
+              <Typography fontSize="h3" className="text-white">
                 Smakchet
               </Typography>
-              <Typography fontSize="h6" className="text-white">
-                SmakChet is Cambodia&apos;s Volunteer seeking
+              <Typography fontSize="h4" className="text-white">
+                SmakChet is Cambodia&#39;s Volunteer seeking
               </Typography>
               <div className=" mt-6 lg:mb-0 mb-6 flex">
                 <div className="group">
@@ -24,12 +24,12 @@ const Footer = () => {
                         viewBox="0 0 24 24"
                         fill="blue"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="group-hover:fill-white duration-300"
+                        className="group-hover:fill-white duration-150"
                       >
                         <path d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z" />
                       </svg>
                     }
-                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-blue-900 duration-300"
+                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-blue-900 duration-150"
                   ></ButtonIcon>
                 </div>
                 <div className="group">
@@ -78,7 +78,7 @@ const Footer = () => {
                         />
                       </svg>
                     }
-                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 duration-300"
+                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 duration-150"
                   ></ButtonIcon>
                 </div>
                 <div className="group">
@@ -88,7 +88,7 @@ const Footer = () => {
                         viewBox="0 0 24 24"
                         fill="#29a1d5"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="group-hover:fill-white duration-300"
+                        className="group-hover:fill-white duration-150"
                       >
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                         <g
@@ -101,7 +101,7 @@ const Footer = () => {
                         </g>
                       </svg>
                     }
-                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-[#29a1d5] duration-300"
+                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-[#29a1d5] duration-150"
                   ></ButtonIcon>
                 </div>
                 <div className="group">
@@ -138,7 +138,7 @@ const Footer = () => {
                               id="Color-"
                               transform="translate(-702.000000, -265.000000)"
                               fill="#007EBB"
-                              className="group-hover:fill-white duration-300"
+                              className="group-hover:fill-white duration-150"
                             >
                               {" "}
                               <path
@@ -152,7 +152,7 @@ const Footer = () => {
                         </g>
                       </svg>
                     }
-                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-[#007EBB] duration-300"
+                    className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 group-hover:bg-[#007EBB] duration-150"
                   ></ButtonIcon>
                 </div>
               </div>
@@ -160,43 +160,43 @@ const Footer = () => {
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap justify-evenly">
                 <div className="w-full lg:w-4/12 px-4">
-                  <Typography fontSize="h5" className="text-white">
+                  <Typography fontSize="h4" className="text-white">
                     Company
                   </Typography>
                   <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6 rounded-full" />
                   <ul className="list-unstyled">
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         About us
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         Contact us
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         Our Service
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         Privacy Policy
                       </Typography>
@@ -204,42 +204,42 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="w-full lg:w-8/12 px-4">
-                  <Typography fontSize="h5" className="text-white">
+                  <Typography fontSize="h4" className="text-white">
                     Find Us
                   </Typography>
                   <hr className="w-[90px] h-[5px] rounded-full bg-red-500 border-0 mb-6" />
                   <ul className="list-unstyled">
                     <li>
                       <Typography
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
-                        variant="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
+                        fontWeight="normal"
                       >
                         1295 Aphiwat BLVO, Phnom Penh
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         @SmakChet.co
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         +885-465-876-43
                       </Typography>
                     </li>
                     <li>
                       <Typography
-                        fontSize="h6"
-                        variant="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-300 ease cursor-pointer"
+                        fontSize="h4"
+                        fontWeight="normal"
+                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                       >
                         +885-465-876-43
                       </Typography>
@@ -253,7 +253,7 @@ const Footer = () => {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-blueGray-500 font-semibold py-1">
-                <Typography fontSize="h6" className="text-white">
+                <Typography fontSize="h4" className="text-white">
                   Copyright © 2024 | By Smakchet
                 </Typography>
               </div>
