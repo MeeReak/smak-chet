@@ -1,4 +1,5 @@
 import { InputData } from "./InputData";
 import { InputSearch } from "./InputSearch";
+import {InputDate} from "./InputDate"
 
-export { InputData, InputSearch };
+export { InputData, InputSearch , InputDate};

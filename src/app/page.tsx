@@ -1,19 +1,46 @@
-import {
-  Button,
-  ButtonIcon,
-  InputSearch,
-  Navbar,
-  UserOption,
-} from "@/components";
+"use client";
+
+import React, {useState} from "react";
+import { Buttontaps, CardList, Trending } from "@/components";
 import Image from "next/image";
-import React from "react";
 
 const Homepage = () => {
+
+  const [filtered, setFiltered] = useState<number>(0);
+
   return (
-    <div className="flex justify-center">
-      <UserOption imgUrl={"assets/image/user.svg"} text={"Become a host"} />
-      <UserOption imgUrl={"assets/image/user.svg"} text={"Become a member"} />
-    </div>
+    <>
+      {" "}
+      <div className="w-[1024px] m-auto space-y-5">
+        <Trending
+          className="flex gap-4"
+          topEvent={
+            <Image
+              src="/assets/image/volunteer.svg"
+              alt=""
+              width={500}
+              height={250}
+              className="rounded-xl"
+            ></Image>
+          }
+          secondEvent={
+            <Image
+              src="/assets/image/volunteer.svg"
+              alt=""
+              width={500}
+              height={250}
+              className="rounded-xl"
+            ></Image>
+          }
+        ></Trending>
+
+        {/* button of filter feature */}
+        <Buttontaps setFiltered={setFiltered} filtered={filtered}/>
+
+        {/* display cards */}
+        <CardList />
+      </div>
+    </>
   );
 };
 

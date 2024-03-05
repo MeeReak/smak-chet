@@ -4,9 +4,10 @@ interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "justify" | "right" | "center";
-  fontSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  variant?: "normal" | "semibold" | "bold";
+  fontSize?: "h1" | "h2" | "h3" | "h4" | "h5";
+  fontWeight?: "normal" | "medium" | "semibold" | "bold";
   color?: "black" | "red" | "blue" | "grey";
+  screensize?: "xl" | "sm";
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -14,8 +15,9 @@ const Typography: FC<TypographyProps> = ({
   className,
   align = "",
   fontSize = "",
-  variant = "",
+  fontWeight = "",
   color = "",
+  screensize = "",
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -32,29 +34,29 @@ const Typography: FC<TypographyProps> = ({
     }
   };
 
-  const typographyFontSize = (fontSize: string) => {
+  const typographyFontSize = (fontSize: string, screensize: string) => {
     switch (fontSize) {
       case "h1":
-        return "text-[48px]";
+        return "text-4xl";
       case "h2":
-        return "text-[40px]";
+        return "text-2xl";
       case "h3":
-        return "text-[32px]";
+        return "text-xl";
       case "h4":
-        return "text-[24px]";
+        return "text-base";
       case "h5":
-        return "text-[20px]";
-      case "h6":
-        return "text-[16px]";
+        return "text-sm";
       default:
-        return "text-[16px]";
+        return "text-base";
     }
   };
 
-  const typographyVariant = (variant: string) => {
-    switch (variant) {
+  const typographyfontWeight = (fontWeight: string) => {
+    switch (fontWeight) {
       case "normal":
         return "font-normal";
+      case "medium":
+        return "font-medium";
       case "semibold":
         return "font-semibold";
       case "bold":
@@ -68,7 +70,6 @@ const Typography: FC<TypographyProps> = ({
     switch (color) {
       case "red":
         return "text-[#FF2020]";
-
       case "blue":
         return "text-[#207BFF]";
       case "grey":
@@ -80,13 +81,13 @@ const Typography: FC<TypographyProps> = ({
 
   const typographyColorStyle = typographyColor(color);
   const typographyAlignStyles = typographyAlign(align);
-  const typographyFontSizeStyles = typographyFontSize(fontSize);
-  const typographyVariantStyles = typographyVariant(variant);
+  const typographyFontSizeStyles = typographyFontSize(fontSize, screensize);
+  const typographyfontWeightStyles = typographyfontWeight(fontWeight);
 
   return (
     <div>
       <p
-        className={`${typographyVariantStyles}
+        className={`${typographyfontWeightStyles}
       ${typographyFontSizeStyles}
       ${typographyAlignStyles}
       ${typographyColorStyle}
