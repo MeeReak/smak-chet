@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+import CardContext from "@/contexts/CardContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {hideNavbarFooter ? null : <Navbar />}
-        {children}
+        <CardContext>{children}</CardContext>
         {hideNavbarFooter ? null : <Footer />}
       </body>
     </html>
