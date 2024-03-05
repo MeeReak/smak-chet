@@ -4,8 +4,6 @@ import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 
-const facebook = "facebook.svg";
-const google = "";
 const page = () => {
   return (
     <div>
@@ -18,7 +16,7 @@ const page = () => {
           height={50}
         />
 
-        {/* Welcome text */}
+        {/* create account text */}
         <Typography
           align="center"
           fontSize="h3"
@@ -34,7 +32,7 @@ const page = () => {
           <InputData
             type="text"
             placeholder={"name"}
-            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-2"}
+            className={"w-[350px] border border-gray-500 h-12 mb-2 mt-4"}
           />
           <br />
           {/* email input */}
@@ -52,16 +50,12 @@ const page = () => {
           />
 
           <br />
-          {/*  submit button */}
-          <InputData
-            type="submit"
-            placeholder={""}
-            className={
-              "bg-blue-500 w-full text-white border-none hover:cursor-pointer"
-            }
-          />
-          <br />
-          {/* signup if don't ahve account */}
+          {/*  continue button */}
+          <Button className="!bg-blue-500 w-full align-middle justify-center text-white py-4 rounded-[10px]  hover:cursor-pointer">
+            Continue
+          </Button>
+
+          {/* signup if don't have account */}
           <Typography align="center" className="mt-4">
             Already have an account?
             <Link href={"../login"} className="text-blue-500">
@@ -90,7 +84,7 @@ const page = () => {
             </Typography>
           </div>
 
-          {/* countiune with google */}
+          {/* countinue with google */}
 
           <div className="hover:cursor-pointer flex flex-row justify-left w-full h-12 pl-6 items-center border border-[#828282] rounded-md">
             <ButtonIcon
