@@ -9,18 +9,20 @@ const page = () => {
     <div>
       {/* logo */}
       <div className="flex flex-col items-center mt-12">
-        <Image
-          src={"assets/icons/smakchet-logo.svg"}
-          alt={"Smakchet logo"}
-          width={140}
-          height={50}
-        />
+        <Link href="/">
+          <Image
+            src={"assets/icons/smakchet-logo.svg"}
+            alt={"Smakchet logo"}
+            width={140}
+            height={50}
+          />
+        </Link>
 
         {/* create account text */}
         <Typography
           align="center"
           fontSize="h3"
-          variant="bold"
+          fontWeight="bold"
           className="mt-16"
         >
           Create Your Account
@@ -58,7 +60,7 @@ const page = () => {
           {/* signup if don't have account */}
           <Typography align="center" className="mt-4">
             Already have an account?
-            <Link href={"../login"} className="text-blue-500">
+            <Link href={"/login"} className="text-blue-500">
               {" "}
               Login
             </Link>
@@ -79,7 +81,7 @@ const page = () => {
                 <Image src={"facebook.svg"} alt={""} width={20} height={20} />
               }
             />
-            <Typography align="center" fontSize="h6">
+            <Typography align="center" fontSize="h4">
               Continues with Facebook
             </Typography>
           </div>
@@ -92,7 +94,7 @@ const page = () => {
                 <Image src={"google.svg"} alt={""} width={20} height={20} />
               }
             />
-            <Typography align="center" fontSize="h6">
+            <Typography align="center" fontSize="h4">
               Continues with Google
             </Typography>
           </div>

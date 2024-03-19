@@ -17,10 +17,10 @@ const Homepage = () => {
   console.log(DetailEvent);
 
   return (
-    <div className="w-[1024px]  m-auto">
+    <div className="w-[1024px]  m-auto mt-[80px] ">
       <div>
         <div className="w-[1024px]  m-auto">
-          <header className="py-5 flex items-center">
+          <header className="py-5 flex items-center ">
             <div className="w-[70%] ">
               <Typography
                 fontSize="h3"
