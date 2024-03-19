@@ -6,7 +6,7 @@ const InputSearch = () => {
   return (
     <div className="w-[240px] relative xl:block max-[640px]:hidden">
       <input
-        className="placeholder-gray-500 border outline-none border-gray-300 h-[44px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full"
+        className="placeholder-gray-500 border outline-none border-gray-300 h-[44px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full "
         type="text"
         placeholder="Search"
       />

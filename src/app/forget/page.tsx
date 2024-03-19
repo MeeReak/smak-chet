@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { ButtonIcon, InputData, Typography, Button } from "@/components";
+import { InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 
 const page = () => {
@@ -9,18 +9,20 @@ const page = () => {
     <div>
       {/* logo */}
       <div className="flex flex-col items-center mt-12">
-        <Image
-          src={"assets/icons/smakchet-logo.svg"}
-          alt={"Smakchet logo"}
-          width={140}
-          height={50}
-        />
+        <Link href="/">
+          <Image
+            src={"assets/icons/smakchet-logo.svg"}
+            alt={"Smakchet logo"}
+            width={140}
+            height={50}
+          />
+        </Link>
 
         {/* Forget Password text */}
         <Typography
           align="center"
           fontSize="h3"
-          variant="bold"
+          fontWeight="bold"
           className="mt-16 mb-4"
         >
           Forget Your Password
