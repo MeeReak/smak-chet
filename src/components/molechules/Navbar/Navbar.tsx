@@ -6,7 +6,7 @@ import { InputSearch, Button, ButtonIcon } from "@/components";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [login, setLogin] = useState<boolean>(true);
+  const [login, setLogin] = useState<boolean>(false);
 
   return (
     <header>
