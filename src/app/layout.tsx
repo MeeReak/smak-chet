@@ -1,21 +1,29 @@
-"use client";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Footer, Navbar } from "@/components";
+"use client"
+
+import { Navbar, Footer } from '@/components';
+import CardContext from '@/contexts/CardContext';
+import { Inter } from 'next/font/google';
 import { usePathname } from "next/navigation";
-import CardContext from "@/contexts/CardContext";
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
+const inter = Inter({ subsets: ['latin'] });
+
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   const pathname = usePathname();
-  const routeToHide = ["/login", "/signup", "/forget"];
-  const hideNavbarFooter = routeToHide.includes(pathname);
+
+  // Define routes where Navbar should be hidden
+  const routesToHideNavbar = ['/login', '/signup', '/forget'];
+
+  // Determine if current page is an eventDetail page (/detail/{id})
+  //const isEventDetailPage = pathname.startsWith('/detail');
+
+  // Determine if Navbar should be hidden based on current route
+  const hideNavbar = routesToHideNavbar.includes(pathname);
 
   return (
     <html lang="en">
@@ -23,10 +31,12 @@ export default function RootLayout({
         <title>SmakChet</title>
       </head>
       <body className={inter.className}>
-        {hideNavbarFooter ? null : <Navbar />}
+        {!hideNavbar && <Navbar />}
         <CardContext>{children}</CardContext>
-        {hideNavbarFooter ? null : <Footer />}
+        {!hideNavbar && <Footer />}
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

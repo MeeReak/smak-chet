@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Typography, ButtonIcon } from "@/components";
 
 const Footer = () => {
@@ -166,13 +167,15 @@ const Footer = () => {
                   <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6 rounded-full" />
                   <ul className="list-unstyled">
                     <li>
-                      <Typography
-                        fontSize="h4"
-                        fontWeight="normal"
-                        className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
-                      >
-                        About us
-                      </Typography>
+                      <Link href="/aboutus">
+                        <Typography
+                          fontSize="h4"
+                          fontWeight="normal"
+                          className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
+                        >
+                          About us
+                        </Typography>  
+                      </Link>
                     </li>
                     <li>
                       <Typography
