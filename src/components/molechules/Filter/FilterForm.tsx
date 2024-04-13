@@ -5,14 +5,14 @@ const FilterForm = () => {
   return (
     <>
       <div>
-        <Typography fontSize="h4" variant="bold">
+        <Typography fontSize="h4" fontWeight="bold">
           Filter
         </Typography>
       </div>
       <form action="" className="mt-10">
         <div className="mb-5">
           <label htmlFor="date">
-            <Typography fontSize="h5" variant="semibold" className="mb-2">
+            <Typography fontSize="h5" fontWeight="semibold" className="mb-2">
               Date
             </Typography>
           </label>
@@ -20,7 +20,7 @@ const FilterForm = () => {
         </div>
         <div>
           <label htmlFor="location">
-            <Typography fontSize="h5" variant="semibold" className="mb-2">
+            <Typography fontSize="h5" fontWeight="semibold" className="mb-2">
               Location
             </Typography>
           </label>
@@ -36,11 +36,7 @@ const FilterForm = () => {
           </select>
         </div>
         <div className="w-[100%] mt-5">
-          <Button
-            colorScheme="primary"
-            size="medium"
-            className="rounded-lg m-auto"
-          >
+          <Button colorScheme="primary" size="h5" className="rounded-lg m-auto">
             Apply
           </Button>
         </div>

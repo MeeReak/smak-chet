@@ -1,6 +1,6 @@
 import React from "react";
 
-const Map = ({ src }) => (
+const Map = ({ src }: { src: string }) => (
   <div className="relative" style={{ paddingTop: "75%" }}>
     <iframe
       src={src}
