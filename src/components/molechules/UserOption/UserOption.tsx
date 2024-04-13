@@ -17,7 +17,7 @@ const UserOption = ({ imgUrl = "", text = "" }) => {
           alt="Image"
         />
       </div>
-      <Typography className="flex justify-center" fontSize="h6">
+      <Typography className="flex justify-center" fontSize="h5">
         {text}
       </Typography>
     </div>

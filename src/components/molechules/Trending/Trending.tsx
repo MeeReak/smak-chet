@@ -22,7 +22,7 @@ const Trending: React.FC<TrendingProps> = ({
       setScreenSize(mq.matches ? "xl" : "sm");
     };
 
-    handleScreenChange(mediaQuery);
+    setScreenSize(mediaQuery.matches ? "xl" : "sm");
 
     mediaQuery.addEventListener("change", handleScreenChange);
 

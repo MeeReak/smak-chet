@@ -3,7 +3,7 @@ import Icon from "@/components/atoms/Icons/Icons";
 import React from "react";
 import FilterForm from "./FilterForm";
 
-const Popup = (props) => {
+const Popup = (props: { setModalState: (arg0: boolean) => void }) => {
   return (
     <>
       <div className="fixed inset-0 opacity-25 bg-black"></div>
