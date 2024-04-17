@@ -17,7 +17,7 @@ const RootLayout = ({
   const pathname = usePathname();
 
   // Define routes where Navbar should be hidden
-  const routesToHideNavbar = ['/login', '/signup', '/forget'];
+  const routesToHideNavbar = ['/login', '/signup', '/forget' , '/aboutus'];
 
   // Determine if current page is an eventDetail page (/detail/{id})
   //const isEventDetailPage = pathname.startsWith('/detail');
