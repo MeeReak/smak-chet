@@ -200,7 +200,7 @@ const Homepage = () => {
           </div>
           <hr className="mt-5 w-full h-[2px] bg-black opacity-30"></hr>
           {/* requirement */}
-          <div className="mt-5 grid xl:grid-cols-2 gap-3 max-[640px]:grid-cols-1 max-[640px]:grid-flow-col">
+          <div className="mt-5 grid xl:grid-cols-2 gap-3">
             <div className="">
               <Typography fontSize="h3" fontWeight="bold" className="mb-5">
                 Requirement
@@ -211,13 +211,13 @@ const Homepage = () => {
               <Typography fontSize="h3" fontWeight="bold" className="mb-5">
                 Location
               </Typography>
-              <Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.3126568670227!2d104.92259197489524!3d11.601044088602363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951f3148296db%3A0x5b289f3f5cef444!2sSabaiCode!5e0!3m2!1skm!2skh!4v1709280237207!5m2!1skm!2skh" />
+              <Map classname="w-full h-[85%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.3126568670227!2d104.92259197489524!3d11.601044088602363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951f3148296db%3A0x5b289f3f5cef444!2sSabaiCode!5e0!3m2!1skm!2skh!4v1709280237207!5m2!1skm!2skh" />
             </div>
           </div>
           <hr className=" w-full h-[2px] bg-black opacity-30"></hr>
           {/* You may like */}
           <div className="mt-5">
-            <Typography fontSize="h3" fontWeight="bold" className="mb-5">
+            <Typography fontSize="h3" fontWeight="bold" className="mb-5 xl:text-left max-[640px]:text-center">
               You might also be interested in
             </Typography>
             <div className="grid xl:grid-cols-3 gap-[22px] max-[640px]:grid-cols-1 mx-auto justify-items-center max-[640px]:space-y-2">
