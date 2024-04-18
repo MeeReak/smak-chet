@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import SecondNarbar from "@/components/molechules/SecondNarbar";
 import Dropdown from "@/components/molechules/Dropdown/Dropdown";
+import FavPage from "@/components/molechules/Favoritepage/favPage";
 
 const Homepage = () => {
   const [filtered, setFiltered] = useState<number>(0);

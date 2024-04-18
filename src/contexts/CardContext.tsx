@@ -2,13 +2,14 @@
 
 import React, { createContext, useState, ReactNode } from "react";
 
-interface CardModal {
+export interface CardModal {
   id: string;
   src: string;
   alt: string;
   title: string;
   date: string;
   location: string;
+  isFavorite: boolean;
 }
 
 interface CardContextProp {
@@ -33,6 +34,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "National day of Science, Technology and Innovation 2024",
       date: "Mar 03 2024",
       location: "Phnom Penh",
+      isFavorite: true
     },
     {
       id: "2",
@@ -41,6 +43,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
       location: "Phnom Penh",
+      isFavorite: false
     },
     {
       id: "3",
@@ -49,6 +52,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
+      isFavorite: true
     },
     {
       id: "4",
@@ -57,6 +61,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "National day of Science, Technology and Innovation 2024",
       date: "Mar 03 2024",
       location: "Phnom Penh",
+      isFavorite: false
     },
     {
       id: "5",
@@ -65,6 +70,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
       location: "Phnom Penh",
+      isFavorite: true
     },
     {
       id: "6",
@@ -73,6 +79,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
+      isFavorite: false
     },
   ]);
 
@@ -81,7 +88,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
   const Contextvalue = {
     CardInfo,
     setCardInfo,
-  };
+  }; 
   return (
     <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>
   );
