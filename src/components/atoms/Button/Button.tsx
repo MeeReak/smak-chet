@@ -101,7 +101,7 @@ const Button: FC<ButtonProps> = ({
   const bgColorClass = getBackgroundColorClass(bgColor);
   const roundClass = getRoundClass(round);
 
-  const combinedClassName = `flex items-center justify-start border-[1px] py-2 px-4 ${colorSchemeClass} ${sizeClass} ${bgColorClass} ${roundClass} ${className}`;
+  const combinedClassName = `flex items-center justify-start border-[1px] ${colorSchemeClass} ${sizeClass} ${bgColorClass} ${roundClass} ${className}`;
 
   return (
     <button className={combinedClassName} onClick={onclick}>

@@ -16,14 +16,14 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
   return (
     <>
       <Link href={`/${id}`}>
-        <div className="h-[340px] w-[320px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <div className="h-[340px] lg:max-w-[320px] md:h-[340px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image
-              className="w-[310px] h-[200px] object-cover rounded-[10px]"
               src={src}
               alt={alt}
-              width={330}
-              height={340}
+              width={310}
+              height={200}
+              className="w-[310px] h-[200px] object-cover rounded-[10px]"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
               />
             </svg>
           </div>
-          <div className="space-y-1 pl-[10px]">
+          <div className="space-y-1 pl-[10px] max-w-[320px]">
             <Typography
               className="line-clamp-2"
               fontSize="h3"
@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
               {title}
             </Typography>
 
-            <div className="flex items-center">
+            <div className="flex items-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
