@@ -15,7 +15,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
   return (
     <>
-      <Link href={`/${id}`}>
+      <Link href={`/detail/${id}`}>
         <div className="h-[340px] lg:max-w-[320px] md:h-[340px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image

@@ -1,18 +1,19 @@
-"use client";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Footer, Navbar } from "@/components";
+"use client"
+
+import { Navbar, Footer } from '@/components';
+import CardContext from '@/contexts/CardContext';
+import { Inter } from 'next/font/google';
 import { usePathname } from "next/navigation";
-import CardContext from "@/contexts/CardContext";
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
+const inter = Inter({ subsets: ['latin'] });
+
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   const pathname = usePathname();
   const routeToHide = ["/login", "/signup", "/forget", "/roleSelection"];
   const hideNavbarFooter = routeToHide.includes(pathname);
@@ -23,10 +24,12 @@ export default function RootLayout({
         <title>SmakChet</title>
       </head>
       <body className={inter.className}>
-        {hideNavbarFooter ? null : <Navbar />}
+        {!hideNavbarFooter && <Navbar />}
         <CardContext>{children}</CardContext>
-        {hideNavbarFooter ? null : <Footer />}
+        {!hideNavbarFooter && <Footer />}
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
