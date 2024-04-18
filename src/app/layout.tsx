@@ -14,18 +14,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const routeToHide = ["/login", "/signup", "/forget", "/roleSelection"];
-  const hideNavbarFooter = routeToHide.includes(pathname);
-
+  const hideRoutes = ['/login', '/signup', '/forget', '/roleSelection'];
+  const shouldHideNavbar = hideRoutes.includes(pathname);
+  const shouldHideFooter = shouldHideNavbar || pathname === '/profile';
   return (
     <html lang="en">
       <head>
         <title>SmakChet</title>
       </head>
       <body className={inter.className}>
-        {hideNavbarFooter ? null : <Navbar />}
+        {shouldHideNavbar ? null : <Navbar />}
         <CardContext>{children}</CardContext>
-        {hideNavbarFooter ? null : <Footer />}
+        {shouldHideFooter ? null : <Footer />}
       </body>
     </html>
   );
