@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { InputSearch, Button, ButtonIcon } from "@/components";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
@@ -17,7 +19,7 @@ const Navbar = () => {
             <Link href="/">
               <Image
                 className="pb-2"
-                src={"assets/icons/smakchet-logo.svg"}
+                src={"/assets/icons/smakchet-logo.svg"}
                 alt="smakchet-logo"
                 width={140}
                 height={50}

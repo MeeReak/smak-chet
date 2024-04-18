@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Buttontaps, CardList, Trending } from "@/components";
+import { Buttontaps, CardList, NotificationCard, Trending } from "@/components";
 import Image from "next/image";
 import SecondNarbar from "@/components/molechules/SecondNarbar";
+import Dropdown from "@/components/molechules/Dropdown/Dropdown";
 
 const Homepage = () => {
   const [filtered, setFiltered] = useState<number>(0);
@@ -33,7 +34,6 @@ const Homepage = () => {
             ></Image>
           }
         ></Trending>
-
         {/* button of filter feature */}
         <Buttontaps setFiltered={setFiltered} filtered={filtered} />
 
