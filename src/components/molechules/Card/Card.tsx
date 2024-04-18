@@ -1,7 +1,9 @@
+"use client"
 import { Typography } from "@/components";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
+import { MyContext } from "@/contexts/CardContext";
 
 interface CardProps {
   id: string;
@@ -10,9 +12,11 @@ interface CardProps {
   title: string;
   date: string;
   location: string;
+  favorite:boolean
 }
 
-const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
+const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favorite }) => {
+ 
   return (
     <>
       <Link href={`/${id}`}>
@@ -33,7 +37,11 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 absolute top-3 right-3 fill-white"
+              className={
+                favorite == true
+                  ? `w-6 h-6 absolute top-3 right-3 fill-red-500 border-none outline-nonet`
+                  : `w-6 h-6 absolute top-3 right-3 fill-white`
+              }
             >
               <path
                 strokeLinecap="round"

@@ -50,7 +50,8 @@ const Navbar = () => {
                 </Link>
               </>
             ) : (
-              <>
+                <>
+                  <Link href={"/favorite"}>
                 <ButtonIcon
                   className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
                   icon={
@@ -70,6 +71,7 @@ const Navbar = () => {
                     </svg>
                   }
                 />
+                  </Link>
                 <ButtonIcon
                   className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
                   icon={

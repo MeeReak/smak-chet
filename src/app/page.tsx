@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Buttontaps, CardList, Trending } from "@/components";
 import Image from "next/image";
+import FavPage from "@/components/molechules/Favoritepage/favPage";
 
 const Homepage = () => {
   const [filtered, setFiltered] = useState<number>(0);
