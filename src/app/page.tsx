@@ -47,7 +47,6 @@ const Homepage = () => {
         {/* display cards */}
         <CardList />
 
-        <MyEventCardList />
       </div>
     </>
   );

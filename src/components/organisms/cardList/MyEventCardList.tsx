@@ -1,3 +1,5 @@
+"use client";
+
 import MyEventCard from "@/components/molechules/Card/MyEventCard";
 import { MyContext } from "@/contexts/CardContext";
 import React, { useContext } from "react";
@@ -7,8 +9,7 @@ const MyEventCardList = () => {
 
   return (
     <>
-    <MyEventCard/>
-      {/* <div className="max-[1030px]:px-5">
+      <div className="px-5 space-y-4 py-5 flex flex-col justify-center items-center">
         {CardInfo.map((item, index) => (
           <MyEventCard
             key={index}
@@ -19,7 +20,7 @@ const MyEventCardList = () => {
             location={item.location}
           />
         ))}
-      </div> */}
+      </div>
     </>
   );
 };
