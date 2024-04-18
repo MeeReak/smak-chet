@@ -15,7 +15,7 @@ const page = () => {
               Get in touch !!
             </Typography>
             <Typography fontSize="h3" align="center">
-              We'd love to hear from you, Don't hesitate to ask questions or
+              We&apos;d love to hear from you, Don&apos;t hesitate to ask questions or
               make comments.{" "}
             </Typography>
           </div>

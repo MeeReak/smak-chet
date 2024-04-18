@@ -5,6 +5,7 @@ import CardContext from '@/contexts/CardContext';
 import { Inter } from 'next/font/google';
 import { usePathname } from "next/navigation";
 import './globals.css';
+import SecondNarbar from '@/components/molechules/SecondNarbar';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -26,6 +27,7 @@ const RootLayout = ({
       <body className={inter.className}>
         {!hideNavbarFooter && <Navbar />}
         <CardContext>{children}</CardContext>
+        {!hideNavbarFooter && <SecondNarbar />}
         {!hideNavbarFooter && <Footer />}
       </body>
     </html>

@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Buttontaps, CardList, NotificationCard, Trending } from "@/components";
+import {
+  Buttontaps,
+  CardList,
+  CardOption,
+  MyEventCardList,
+  NotificationCard,
+  Trending,
+} from "@/components";
 import Image from "next/image";
 import SecondNarbar from "@/components/molechules/SecondNarbar";
 import Dropdown from "@/components/molechules/Dropdown/Dropdown";
@@ -40,8 +47,6 @@ const Homepage = () => {
         {/* display cards */}
         <CardList />
 
-        {/* Second Narbar */}
-        <SecondNarbar />
       </div>
     </>
   );
