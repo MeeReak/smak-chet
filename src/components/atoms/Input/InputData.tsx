@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
 
 interface InputDataProps {
   placeholder?: string;
   type: string;
-  onChange: (event: any) => void;
+  onChange?: (event: any) => void;
   className?: string;
 }
 

@@ -17,7 +17,7 @@ const FavPage = () => {
             title={item.title}
             date={item.date}
             location={item.location}
-            favorite={item.isFavorite}
+            isFavorite={item.isFavorite}
           />
         ))}
       </div>

@@ -3,8 +3,8 @@
 import React from "react";
 
 export interface InputSearchProps{
-  className: string
-  onChange:(event:any)=>void
+  className?: string
+  onChange?:(event:any)=>void
 }
 
 const InputSearch: React.FC<InputSearchProps> = (
