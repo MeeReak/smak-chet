@@ -1,18 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Buttontaps,
-  CardList,
-  CardOption,
-  MyEventCardList,
-  NotificationCard,
-  Trending,
-} from "@/components";
+import { Buttontaps, CardList, Trending } from "@/components";
 import Image from "next/image";
-import SecondNarbar from "@/components/molechules/SecondNarbar";
-import Dropdown from "@/components/molechules/Dropdown/Dropdown";
-import FavPage from "@/components/molechules/Favoritepage/favPage";
 
 const Homepage = () => {
   const [filtered, setFiltered] = useState<number>(0);
@@ -47,7 +37,6 @@ const Homepage = () => {
 
         {/* display cards */}
         <CardList />
-
       </div>
     </>
   );
