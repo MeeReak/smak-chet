@@ -72,7 +72,7 @@ const Navbar = () => {
                     </svg>
                   }
                 />
-                <Dropdown>
+                {/* <Dropdown>
                   <ButtonIcon
                     className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
                     icon={
@@ -97,7 +97,7 @@ const Navbar = () => {
                       </svg>
                     }
                   />
-                </Dropdown>
+                </Dropdown> */}
                 <ButtonIcon
                   className="bg-[#bdd8ff] text-white rounded-full p-2"
                   icon={

@@ -1,43 +1,70 @@
 "use client";
-import { Button, ButtonIcon, Typography } from "@/components/atoms";
 import React, { useState } from "react";
-import  NotificationCard  from "../Card/NotificationCard";
-import Link from "next/link"
 
 
-interface DropdownProp{
-    children : React.ReactNode;
+interface DropdownProps{
+  classname?:string; 
+  options:string[];
 }
-const Dropdown:React.FC <DropdownProp> = ({children}) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+const Dropdown:React.FC<DropdownProps> = ({classname , options}) => {
+
+  const [isOpen, setisOpen] = useState(false);
+  const [selectedOption , setselectedOption] = useState(null);
+
+  const toggling = () => {
+    setisOpen(!isOpen);
   };
 
-  const closeDropdown = () => {
-    setIsOpen(false);
-  };
+  const onOptionClicked = (value:any) => () => {
+    setselectedOption(value);
+    setisOpen(false)
+  }
 
   return (
-    <div>
-      <div className="relative inline-block" onClick={toggleDropdown}>
-        {children}
-
-        {isOpen && (
-          <div className="origin-top-right absolute -right-14 mt-2 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-auto h-auto py-8 px-5">
-            <Typography className="p-2 text-[20px]" fontWeight="bold">Notifications</Typography>
-            <div className="flex justify-between">
-                <Typography className="p-2">Earlier</Typography>
-                <Link href={'/notification'}>   
-                    <Typography className="p-2" color="blue">See all</Typography>
-                </Link>
-            </div>
-              <NotificationCard classname="w-[305px] h-[75px]"/>
-              <NotificationCard classname="w-[305px] h-[75px]"/>
-              <NotificationCard classname="w-[305px] h-[75px]"/>
+    <div className={`inline-flex w-full ${classname}`}>
+      <div className="w-full h-[50px] relative flex items-center justify-between border border-black py-[15px] pl-[20px] rounded-[10px] outline-none">
+        <a
+          onClick={toggling}
+          href="javascript:void(0)"
+          className={`w-[100%] rounded-l-md py-2 ${selectedOption ? 'text-black' :  'text-gray-400'}`}
+        >
+          {selectedOption || 'Select Option'}
+        </a>
+        <div className="relative">
+          <button
+            type="button"
+            className="border-1 border-gray-100 inline-flex h-full items-center justify-center rounded-r-md px-2 text-gray-600 hover:bg-gray-500 hover:text-gray-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+        </div>
+        {
+          isOpen && (
+            <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-100 bg-white shadow-lg grid">
+            {options.map((option)=>(
+              <button type='button' onClick={onOptionClicked(option)}>
+              <div className="block rounded-lg px-4 py-2 text-sm text-gray-500 no-underline hover:bg-gray-50">
+                {option}
+              </div>
+            </button>
+            ))}
           </div>
-        )}
+          )
+        }
       </div>
     </div>
   );
