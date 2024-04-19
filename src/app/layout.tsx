@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import { Navbar, Footer } from '@/components';
-import CardContext from '@/contexts/CardContext';
-import { Inter } from 'next/font/google';
+import { Navbar, Footer } from "@/components";
+import CardContext from "@/contexts/CardContext";
+import { Inter } from "next/font/google";
 import { usePathname } from "next/navigation";
-import './globals.css';
-import SecondNarbar from '@/components/molechules/SecondNarbar';
+import "./globals.css";
+import SecondNarbar from "@/components/molechules/SecondNarbar";
 
-
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 const RootLayout = ({
   children,
@@ -16,9 +15,8 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   const pathname = usePathname();
-  const routeToHide = ["/login", "/signup", "/forget", "/roleSelection"];
+  const routeToHide = ["/login", "/signup", "/forget", "/roleSelection", "/profile"];
   const hideNavbarFooter = routeToHide.includes(pathname);
-
   return (
     <html lang="en">
       <head>
