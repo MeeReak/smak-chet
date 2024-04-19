@@ -26,6 +26,7 @@ export const MyContext = createContext<ContextProps>({
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
+  
   const [CardInfo, setCardInfo] = useState([
     {
       id: "1",
@@ -83,11 +84,13 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     },
   ]);
 
+   
   
 
   const Contextvalue = {
     CardInfo,
     setCardInfo,
+   
   }; 
   return (
     <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>

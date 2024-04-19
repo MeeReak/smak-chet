@@ -31,7 +31,7 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
             <Button
               onclick={() => setFiltered(index)}
               round="full"
-              className={`rounded-full border-[1px] px-6 py-3 ${
+              className={`rounded-full border-[1px] px-6 py-3  ${
                 filtered === index
                   ? "bg-[#207bff] text-white"
                   : "hover:bg-[#bdd8ff] hover:text-[#207BFF] hover:border-[#207BFF]"
@@ -43,7 +43,7 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
           ))}
         </div>
 
-        <FilterButton />
+        <FilterButton className="" />
       </div>
     </>
   );
