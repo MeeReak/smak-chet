@@ -19,7 +19,7 @@ const MyEventCard: React.FC<MyEventCardProps> = ({
 }) => {
   return (
     <>
-      <div className="group flex max-[640px]:max-w-[500px] sm:w-[600px] lg:w-[800px] relative p-[10px] rounded-[10px] shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+      <div className="group flex max-[640px]:max-w-[500px] sm:w-[600px] lg:w-[800px] relative p-[10px] rounded-[10px] shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:bg-gray-200">
         <div>
           <Image
             src={src}
@@ -85,7 +85,7 @@ const MyEventCard: React.FC<MyEventCardProps> = ({
           </div>
         </div>
         <ButtonIcon
-          className="absolute bottom-3 right-3 border-[2px] border-[#207BFF] rounded-md hidden group-hover:flex hover:border-[3px] hover:bg-[#D2E5FF] transition-all !h-10 w-[40px] "
+          className="absolute bottom-3 right-3 border-[2px] border-[#207BFF] rounded-md hidden group-hover:flex hover:border-[3px] hover:bg-[#D2E5FF] transition-all !h-10 !w-[40px] "
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const MyEventCard: React.FC<MyEventCardProps> = ({
           }
         />
         <ButtonIcon
-          className=" absolute bottom-3 right-16 border-[2px] border-[#207BFF] rounded-md hidden group-hover:flex hover:border-[3px]  hover:bg-[#D2E5FF] transition-all !h-[40px] w-[40px] "
+          className=" absolute bottom-3 right-16 border-[2px] border-[#207BFF] rounded-md hidden group-hover:flex hover:border-[3px]  hover:bg-[#D2E5FF] transition-all !h-10 !w-10 "
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"

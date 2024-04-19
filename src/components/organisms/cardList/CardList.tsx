@@ -17,6 +17,7 @@ const CardList = () => {
             title={item.title}
             date={item.date}
             location={item.location}
+            isFavorite={item.isFavorite}
           />
         ))}
       </div>

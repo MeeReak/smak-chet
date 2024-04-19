@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { Typography } from "@/components";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { MyContext } from "@/contexts/CardContext";
 
@@ -12,11 +12,20 @@ interface CardProps {
   title: string;
   date: string;
   location: string;
-  favorite:boolean
+  isFavorite?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favorite }) => {
- 
+const Card: React.FC<CardProps> = ({
+  src,
+  alt,
+  title,
+  date,
+  location,
+  id,
+  isFavorite,
+}) => {
+  const { toggleFavorite } = useContext(MyContext);
+
   return (
     <>
       <Link href={`/detail/${id}`}>
@@ -37,9 +46,13 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favori
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
+              onClick={(e)=>{
+                e.preventDefault()
+                toggleFavorite(id)
+              }}
               className={
-                favorite == true
-                  ? `w-6 h-6 absolute top-3 right-3 fill-red-500 border-none outline-nonet`
+                isFavorite == true
+                  ? `w-6 h-6 absolute top-3 right-3 fill-[#FF2020] stroke-[#FF2020]`
                   : `w-6 h-6 absolute top-3 right-3 fill-white`
               }
             >
