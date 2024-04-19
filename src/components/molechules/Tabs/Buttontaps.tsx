@@ -6,15 +6,16 @@ import { Button, FilterButton } from "@/components";
 interface ButtontapsProps {
   setFiltered: (index: number) => void;
   filtered: number;
+  setCate: (Cate: string) => void;
 }
 
 export const Buttontaps: React.FC<ButtontapsProps> = ({
   setFiltered,
   filtered,
+  setCate,
 }) => {
   const [type, setType] = useState([
     "All",
-    "Recently",
     "Education",
     "Exhibition",
     "Workshop",
@@ -29,7 +30,10 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
         <div className=" flex items-center space-x-[15px] overflow-x-auto overflow-hidden scrollbar-hide">
           {type.map((item, index) => (
             <Button
-              onclick={() => setFiltered(index)}
+              onclick={() => {
+                setFiltered(index);
+                setCate(item);
+              }}
               round="full"
               className={`rounded-full border-[1px] px-6 py-3 max-[640px]:text-xs ${
                 filtered === index

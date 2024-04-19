@@ -10,6 +10,7 @@ export interface CardModal {
   date: string;
   location: string;
   isFavorite: boolean;
+  cate?:string;
 }
 
 interface CardContextProp {
@@ -38,6 +39,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Mar 03 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Exhibition"
     },
     {
       id: "2",
@@ -47,6 +49,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Oct 25 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Charity"
     },
     {
       id: "3",
@@ -56,6 +59,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "May 18 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Environmental"
     },
     {
       id: "4",
@@ -65,6 +69,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Mar 03 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Sport"
     },
     {
       id: "5",
@@ -74,6 +79,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Oct 25 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Workshop"
     },
     {
       id: "6",
@@ -83,6 +89,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "May 18 2024",
       location: "Phnom Penh",
       isFavorite: false,
+      cate:"Education"
     },
   ]);
 
