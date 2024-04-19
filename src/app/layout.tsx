@@ -15,7 +15,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   const pathname = usePathname();
-  const routeToHide = ["/login", "/signup", "/forget", "/roleSelection", "/profile"];
+  const routeToHide = ["/login", "/signup", "/forget", "/roleSelection","/favorite", "/search"];
   const hideNavbarFooter = routeToHide.includes(pathname);
   return (
     <html lang="en">

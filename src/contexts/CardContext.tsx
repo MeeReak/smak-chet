@@ -30,6 +30,7 @@ export const MyContext = createContext<ContextProps>({
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
+  
   const [CardInfo, setCardInfo] = useState([
     {
       id: "1",
