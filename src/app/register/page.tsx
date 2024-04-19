@@ -4,8 +4,8 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="mt-[80px] md:bg-[#F0F2F5] flex justify-center">
-      <div className="w-[783px] bg-white flex flex-col md:items-start items-center">
+    <div className=" md:bg-[#F0F2F5] flex justify-center">
+      <div className=" mt-[110px] w-[783px] bg-white flex flex-col md:items-start items-center">
         <Typography className=" md:ml-[33px] md:mt-5" fontWeight="bold" fontSize="h2">Fill in your information</Typography>
         <InputRegister
           label="Full Name"
@@ -34,7 +34,7 @@ const page = () => {
           type={"string"}
         />
 
-        <Button bgColor="primary" className="self-center md:px-[321px] py-4 px-[100px] outline-none" colorScheme="White">Continue</Button>
+        <Button bgColor="primary" className="self-center md:px-[321px] py-4 px-[100px] outline-none md:mt-16 mt-4" colorScheme="White">Continue</Button>
       </div>
     </div>
   );
