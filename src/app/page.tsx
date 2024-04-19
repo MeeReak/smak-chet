@@ -7,6 +7,8 @@ import Image from "next/image";
 const Homepage = () => {
   const [filtered, setFiltered] = useState<number>(0);
 
+  const [cate, setCate] = useState<string>("All")
+
   return (
     <>
       {" "}
@@ -33,10 +35,10 @@ const Homepage = () => {
           }
         ></Trending>
         {/* button of filter feature */}
-        <Buttontaps setFiltered={setFiltered} filtered={filtered} />
+        <Buttontaps setFiltered={setFiltered} filtered={filtered} setCate={setCate}/>
 
         {/* display cards */}
-        <CardList />
+        <CardList cate={cate}/>
       </div>
     </>
   );

@@ -13,6 +13,7 @@ interface CardProps {
   date: string;
   location: string;
   isFavorite?: boolean;
+  
 }
 
 const Card: React.FC<CardProps> = ({
