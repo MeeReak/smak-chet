@@ -10,7 +10,7 @@ export interface CardModal {
   date: string;
   location: string;
   isFavorite: boolean;
-  cate?:string;
+  cate:string;
 }
 
 interface CardContextProp {
@@ -96,7 +96,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
 
   function toggleFavorite(id: string) {
     const updatedCard = CardInfo.map((card) => {
-      if (card.id === id) {
+      if (card.id == id) {
         return {
           ...card,
           isFavorite: !card.isFavorite,
