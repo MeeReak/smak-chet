@@ -1,10 +1,13 @@
 import React from "react";
-
-const Map = ({ src }) => (
+interface MapProps{
+  classname ?: string,
+  src: string
+}
+const Map: React.FC<MapProps> = ({ src , classname}) => (
   <div className="relative" style={{ paddingTop: "75%" }}>
     <iframe
       src={src}
-      className="absolute inset-0 w-full h-[85%]"
+      className={`absolute inset-0 ${classname}`}
       style={{ border: "0" }}
       allowFullScreen
       loading="lazy"

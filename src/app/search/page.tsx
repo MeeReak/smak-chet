@@ -14,7 +14,7 @@ import { MyContext } from "@/contexts/CardContext";
 const SearchPage = () => {
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState<number>(0);
-  const {CardInfo}= useContext(MyContext)
+  const {CardInfo} = useContext(MyContext)
 
   const handleOnChange = (event:any) => {
     setSearch(event.target.value);
@@ -60,7 +60,7 @@ const SearchPage = () => {
         <div className="mt-[10px]  ">
           <Buttontaps setFiltered={setFiltered} filtered={filtered} />
         </div>
-        <div className=" mt-[20px] grid xl:grid-cols-3 gap-[22px] justify-items-center ">
+        <div className="max-[1030px]:px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
           {findCard.map((item) => {
             return (
               <Card
@@ -71,7 +71,7 @@ const SearchPage = () => {
                 title={item.title}
                 date={item.date}
                 location={item.location}
-                favorite={item.isFavorite}
+                isFavorite={item.isFavorite}
               ></Card>
             );
           })}

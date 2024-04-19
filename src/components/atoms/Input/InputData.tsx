@@ -4,10 +4,10 @@ import Image from "next/image";
 import React from "react";
 
 interface InputDataProps {
-  placeholder: string;
+  placeholder?: string;
   type: string;
-  className: string;
   onChange: (event: any) => void;
+  className?: string;
 }
 
 const InputData: React.FC<InputDataProps> = ({

@@ -1,23 +1,23 @@
-import { Card } from "@/components/molechules";
+"use client";
+
+import MyEventCard from "@/components/molechules/Card/MyEventCard";
 import { MyContext } from "@/contexts/CardContext";
 import React, { useContext } from "react";
 
-const CardList = () => {
+const MyEventCardList = () => {
   const { CardInfo } = useContext(MyContext);
 
   return (
     <>
-      <div className="max-[1030px]:px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+      <div className="px-5 space-y-4 py-5 flex flex-col justify-center items-center">
         {CardInfo.map((item, index) => (
-          <Card
-            id={item.id}
+          <MyEventCard
             key={index}
             src={item.src}
             alt={item.alt}
             title={item.title}
             date={item.date}
             location={item.location}
-            isFavorite={item.isFavorite}
           />
         ))}
       </div>
@@ -25,4 +25,4 @@ const CardList = () => {
   );
 };
 
-export default CardList;
+export default MyEventCardList;

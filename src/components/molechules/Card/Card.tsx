@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { Typography } from "@/components";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { MyContext } from "@/contexts/CardContext";
 
@@ -12,22 +12,31 @@ interface CardProps {
   title: string;
   date: string;
   location: string;
-  favorite:boolean
+  isFavorite?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favorite }) => {
- 
+const Card: React.FC<CardProps> = ({
+  src,
+  alt,
+  title,
+  date,
+  location,
+  id,
+  isFavorite,
+}) => {
+  const { toggleFavorite } = useContext(MyContext);
+
   return (
     <>
-      <Link href={`/${id}`}>
-        <div className="h-[340px] w-[320px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+      <Link href={`/detail/${id}`}>
+        <div className="h-[340px] lg:max-w-[320px] md:h-[340px] space-y-3 p-2 rounded-[10px] relative shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div>
             <Image
-              className="w-[310px] h-[200px] object-cover rounded-[10px]"
               src={src}
               alt={alt}
-              width={330}
-              height={340}
+              width={310}
+              height={200}
+              className="w-[310px] h-[200px] object-cover rounded-[10px]"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +46,13 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favori
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
+              onClick={(e)=>{
+                e.preventDefault()
+                toggleFavorite(id)
+              }}
               className={
-                favorite == true
-                  ? `w-6 h-6 absolute top-3 right-3 fill-red-500 border-none outline-nonet`
+                isFavorite == true
+                  ? `w-6 h-6 absolute top-3 right-3 fill-[#FF2020] stroke-[#FF2020]`
                   : `w-6 h-6 absolute top-3 right-3 fill-white`
               }
             >
@@ -50,7 +63,7 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favori
               />
             </svg>
           </div>
-          <div className="space-y-1 pl-[10px]">
+          <div className="space-y-1 pl-[10px] max-w-[320px]">
             <Typography
               className="line-clamp-2"
               fontSize="h3"
@@ -59,7 +72,7 @@ const Card: React.FC<CardProps> = ({ src, alt, title, date, location, id, favori
               {title}
             </Typography>
 
-            <div className="flex items-center">
+            <div className="flex items-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

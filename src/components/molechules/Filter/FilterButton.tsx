@@ -4,7 +4,7 @@ import { Button } from "@/components/atoms";
 import Popup from "./Popup";
 
 export interface FilterButtonProps {
-  className: string;
+  className?: string;
 }
 
 const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
@@ -20,7 +20,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 max-[640px]:w-4 max-[640px]:h-4"
           >
             <path
               strokeLinecap="round"
@@ -29,7 +29,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
             />
           </svg>
         }
-        className={`px-6 py-3 border-[1px] text-black-900 rounded-full h-[44px] ${className}`}
+        className={`max-[640px]:text-xs px-6 py-3 border-[1px] text-black-900 rounded-full  h-[44px] ${className}`}
       >
         Filter
       </Button>

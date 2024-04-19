@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { InputSearch, Button, ButtonIcon } from "@/components";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
@@ -12,17 +14,19 @@ const Navbar = () => {
     <header>
       <div className="fixed top-0 left-0 right-0  m-auto z-50 bg-opacity-50 backdrop-blur-md bg-white">
         {" "}
-        <div className=" h-[80px] flex flex-row justify-between aligns-center w-[1024px] m-auto ">
+        <div className="h-[80px] flex flex-row justify-between aligns-center max-[1030px]:p-5 max-[1030px]:pl-[10px] max-w-[1024px] m-auto ">
           <div className="flex flex-row justify-right items-center">
             <Link href="/">
               <Image
                 className="pb-2"
-                src={"assets/icons/smakchet-logo.svg"}
+                src={"/assets/icons/smakchet-logo.svg"}
                 alt="smakchet-logo"
                 width={140}
                 height={50}
               />
             </Link>
+
+            {/* Search Bar */}
             <InputSearch />
           </div>
           <div className=" flex flex-row space-x-[10px] items-center">
@@ -50,10 +54,10 @@ const Navbar = () => {
                 </Link>
               </>
             ) : (
-                <>
-                  <Link href={"/favorite"}>
+              <>
+                {/* Create */}
                 <ButtonIcon
-                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
+                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
                   icon={
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -66,14 +70,40 @@ const Navbar = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                        d="M12 4.5v15m7.5-7.5h-15"
                       />
                     </svg>
                   }
                 />
-                  </Link>
+
+                {/* Favorite */}
+
+                <Link href={"/favorite"}>
+                  <ButtonIcon
+                    className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
+                    icon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                        />
+                      </svg>
+                    }
+                  />
+                </Link>
+
+                {/* Notification */}
+
                 <ButtonIcon
-                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
+                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
                   icon={
                     <svg
                       width="24"
@@ -97,8 +127,30 @@ const Navbar = () => {
                   }
                 />
 
+                {/* Hamburger Bar*/}
                 <ButtonIcon
-                  className="bg-[#bdd8ff] text-white rounded-full p-2"
+                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out flex sm:hidden"
+                  icon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                      />
+                    </svg>
+                  }
+                />
+
+                {/* Profile */}
+                <ButtonIcon
+                  className="bg-[#D2E5FF] text-white rounded-full p-2 max-[640px]:hidden"
                   icon={
                     <svg
                       width="24"

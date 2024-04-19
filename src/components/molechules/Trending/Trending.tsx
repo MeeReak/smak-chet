@@ -22,7 +22,7 @@ const Trending: React.FC<TrendingProps> = ({
       setScreenSize(mq.matches ? "xl" : "sm");
     };
 
-    handleScreenChange(mediaQuery);
+    setScreenSize(mediaQuery.matches ? "xl" : "sm");
 
     mediaQuery.addEventListener("change", handleScreenChange);
 
@@ -31,7 +31,7 @@ const Trending: React.FC<TrendingProps> = ({
     };
   }, []);
   return (
-    <div>
+    <div className="max-[1030px]:px-5">
       <Typography
         fontSize="h2"
         fontWeight="bold"

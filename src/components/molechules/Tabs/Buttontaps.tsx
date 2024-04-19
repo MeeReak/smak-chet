@@ -25,13 +25,13 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
 
   return (
     <>
-      <div className="flex items-center space-x-[15px] w-[1024px] m-auto">
-        <div className="w-[880px] flex items-center space-x-[15px] overflow-x-auto overflow-hidden scrollbar-hide">
+      <div className="max-[1030px]:px-5 flex items-center space-x-[15px] max-w-[1024px] m-auto">
+        <div className=" flex items-center space-x-[15px] overflow-x-auto overflow-hidden scrollbar-hide">
           {type.map((item, index) => (
             <Button
               onclick={() => setFiltered(index)}
               round="full"
-              className={`rounded-full border-[1px] px-6 py-3  ${
+              className={`rounded-full border-[1px] px-6 py-3 max-[640px]:text-xs ${
                 filtered === index
                   ? "bg-[#207bff] text-white"
                   : "hover:bg-[#bdd8ff] hover:text-[#207BFF] hover:border-[#207BFF]"
@@ -43,7 +43,7 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
           ))}
         </div>
 
-        <FilterButton className="" />
+        <FilterButton />
       </div>
     </>
   );

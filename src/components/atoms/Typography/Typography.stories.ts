@@ -17,8 +17,8 @@ export const Default: Story = {
   args: {
     children: "Typo",
     align: "center",
-    fontSize: "h6",
-    variant: "normal",
+    fontSize: "h5",
+    fontWeight: "normal",
     color: "black",
   },
 };

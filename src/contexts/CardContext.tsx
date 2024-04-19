@@ -18,11 +18,14 @@ interface CardContextProp {
 
 interface ContextProps {
   CardInfo: CardModal[];
-
+  setCardInfo: React.Dispatch<React.SetStateAction<CardModal[]>>;
+  toggleFavorite: (id: string) => void;
 }
 
 export const MyContext = createContext<ContextProps>({
-  CardInfo: []
+  CardInfo: [],
+  setCardInfo: () => {},
+  toggleFavorite: () => {},
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
@@ -35,7 +38,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "National day of Science, Technology and Innovation 2024",
       date: "Mar 03 2024",
       location: "Phnom Penh",
-      isFavorite: true
+      isFavorite: false,
     },
     {
       id: "2",
@@ -44,7 +47,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
       location: "Phnom Penh",
-      isFavorite: false
+      isFavorite: false,
     },
     {
       id: "3",
@@ -53,7 +56,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
-      isFavorite: true
+      isFavorite: false,
     },
     {
       id: "4",
@@ -62,7 +65,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "National day of Science, Technology and Innovation 2024",
       date: "Mar 03 2024",
       location: "Phnom Penh",
-      isFavorite: false
+      isFavorite: false,
     },
     {
       id: "5",
@@ -71,7 +74,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "Cambodia Book Fair",
       date: "Oct 25 2024",
       location: "Phnom Penh",
-      isFavorite: true
+      isFavorite: false,
     },
     {
       id: "6",
@@ -80,18 +83,28 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       title: "ACE Graduation Ceremony",
       date: "May 18 2024",
       location: "Phnom Penh",
-      isFavorite: false
+      isFavorite: false,
     },
   ]);
 
-   
-  
+  function toggleFavorite(id: string) {
+    const updatedCard = CardInfo.map((card) => {
+      if (card.id === id) {
+        return {
+          ...card,
+          isFavorite: !card.isFavorite,
+        };
+      }
+      return card;
+    });
+    setCardInfo(updatedCard);
+  }
 
   const Contextvalue = {
+    toggleFavorite,
     CardInfo,
     setCardInfo,
-   
-  }; 
+  };
   return (
     <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>
   );
