@@ -3,16 +3,15 @@ import React, { useState } from "react";
 import { Button } from "@/components/atoms";
 import Popup from "./Popup";
 
-export interface FilterButtonProps {
-  className?: string;
-}
 
-const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
+const FilterButton = () => {
   const [modalState, setModalState] = useState(false);
   return (
-    <div>
-      <Button
+    <>
+     <div>
+     <Button
         onclick={() => setModalState(true)}
+        round="full"
         leftIcon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,12 +28,13 @@ const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
             />
           </svg>
         }
-        className={`max-[640px]:text-xs px-6 py-3 border-[1px] text-black-900 rounded-full  h-[44px] ${className}`}
+        className="max-[640px]:text-xs px-6 py-3 border-[1px] text-black-900"
       >
         Filter
       </Button>
-      <div>{modalState && <Popup setModalState={setModalState} />}</div>
-    </div>
+      {modalState && <Popup setModalState={setModalState} />}
+     </div>
+    </>
   );
 };
 

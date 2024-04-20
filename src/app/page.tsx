@@ -1,14 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import { Buttontaps, CardList, Trending } from "@/components";
+import React from "react";
+import { Trending, FilteredCardDisplay } from "@/components";
 import Image from "next/image";
 
 const Homepage = () => {
-  const [filtered, setFiltered] = useState<number>(0);
-
-  const [cate, setCate] = useState<string>("All")
-
   return (
     <>
       {" "}
@@ -34,11 +30,8 @@ const Homepage = () => {
             ></Image>
           }
         ></Trending>
-        {/* button of filter feature */}
-        <Buttontaps setFiltered={setFiltered} filtered={filtered} setCate={setCate}/>
 
-        {/* display cards */}
-        <CardList cate={cate}/>
+        <FilteredCardDisplay />
       </div>
     </>
   );

@@ -3,13 +3,13 @@
 import React, { useState } from "react";
 import { Button, FilterButton } from "@/components";
 
-interface ButtontapsProps {
+interface CategoryGroupProps {
   setFiltered: (index: number) => void;
   filtered: number;
   setCate: (Cate: string) => void;
 }
 
-export const Buttontaps: React.FC<ButtontapsProps> = ({
+export const CategoryGroup: React.FC<CategoryGroupProps> = ({
   setFiltered,
   filtered,
   setCate,
@@ -22,6 +22,7 @@ export const Buttontaps: React.FC<ButtontapsProps> = ({
     "Environmental",
     "Charity",
     "Sport",
+    "Technology"
   ]);
 
   return (
