@@ -8,7 +8,7 @@ const Popup = (props: { setModalState: (arg0: boolean) => void }) => {
     <>
       <div className="fixed inset-0 opacity-25 bg-black"></div>
       <div className="fixed inset-0 flex justify-center items-center z-10 ">
-        <div className="bg-white border-[2px] border-gray-200 w-[300px] md:w-[300px] lg:w-[500px] p-5 rounded-xl relative">
+        <div className="bg-white border-[2px] border-gray-200 w-[300px] sm:w-[350px] md:w-[500px] p-5 rounded-xl relative">
           <div>
             <div
               onClick={() => props.setModalState(false)}
