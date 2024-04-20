@@ -135,7 +135,7 @@ const page = () => {
                 <InputData type="text" className="w-[600px] h-[50px] mt-3 mb-6 bg-[#FFFBFB]"></InputData><br/>
                 <label className="text-xl font-medium">Message</label><br/>
                 <textarea className="w-[600px] h-[154px] mt-3 mb-6 border border-black py-[15px] pl-[20px] rounded-[10px] outline-none bg-[#FFFBFB]"></textarea>
-                <Button bgColor="primary" className="text-center">Send</Button>
+                <Button bgColor="primary" className="text-center py-3 px-4">Send</Button>
               </form>
             </div>
             <div className="w-[30%] flex justify-center items-center">
