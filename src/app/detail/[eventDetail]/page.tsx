@@ -52,7 +52,7 @@ const Homepage = () => {
                     />
                   </svg>
                 }
-              ></ButtonIcon>
+              />
               <ButtonIcon
                 className="w-[50px] h-[50px] rounded-lg border border-gray-400"
                 icon={
@@ -111,7 +111,7 @@ const Homepage = () => {
                           />
                         </svg>
                       }
-                    ></ButtonIcon>
+                    />
                   </Link>
                 </div>
                 <div className="flex gap-1">
