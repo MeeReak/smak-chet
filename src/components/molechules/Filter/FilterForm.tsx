@@ -5,38 +5,42 @@ const FilterForm = () => {
   return (
     <>
       <div>
-        <Typography fontSize="h4" fontWeight="bold">
+        <Typography className="text-base sm:text-lg md:text-xl" fontWeight="bold">
           Filter
         </Typography>
       </div>
-      <form action="" className="mt-10">
-        <div className="mb-5">
+      <form action="submit" className="mt-3 sm:mt-4 md:mt-5">
+        <div className="mb-3 ">
           <label htmlFor="date">
-            <Typography fontSize="h5" fontWeight="semibold" className="mb-2">
+            <Typography fontSize="h5" fontWeight="semibold" className="mb-2 sm:text-base md:text-lg">
               Date
             </Typography>
           </label>
-          <InputDate className="border-[1px] border-black w-[100%] h-[40px] p-5 rounded-lg"></InputDate>
+          <InputDate className="border-[1px] border-gray-200 w-[100%] p-3 rounded-lg outline-none text-xs sm:text-sm"></InputDate>
         </div>
         <div>
           <label htmlFor="location">
-            <Typography fontSize="h5" fontWeight="semibold" className="mb-2">
+            <Typography fontSize="h5" fontWeight="semibold" className="mb-2 sm:text-base md:text-lg">
               Location
             </Typography>
           </label>
           <select
             name=""
             id="location"
-            className="w-[100%] h-[40px] border border-black rounded-lg px-5"
+            className="w-[100%] p-3 border border-gray-200 rounded-lg outline-none text-xs sm:text-sm"
           >
-            <option disabled>Select Location</option>
-            <option value="">Phnom Penh</option>
-            <option value="">Takeo</option>
-            <option value="">Siem Reap</option>
+            <option className="text-[10px] sm:text-base" disabled>Select Location</option>
+            <option className="text-[10px] sm:text-base" value="">Phnom Penh</option>
+            <option className="text-[10px] sm:text-base" value="">Takeo</option>
+            <option className="text-[10px] sm:text-base" value="">Siem Reap</option>
           </select>
         </div>
-        <div className="w-[100%] mt-5">
-          <Button colorScheme="primary" size="h5" className="rounded-lg m-auto">
+        <div className="w-[100%] mt-4">
+          <Button
+            colorScheme="primary"
+            size="h5"
+            className="rounded-lg m-auto px-4 py-2 font-semibold  border-gray-200 transition duration-300 ease-in-out transform hover:scale-105 sm:text-base"
+          >
             Apply
           </Button>
         </div>
