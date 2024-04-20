@@ -1,25 +1,23 @@
 "use client";
 import React, { useState } from "react";
 
-
-interface DropdownProps{
-  classname?:string; 
-  options:string[];
+interface DropdownProps {
+  classname?: string;
+  options: string[];
 }
 
-const Dropdown:React.FC<DropdownProps> = ({classname , options}) => {
-
+const Dropdown: React.FC<DropdownProps> = ({ classname, options }) => {
   const [isOpen, setisOpen] = useState(false);
-  const [selectedOption , setselectedOption] = useState(null);
+  const [selectedOption, setselectedOption] = useState(null);
 
   const toggling = () => {
     setisOpen(!isOpen);
   };
 
-  const onOptionClicked = (value:any) => () => {
+  const onOptionClicked = (value: any) => () => {
     setselectedOption(value);
-    setisOpen(false)
-  }
+    setisOpen(false);
+  };
 
   return (
     <div className={`inline-flex w-full ${classname}`}>
@@ -27,9 +25,11 @@ const Dropdown:React.FC<DropdownProps> = ({classname , options}) => {
         <a
           onClick={toggling}
           href="javascript:void(0)"
-          className={`w-[100%] rounded-l-md py-2 ${selectedOption ? 'text-black' :  'text-gray-400'}`}
+          className={`w-[100%] rounded-l-md py-2 ${
+            selectedOption ? "text-black" : "text-gray-400"
+          }`}
         >
-          {selectedOption || 'Select Option'}
+          {selectedOption || "Select Option"}
         </a>
         <div className="relative">
           <button
@@ -52,19 +52,21 @@ const Dropdown:React.FC<DropdownProps> = ({classname , options}) => {
             </svg>
           </button>
         </div>
-        {
-          isOpen && (
-            <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-100 bg-white shadow-lg grid">
-            {options.map((option)=>(
-              <button type='button' onClick={onOptionClicked(option)}>
-              <div className="block rounded-lg px-4 py-2 text-sm text-gray-500 no-underline hover:bg-gray-50">
-                {option}
-              </div>
-            </button>
+        {isOpen && (
+          <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-100 bg-white shadow-lg grid">
+            {options.map((option, index) => (
+              <button
+                type="button"
+                onClick={onOptionClicked(option)}
+                key={index}
+              >
+                <div className="block rounded-lg px-4 py-2 text-sm text-gray-500 no-underline hover:bg-gray-50">
+                  {option}
+                </div>
+              </button>
             ))}
           </div>
-          )
-        }
+        )}
       </div>
     </div>
   );
