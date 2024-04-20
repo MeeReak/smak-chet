@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { InputSearch, Button, ButtonIcon } from "@/components";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Dropdown from "../Dropdown/Dropdown";
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
@@ -27,7 +25,9 @@ const Navbar = () => {
             </Link>
 
             {/* Search Bar */}
-            <InputSearch />
+            <Link href={"/search"}>
+              <InputSearch />
+            </Link>
           </div>
           <div className=" flex flex-row space-x-[10px] items-center">
             {login ? (
