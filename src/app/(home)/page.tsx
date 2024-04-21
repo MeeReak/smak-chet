@@ -29,7 +29,7 @@ const Homepage = () => {
               className="rounded-xl"
             ></Image>
           }
-        ></Trending>
+        />
 
         <FilteredCardDisplay />
       </div>

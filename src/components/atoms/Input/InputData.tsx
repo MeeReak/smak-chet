@@ -8,6 +8,7 @@ interface InputDataProps {
   onChange?: (event: any) => void;
   className?: string;
   id?:string
+  name?:string
 }
 
 const InputData: React.FC<InputDataProps> = ({
@@ -16,6 +17,7 @@ const InputData: React.FC<InputDataProps> = ({
   className,
   onChange,
   id,
+  name
 }) => {
   const combinedClassName = `border border-black py-[15px] pl-[20px] rounded-[10px] outline-none ${className}`;
 
@@ -26,6 +28,7 @@ const InputData: React.FC<InputDataProps> = ({
       placeholder={placeholder}
       onChange={onChange}
       id={id}
+      name={name}
     />
   );
 };

@@ -13,7 +13,7 @@ const InputSearch: React.FC<InputSearchProps> = (
   return (
     <div className="relative xl:block max-[640px]:hidden flex justify-between">
       <input
-        className={`placeholder-gray-500 border outline-none border-gray-300 h-[44px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full ${className}`}
+        className={`placeholder-gray-500 border outline-none border-gray-200 h-[44px]  w-full pl-[20px] pr-[10px] py-[15px] rounded-full ${className}`}
         type="text"
         placeholder="Search"
         onChange={onChange}

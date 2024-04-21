@@ -6,7 +6,7 @@ import { InputSearch, Button, ButtonIcon, NotiDropdown } from "@/components";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [login, setLogin] = useState<boolean>(false);
+  const [login, setLogin] = useState<boolean>(true);
   const [hideNavbar, setHideNavbar] = useState(false);
 
   useEffect(() => {
@@ -39,10 +39,12 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Search Bar */}
-            <Link href={"/search"}>
-              <InputSearch />
-            </Link>
+            {/* Conditionally Render Search Bar */}
+            {window.location.pathname !== "/search" && (
+              <Link href={"/search"}>
+                <InputSearch />
+              </Link>
+            )}
           </div>
           <div className=" flex flex-row items-center ">
             {login ? (
@@ -62,7 +64,7 @@ const Navbar = () => {
                     size="h4"
                     bgColor="primary"
                     colorScheme="White"
-                    className="py-[13px] px-5 border-[1px] rounded-[10px]"
+                    className="py-[13px] px-5 ml-[10px] border-[1px] rounded-[10px]"
                   >
                     Register
                   </Button>

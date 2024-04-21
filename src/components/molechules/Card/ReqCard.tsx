@@ -15,9 +15,9 @@ const ReqCard: React.FC<ReqCardProp> = ({
   imageSrc = "",
 }) => {
   return (
-    <div className="h-[70px]   pl-6 border-[1px] border-gray-300 flex cursor-pointer hover:bg-gray-100 items-center rounded-[10px]">
+    <div className="h-[70px] pl-6 border border-gray-200 flex cursor-pointer hover:bg-gray-100 items-center rounded-[10px]">
       <div className="flex items-start space-x-4">
-        <Image src={imageSrc} alt="age" width={24} height={24}></Image>
+        <Image src={imageSrc} alt="age" width={24} height={24}/>
         <div>
           <Typography fontWeight="medium" fontSize="h3">
             {title}

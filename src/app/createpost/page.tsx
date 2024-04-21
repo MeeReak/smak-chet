@@ -29,7 +29,7 @@ const page = () => {
   };
 
   return (
-    <div className="xl:w-[1024px] m-auto space-y-5 z-10 xl:mt-[100px] w-screen">
+    <div className="xl:w-[1024px] m-auto space-y-5 z-10 xl:mt-[100px] w-screen mb-20">
       <Typography fontWeight="bold" fontSize="h2">
         Event’s Detail
       </Typography>
