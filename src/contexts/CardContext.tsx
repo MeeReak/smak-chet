@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
+import { getLocalStorage, setLocalStorage } from "../utils/localStorage";
 
 export interface CardModal {
   id: string;
@@ -10,7 +11,7 @@ export interface CardModal {
   date: string;
   location: string;
   isFavorite: boolean;
-  cate:string;
+  cate: string;
 }
 
 interface CardContextProp {
@@ -30,7 +31,6 @@ export const MyContext = createContext<ContextProps>({
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
-  
   const [CardInfo, setCardInfo] = useState([
     {
       id: "1",
@@ -40,7 +40,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Mar 03 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Exhibition"
+      cate: "Exhibition",
     },
     {
       id: "2",
@@ -50,7 +50,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Oct 25 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Charity"
+      cate: "Charity",
     },
     {
       id: "3",
@@ -60,7 +60,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "May 18 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Environmental"
+      cate: "Environmental",
     },
     {
       id: "4",
@@ -70,7 +70,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Mar 03 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Sport"
+      cate: "Sport",
     },
     {
       id: "5",
@@ -80,7 +80,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Oct 25 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Workshop"
+      cate: "Workshop",
     },
     {
       id: "6",
@@ -90,9 +90,16 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "May 18 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate:"Education"
+      cate: "Education",
     },
   ]);
+
+  useEffect(() => {
+    const data = getLocalStorage("cardInfo")
+      ? getLocalStorage("cardInfo")
+      : CardInfo;
+    setCardInfo(data);
+  }, []);
 
   function toggleFavorite(id: string) {
     const updatedCard = CardInfo.map((card) => {
@@ -104,6 +111,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       }
       return card;
     });
+    setLocalStorage("cardInfo", updatedCard);
     setCardInfo(updatedCard);
   }
 
@@ -118,3 +126,6 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
 };
 
 export default CardContext;
+function usrEffect(arg0: () => void, arg1: never[]) {
+  throw new Error("Function not implemented.");
+}

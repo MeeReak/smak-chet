@@ -239,6 +239,7 @@ const Homepage = () => {
                 .slice(0, 3)
                 .map((item, index) => (
                   <Card
+                    isFavorite={item.isFavorite}
                     key={index}
                     id={item.id}
                     src={item.src}

@@ -1,20 +1,10 @@
 "use client";
 import { Typography } from "@/components";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { MyContext } from "@/contexts/CardContext";
-
-interface CardProps {
-  id: string;
-  src: string;
-  alt: string;
-  title: string;
-  date: string;
-  location: string;
-  isFavorite?: boolean;
-  
-}
+import { CardProps } from "@/@types/card";
 
 const Card: React.FC<CardProps> = ({
   src,
@@ -47,9 +37,9 @@ const Card: React.FC<CardProps> = ({
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              onClick={(e)=>{
-                e.preventDefault()
-                toggleFavorite(id)
+              onClick={(e) => {
+                e.preventDefault();
+                toggleFavorite(id);
               }}
               className={
                 isFavorite == true

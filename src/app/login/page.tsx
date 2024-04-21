@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
-import { LoginProps } from "../@types/auth";
+import { LoginProps } from "../../@types/auth";
 
 const Page = () => {
   const [data, setData] = useState<LoginProps>({
