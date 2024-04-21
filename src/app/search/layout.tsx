@@ -24,7 +24,7 @@ export default function RootLayout({
         <Navbar />
         <CardContext>{children}</CardContext>
         <SecondNarbar />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
