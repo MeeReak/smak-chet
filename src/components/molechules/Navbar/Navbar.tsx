@@ -4,10 +4,14 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { InputSearch, Button, ButtonIcon, NotiDropdown } from "@/components";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
   const [hideNavbar, setHideNavbar] = useState(false);
+
+  const pathname = usePathname();
+  console.log(pathname);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,7 +44,7 @@ const Navbar = () => {
             </Link>
 
             {/* Conditionally Render Search Bar */}
-            {window.location.pathname !== "/search" && (
+            {pathname !== "/search" && (
               <Link href={"/search"}>
                 <InputSearch />
               </Link>
