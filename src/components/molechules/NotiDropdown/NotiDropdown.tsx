@@ -1,7 +1,7 @@
 "use client";
 import { ButtonIcon, Typography } from "@/components/atoms";
 import { NotiCardList } from "@/components/organisms";
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import Link from 'next/link'
 
 const NotiDropdown = () => {
@@ -11,7 +11,7 @@ const NotiDropdown = () => {
     <div className="relative">
       <ButtonIcon
         onclick={() => setIsOpen(!isOpen)}
-        className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
+        className="bg-gray-100 text-black rounded-full p-2 ml-[10px] hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
         icon={
           <svg
             width="24"

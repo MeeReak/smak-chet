@@ -1,19 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { InputSearch, Button, ButtonIcon, NotiDropdown } from "@/components";
 import Link from "next/link";
 
 const Navbar = () => {
   const [login, setLogin] = useState<boolean>(false);
+  const [hideNavbar, setHideNavbar] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isDetailRoute = window.location.pathname.startsWith("/detail/");
+      const isSmallScreen = window.innerWidth < 640; // Adjust breakpoint as needed
+      setHideNavbar(isDetailRoute && isSmallScreen);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <header>
+    <header className={hideNavbar ? "hidden" : ""}>
       <div className="fixed top-0 left-0 right-0  m-auto z-50 bg-opacity-50 backdrop-blur-md bg-white">
         {" "}
         <div className="h-[80px] flex flex-row justify-between aligns-center max-[1030px]:p-5 max-[1030px]:pl-[10px] max-w-[1024px] m-auto ">
           <div className="flex flex-row justify-right items-center">
+            {/* Logo */}
             <Link href="/">
               <Image
                 className="pb-2"
@@ -29,7 +44,7 @@ const Navbar = () => {
               <InputSearch />
             </Link>
           </div>
-          <div className=" flex flex-row space-x-[10px] items-center">
+          <div className=" flex flex-row items-center ">
             {login ? (
               <>
                 <Link href="/login">
@@ -82,7 +97,7 @@ const Navbar = () => {
 
                 <Link href={"/favorite"}>
                   <ButtonIcon
-                    className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
+                    className="bg-gray-100 text-black rounded-full py-2 ml-[10px]  hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out"
                     icon={
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -104,32 +119,11 @@ const Navbar = () => {
 
                 {/* Notification */}
 
-                <NotiDropdown/>
-
-                {/* Hamburger Bar*/}
-                <ButtonIcon
-                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out flex sm:hidden"
-                  icon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                      />
-                    </svg>
-                  }
-                />
+                <NotiDropdown />
 
                 {/* Profile */}
                 <ButtonIcon
-                  className="bg-[#D2E5FF] text-white rounded-full p-2 max-[640px]:hidden"
+                  className="bg-[#D2E5FF] text-white rounded-full p-2 ml-[10px]  max-[640px]:hidden"
                   icon={
                     <svg
                       width="24"
@@ -146,6 +140,29 @@ const Navbar = () => {
                     </svg>
                   }
                 />
+
+                {/* Hamburger Bar*/}
+                <Link href={"/"}>
+                  <ButtonIcon
+                    className="bg-gray-100 text-black rounded-full p-2 ml-[10px]  hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out flex sm:hidden"
+                    icon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
+                      </svg>
+                    }
+                  />
+                </Link>
               </>
             )}
           </div>
