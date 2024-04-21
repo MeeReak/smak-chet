@@ -16,7 +16,7 @@ interface ButtonProps {
   round?: "rounded" | "md" | "lg" | "xl" | "full";
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  onclick?: () => void;
+  onclick?: (e: any) => void;
 }
 
 const Button: FC<ButtonProps> = ({

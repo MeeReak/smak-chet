@@ -29,7 +29,7 @@ const Homepage = () => {
             </div>
             <div className="w-[30%] flex justify-end gap-2">
               <ButtonIcon
-                className="w-[50px] h-[50px] rounded-lg border border-gray-400"
+                className="w-[50px] h-[50px] rounded-lg border border-gray-200"
                 icon={
                   <svg
                     width="24"
@@ -53,7 +53,7 @@ const Homepage = () => {
                 }
               />
               <ButtonIcon
-                className="w-[50px] h-[50px] rounded-lg border border-gray-400"
+                className="w-[50px] h-[50px] rounded-lg border border-gray-200"
                 icon={
                   <svg
                     width="24"
@@ -168,7 +168,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <hr className="mt-5 w-full h-[2px] bg-black opacity-30"></hr>
+          <hr className="mt-5 w-full border-gray-200"></hr>
           <div className="sm:hidden mt-5 flex items-center justify-between max-[1030px]:px-3">
             <div className="w-[70%] line-clamp-2">
               <Typography
@@ -205,7 +205,7 @@ const Homepage = () => {
               consequatur vitae alias velit nemo!
             </Typography>
           </div>
-          <hr className="mt-5 w-full h-[2px] bg-black opacity-30"></hr>
+          <hr className="mt-5 w-full bg-gray-200 "></hr>
           {/* requirement */}
           <div className="mt-5 grid lg:grid-cols-2 gap-3 max-[1030px]:px-3">
             <div className="">
@@ -224,7 +224,7 @@ const Homepage = () => {
               />
             </div>
           </div>
-          <hr className=" w-full h-[2px] bg-black opacity-30"></hr>
+          <hr className=" w-full bg-gray-200"></hr>
           {/* You may like */}
           <div className="mt-5">
             <Typography
