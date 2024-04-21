@@ -1,7 +1,14 @@
-import { ButtonIcon, FavPage, Typography } from "@/components";
-import React from "react";
+"use client"
 
-const page = () => {
+import { ButtonIcon, FavPage, Typography } from "@/components";
+import { MyContext } from "@/contexts/CardContext";
+import React, { useContext } from "react";
+
+const Page = () => {
+  const { CardInfo } = useContext(MyContext);
+
+  const data = CardInfo.filter((item) => item.isFavorite === true);
+
   return (
     <>
       <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
@@ -35,8 +42,8 @@ const page = () => {
             </Typography>
           </div>
           <div className="px-4 py-2 rounded-lg border-[1px] border-gray-200 text-center flex justify-center items-center ">
-            <Typography fontSize="h3" color="blue" fontWeight="semibold">
-              3 Events
+            <Typography fontSize="h3" color="blue" >
+              {data.length} Events
             </Typography>
           </div>
         </div>
@@ -46,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
