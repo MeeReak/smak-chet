@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] ">
+      <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
         <div className="flex justify-between items-center px-5">
           <div className="flex items-center">
             <ButtonIcon

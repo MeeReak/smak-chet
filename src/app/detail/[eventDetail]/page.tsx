@@ -1,10 +1,9 @@
 "use client";
 
-import { Button, ButtonIcon, Typography, Card } from "@/components";
+import { Button, ButtonIcon, Typography, Card, Map } from "@/components";
 import React, { useContext } from "react";
 import { useParams } from "next/navigation";
 import { MyContext } from "@/contexts/CardContext";
-import { Map } from "@/components";
 import ReqCards from "@/components/organisms/ReqCards/ReqCards";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,10 +17,10 @@ const Homepage = () => {
   const DetailEvent = CardInfo.find((data) => data.id === User);
 
   return (
-    <div className="xl:w-[1024px] m-auto xl:mt-[80px] ">
+    <div className="lg:w-[1024px] m-auto sm:mt-[80px] mb-20">
       <div className="">
-        <div className="xl:w-[1024px] m-auto">
-          <header className="py-5 flex items-center max-[640px]:hidden">
+        <div className="lg:w-[1024px] m-auto">
+          <header className="py-5 flex items-center max-[640px]:hidden max-[1030px]:px-5">
             <div className="w-[70%]">
               <Typography
                 fontSize="h3"
@@ -74,13 +73,18 @@ const Homepage = () => {
                   </svg>
                 }
               ></ButtonIcon>
-              <Button round="lg" colorScheme="White" bgColor="primary">
-                Apply Now
+              <Button
+                round="lg"
+                colorScheme="White"
+                bgColor="primary"
+                className="px-5"
+              >
+                Apply
               </Button>
             </div>
           </header>
           {/* banner */}
-          <div className="xl:mt-3 flex justify-center">
+          <div className="lg:mt-3 flex justify-center">
             <div className="w-[885px] max-[640px]:w-[390px] max-[640px]:h-[273px] h-[325.7px] object-cover flex justify-center">
               <Image
                 src={DetailEvent?.src as string}
@@ -90,7 +94,7 @@ const Homepage = () => {
                 height={640}
                 className="max-[640px]:w-full relative object-cover"
               />
-              <div className="absolute flex justify-between w-[97%] mt-1 xl:hidden">
+              <div className="absolute flex justify-between w-[97%] mt-1 sm:hidden">
                 <div>
                   <Link href="/">
                     <ButtonIcon
@@ -165,24 +169,27 @@ const Homepage = () => {
             </div>
           </div>
           <hr className="mt-5 w-full h-[2px] bg-black opacity-30"></hr>
-          <div className="xl:hidden mt-5 flex justify-between">
-            <div className="w-[80%]">
+          <div className="sm:hidden mt-5 flex items-center justify-between max-[1030px]:px-3">
+            <div className="w-[70%] line-clamp-2">
               <Typography
                 fontSize="h3"
                 fontWeight="bold"
               >{`${DetailEvent?.title}`}</Typography>
             </div>
-            <div className="w-[20%]">
-              <Button round="lg" colorScheme="White" bgColor="primary">
-                Apply
-              </Button>
-            </div>
+            <Button
+              round="lg"
+              colorScheme="White"
+              bgColor="primary"
+              className="px-5 py-2"
+            >
+              Apply
+            </Button>
           </div>
-          <div>
-            <Typography fontSize="h3" fontWeight="bold" className="my-3">
+          <div className="max-[1030px]:px-3">
+            <Typography fontSize="h3" fontWeight="semibold" className="my-3">
               Event&#39;s Detail
             </Typography>
-            <Typography align="center" fontSize="h4">
+            <Typography align="justify" fontSize="h4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
               vel repellendus fugiat eius, quibusdam sapiente esse. At repellat
               perspiciatis iusto hic nobis inventore voluptatibus neque iste,
@@ -200,7 +207,7 @@ const Homepage = () => {
           </div>
           <hr className="mt-5 w-full h-[2px] bg-black opacity-30"></hr>
           {/* requirement */}
-          <div className="mt-5 grid xl:grid-cols-2 gap-3">
+          <div className="mt-5 grid lg:grid-cols-2 gap-3 max-[1030px]:px-3">
             <div className="">
               <Typography fontSize="h3" fontWeight="bold" className="mb-5">
                 Requirement
@@ -223,11 +230,11 @@ const Homepage = () => {
             <Typography
               fontSize="h3"
               fontWeight="bold"
-              className="mb-5 xl:text-left max-[640px]:text-center"
+              className="mb-5 lg:text-left max-[640px]:ml-5"
             >
               You might also be interested in
             </Typography>
-            <div className="grid xl:grid-cols-3 gap-[22px] max-[640px]:grid-cols-1 mx-auto justify-items-center max-[640px]:space-y-2">
+            <div className="max-[1030px]:px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
               {CardInfo.filter((item) => item.id !== User)
                 .slice(0, 3)
                 .map((item, index) => (

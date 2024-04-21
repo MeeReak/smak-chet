@@ -8,7 +8,7 @@ const Homepage = () => {
   return (
     <>
       {" "}
-      <div className="max-w-[1024px] m-auto space-y-5 z-10 mt-[100px] ">
+      <div className="max-w-[1024px] m-auto space-y-5 z-10 mt-[100px] mb-20">
         <Trending
           className="flex gap-4 max-[640px]:overflow-hidden max-[640px]:overflow-x-auto"
           topEvent={
