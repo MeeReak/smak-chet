@@ -56,25 +56,27 @@ const Navbar = () => {
             ) : (
               <>
                 {/* Create */}
-                <ButtonIcon
-                  className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
-                  icon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      />
-                    </svg>
-                  }
-                />
+                <Link href={"/createpost"}>
+                  <ButtonIcon
+                    className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
+                    icon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    }
+                  />
+                </Link>
 
                 {/* Favorite */}
 
@@ -102,7 +104,7 @@ const Navbar = () => {
 
                 {/* Notification */}
 
-                <NotiDropdown></NotiDropdown>
+                <NotiDropdown/>
 
                 {/* Hamburger Bar*/}
                 <ButtonIcon
