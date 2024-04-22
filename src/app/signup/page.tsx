@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 import { SignUpProps } from "../../@types/auth";
+import { setLocalStorage } from "@/utils/localStorage";
 
 const Page = () => {
   const [data, setData] = useState<SignUpProps>({
@@ -11,6 +12,11 @@ const Page = () => {
     email: "",
     password: "",
   });
+
+  function login() {
+    const login = true;
+    setLocalStorage("isLogin", login);
+  }
 
   function handleChange(e: any) {
     setData({
@@ -84,15 +90,16 @@ const Page = () => {
 
           <br />
           {/*  continue button */}
-          <Button
-            onclick={(e) => {
-              handleSubmit(e);
-            }}
-            className="bg-blue-500 py-4 my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
-          >
-            Continue
-          </Button>
-
+          <Link href={"/"}>
+            <Button
+              onclick={(e) => {
+                login();
+              }}
+              className="bg-blue-500 py-4 my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
+            >
+              Continue
+            </Button>
+          </Link>
           {/* signup if don't have account */}
           <Typography align="center" fontSize="h4">
             Already have an account?

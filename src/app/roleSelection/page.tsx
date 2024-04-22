@@ -16,8 +16,8 @@ const RoleChoosing = () => {
 
   return (
     <>
-      <div className="h-screen bg-[#f0f2f5]">
-        <div className="flex flex-col items-center justify-center">
+      <div className="h-screen bg-[#f0f2f5] ">
+        <div className="flex flex-col items-center justify-center mb-20">
           <Link href={"/"}>
             <Image
               className="pt-20 pb-10"
@@ -84,9 +84,11 @@ const RoleChoosing = () => {
             </button>
           </div>
 
-          <Button className="bg-[#207BFF] align-middle justify-center text-white py-4 px-48 rounded-lg font-semibold hover:cursor-pointer">
-            Continue
-          </Button>
+          <Link href={"/signup"}>
+            <Button className="bg-[#207BFF] align-middle justify-center text-white py-4 px-48 rounded-lg font-semibold hover:cursor-pointer">
+              Continue
+            </Button>
+          </Link>
 
           <Typography align="center" className="mt-4">
             Already have an account ?{" "}
