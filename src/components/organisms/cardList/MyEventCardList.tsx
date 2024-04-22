@@ -18,6 +18,7 @@ const MyEventCardList = () => {
             title={item.title}
             date={item.date}
             location={item.location}
+            id={item.id}
           />
         ))}
       </div>

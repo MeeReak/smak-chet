@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/atoms";
 import Popup from "./Popup";
+import { Delete } from "../Delete/delete";
+import FilterForm from "./FilterForm";
 
 export interface FilterButtonProps {
   className?: string;
@@ -33,7 +35,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({ className }) => {
       >
         Filter
       </Button>
-      <div>{modalState && <Popup setModalState={setModalState} />}</div>
+      <div>{modalState && <Popup setModalState={setModalState} Children={<FilterForm/>} />}</div>
     </div>
   );
 };

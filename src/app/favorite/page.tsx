@@ -1,4 +1,5 @@
 import { Typography, ButtonIcon } from "@/components";
+import { Delete } from "@/components/molechules/Delete/delete";
 import FavPage from "@/components/molechules/Favoritepage/favPage";
 import React from "react";
 
@@ -29,15 +30,14 @@ const page = () => {
               Favorite
             </Typography>
           </div>
-          <div
-            className="w-[83px] h-[36px] rounded-lg border-[2px] border-gray text-center flex justify-center items-center "
-          >
+          <div className="w-[83px] h-[36px] rounded-lg border-[2px] border-gray text-center flex justify-center items-center ">
             <Typography fontSize="h4" color="blue">
               3 Events
             </Typography>
           </div>
         </div>
         <FavPage />
+        <Delete/>
       </div>
     </>
   );

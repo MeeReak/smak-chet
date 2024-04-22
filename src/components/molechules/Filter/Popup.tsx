@@ -3,7 +3,12 @@ import Icon from "@/components/atoms/Icons/Icons";
 import React from "react";
 import FilterForm from "./FilterForm";
 
-const Popup = (props: { setModalState: (arg0: boolean) => void }) => {
+interface PopupProps {
+  setModalState: (state: boolean) => void; // Update the type signature to match the actual usage
+  Children?: React.ReactNode;
+}
+
+const Popup: React.FC<PopupProps> = ({ Children, setModalState }) => {
   return (
     <>
       <div className="fixed inset-0 opacity-25 bg-black"></div>
@@ -11,12 +16,12 @@ const Popup = (props: { setModalState: (arg0: boolean) => void }) => {
         <div className="bg-white w-[500px] p-5 rounded-xl relative">
           <div>
             <div
-              onClick={() => props.setModalState(false)}
+              onClick={() => setModalState(false)} // Correctly use the setModalState function to close the modal
               className="cursor-pointer float-end"
             >
               <Icon label={"close"} size="lg"></Icon>
             </div>
-            <FilterForm></FilterForm>
+            {Children}
           </div>
         </div>
       </div>
