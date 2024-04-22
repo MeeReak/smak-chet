@@ -5,10 +5,13 @@ import Image from "next/image";
 import { InputSearch, Button, ButtonIcon, NotiDropdown } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getLocalStorage } from "@/utils/localStorage";
 
 const Navbar = () => {
-  const [login, setLogin] = useState<boolean>(false);
+
   const [hideNavbar, setHideNavbar] = useState(false);
+
+  const isLogin = getLocalStorage("isLogin") ? getLocalStorage("isLogin") : false;
 
   const pathname = usePathname();
 
@@ -50,7 +53,7 @@ const Navbar = () => {
             )}
           </div>
           <div className=" flex flex-row items-center ">
-            {login ? (
+            {isLogin == false ? (
               <>
                 <Link href="/login">
                   <Button
@@ -61,7 +64,7 @@ const Navbar = () => {
                     Login
                   </Button>
                 </Link>
-                <Link href="/signup">
+                <Link href="/roleselection">
                   <Button
                     round="lg"
                     size="h4"

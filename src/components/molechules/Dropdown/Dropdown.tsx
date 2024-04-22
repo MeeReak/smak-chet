@@ -34,7 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options }) => {
         <div className="relative">
           <button
             type="button"
-            className="border-1 border-gray-100 inline-flex h-full items-center justify-center rounded-r-md px-2 text-gray-600 hover:bg-gray-500 hover:text-gray-700"
+            className="border-1 border-gray-100 inline-flex h-full items-center justify-center rounded-r-md px-2 text-gray-600 hover:text-gray-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
