@@ -1,2 +1,3 @@
 import { CategoryGroup } from "./CategoryGroup";
-export { CategoryGroup };
+import { PostAboutGroup } from "./PostAboutGroup";
+export { CategoryGroup, PostAboutGroup };
