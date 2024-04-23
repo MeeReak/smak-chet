@@ -66,7 +66,7 @@ const Navbar = () => {
                     Login
                   </Button>
                 </Link>
-                <Link href="/roleSelection">
+                <Link href="/roleselection">
                   <Button
                     round="lg"
                     size="h4"
