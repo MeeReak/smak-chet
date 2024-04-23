@@ -8,10 +8,12 @@ import { usePathname } from "next/navigation";
 import { getLocalStorage } from "@/utils/localStorage";
 
 const Navbar = () => {
-
   const [hideNavbar, setHideNavbar] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
-  const isLogin = getLocalStorage("isLogin") ? getLocalStorage("isLogin") : false;
+  useEffect(() => {
+    setIsLogin(getLocalStorage("isLogin") ? getLocalStorage("isLogin") : false);
+  }, []);
 
   const pathname = usePathname();
 
