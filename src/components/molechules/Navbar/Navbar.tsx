@@ -48,7 +48,7 @@ const Navbar = () => {
             </Link>
 
             {/* Conditionally Render Search Bar */}
-            {pathname !== "/search" && pathname !== "/createpost" && (
+            {pathname !== "/search" && pathname !== "/create-post" && (
               <Link href={"/search"}>
                 <InputSearch />
               </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
                     Login
                   </Button>
                 </Link>
-                <Link href="/roleselection">
+                <Link href="/role-selection">
                   <Button
                     round="lg"
                     size="h4"
@@ -81,8 +81,8 @@ const Navbar = () => {
             ) : (
               <>
                 {/* Create */}
-                {pathname !== "/createpost" && (
-                  <Link href={"/createpost"}>
+                {pathname !== "/create-post" && (
+                  <Link href={"/create-post"}>
                     <ButtonIcon
                       className="bg-gray-100 text-black rounded-full p-2 hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
                       icon={
