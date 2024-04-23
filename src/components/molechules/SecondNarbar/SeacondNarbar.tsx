@@ -52,7 +52,7 @@ const SeacondNarbar = () => {
         </Link>
 
         {/* create post */}
-        <Link href={"createpost"}>
+        <Link href={"create-post"}>
           <ButtonIcon
             icon={
               <svg
@@ -101,7 +101,7 @@ const SeacondNarbar = () => {
         </Link>
 
         {/* profile */}
-        <Link href={"/userprofile"}>
+        <Link href={"/user-profile"}>
           {" "}
           <Image
             src="/assets/image/cambodia_book_fair.png"

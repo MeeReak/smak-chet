@@ -167,18 +167,18 @@ const Footer = () => {
                   <hr className="w-[90px] h-[5px] bg-red-500 border-0 mb-6 rounded-full" />
                   <ul className="list-unstyled">
                     <li>
-                      <Link href="/aboutus">
+                      <Link href="/about-us">
                         <Typography
                           fontSize="h4"
                           fontWeight="normal"
                           className="text-slate-400 hover:text-white hover:translate-x-2 transition-all duration-150 ease cursor-pointer"
                         >
                           About us
-                        </Typography>  
+                        </Typography>
                       </Link>
                     </li>
                     <li>
-                      <Link href={"/contactus"}>
+                      <Link href={"/contact-us"}>
                         <Typography
                           fontSize="h4"
                           fontWeight="normal"
