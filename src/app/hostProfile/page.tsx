@@ -11,7 +11,7 @@ import {
 
 const page = () => {
   return (
-    <div className=" mt-[141px] xl:mx-[271px] md:mx-5 mx-[10px]"> {/* Base container */}
+    <div className=" mt-[141px] xl:mx-[271px] md:mx-5 mx-[10px]"> 
       {/* Profile and Button Section */}
       <div className="flex flex-col items-center gap-x-4 md:flex-row"> {/* Responsive row */}
         <div className=" w-32 h-32 overflow-hidden md:w-48 md:h-48"> {/* Responsive image */}
@@ -46,7 +46,7 @@ const page = () => {
       </div>
 
       {/* Input Section */}
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-x-[91px] md:gap-y-12 "> {/* Responsive grid */}
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-x-[91px] md:gap-y-12 ">
         <div>
           <Typography>Company Name</Typography>
           <InputData placeholder="" type="text" className="w-full border border-gray-300 rounded-md" />
