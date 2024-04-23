@@ -45,7 +45,7 @@ const page = () => {
       </div>
 
       {/* Input Section */}
-      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 "> {/* Responsive grid */}
+      <div className="mt-8 mx-5 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 "> {/* Responsive grid */}
         <div>
           <Typography>Full Name</Typography>
           <InputData placeholder="" type="text" className="w-full border border-gray-300 rounded-md" />
@@ -75,7 +75,7 @@ const page = () => {
           bgColor="primary"
           colorScheme="White"
           size="h3"
-          className="xl:px-[165px] xl:py-[16px] px-[120px] py-[16px] justify-center"
+          className="xl:px-[165px] xl:py-[16px] px-[100px] py-[16px] justify-center"
         >
           Update
         </Button>
