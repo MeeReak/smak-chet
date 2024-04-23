@@ -78,14 +78,16 @@ const Page = () => {
           </Link>
           <br />
           {/*  continue button */}
-          <Button
-            onclick={(e) => {
-              handleSubmit(e);
-            }}
-            className="bg-blue-500 py-4 w-[350px] align-middle justify-center text-white rounded-[10px] hover:cursor-pointer"
-          >
-            Continue
-          </Button>
+          <Link href={"/"}>
+            <Button
+              onclick={(e) => {
+                handleSubmit(e);
+              }}
+              className="bg-blue-500 py-4 w-[350px] align-middle justify-center text-white rounded-[10px] hover:cursor-pointer"
+            >
+              Continue
+            </Button>
+          </Link>
           <br />
 
           {/* signup if don't have account */}
