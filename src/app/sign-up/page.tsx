@@ -1,33 +1,51 @@
 "use client";
-import React, { use, useState } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 import { SignUpProps } from "../../@types/auth";
 import { setLocalStorage } from "@/utils/localStorage";
+import signUpschema from "@/utils/signUpSchema";
 
 const Page = () => {
   const [data, setData] = useState<SignUpProps>({
-    userName: "",
+    username: "",
     email: "",
     password: "",
   });
 
-  function login() {
-    const login = true;
-    setLocalStorage("isLogin", login);
-  }
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
   function handleChange(e: any) {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setData((pre) => ({ ...pre, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   }
 
-  function handleSubmit(e: any) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
-    console.log(data);
+    try {
+      await signUpschema.validate(data, { abortEarly: false });
+      const isLogin = true;
+      setLocalStorage("isLogin", isLogin);
+    } catch (error: any | unknown) {
+      const fieldErrors: { [key: string]: string } = {};
+
+      // Error From Yup
+      error.inner.forEach((err: any) => {
+        fieldErrors[err.path] = err.message;
+      });
+      console.log("Field Error", fieldErrors);
+      setErrors((prev) => ({
+        ...prev,
+        ...fieldErrors,
+      }));
+      return;
+    }
   }
 
   return (
@@ -57,14 +75,21 @@ const Page = () => {
         <form>
           {/* name */}
           <InputData
-            name="userName"
+            name="username"
             onChange={(e) => {
               handleChange(e);
             }}
             type="text"
             placeholder={"Username"}
-            className={"w-[350px] border text-base  border-gray-200  mb-2 mt-4"}
+            className={
+              errors.username
+                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 mt-4"
+                : "w-[350px] border text-base border-gray-200  mb-2 mt-4"
+            }
           />
+          {errors.username && (
+            <p className="text-[#EB5757] ">{errors.username}</p>
+          )}
           <br />
           {/* email input */}
           <InputData
@@ -74,8 +99,13 @@ const Page = () => {
               handleChange(e);
             }}
             placeholder={"Email"}
-            className={"w-[350px] text-base border border-gray-200 mb-2 mt-2"}
+            className={
+              errors.email
+                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 "
+                : "w-[350px] border text-base  border-gray-200  mb-2"
+            }
           />
+          {errors.email && <p className="text-red-500">{errors.email}</p>}
           <br />
           {/* password input */}
           <InputData
@@ -85,21 +115,23 @@ const Page = () => {
             name="password"
             type="password"
             placeholder={"Password"}
-            className={"w-[350px] border text-base  border-gray-200 my-2"}
+            className={
+              errors.username
+                ? "w-[350px] border-[2px] text-base  border-[#EB5757] mb-2"
+                : "w-[350px] border text-base  border-gray-200  mb-2"
+            }
           />
-
+          {errors.password && <p className="text-red-500">{errors.password}</p>}
           <br />
           {/*  continue button */}
-          <Link href={"/"}>
-            <Button
-              onclick={(e) => {
-                login();
-              }}
-              className="bg-blue-500 py-4 my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
-            >
-              Continue
-            </Button>
-          </Link>
+          <Button
+            onclick={(e) => {
+              handleSubmit(e);
+            }}
+            className="bg-blue-500 py-4 my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
+          >
+            Continue
+          </Button>
           {/* signup if don't have account */}
           <Typography align="center" fontSize="h4">
             Already have an account?
@@ -117,7 +149,6 @@ const Page = () => {
           </div>
           <br />
           {/* countinue with facebook */}
-
           <div className="hover:cursor-pointer flex flex-row justify-left w-[350px]  items-center border border-gray-200 rounded-[10px] mb-3 pl-2">
             <ButtonIcon
               icon={
@@ -133,9 +164,7 @@ const Page = () => {
               Continues With Facebook
             </Typography>
           </div>
-
           {/* countinue with google */}
-
           <div className="hover:cursor-pointer flex flex-row justify-left w-[350px] h-[50px] items-center border border-gray-200 rounded-[10px] pl-2">
             <ButtonIcon
               icon={
