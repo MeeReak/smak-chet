@@ -48,6 +48,7 @@ const Page = () => {
           </div>
         </div>
         <FavPage />
+        
       </div>
     </>
   );

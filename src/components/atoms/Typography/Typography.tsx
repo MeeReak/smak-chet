@@ -6,7 +6,7 @@ interface TypographyProps {
   align?: "left" | "justify" | "right" | "center";
   fontSize?: "h1" | "h2" | "h3" | "h4" | "h5";
   fontWeight?: "normal" | "medium" | "semibold" | "bold";
-  color?: "black" | "red" | "blue" | "grey";
+  color?: "black" | "red" | "blue" | "grey" | "white";
   screensize?: "xl" | "sm";
 }
 
@@ -37,15 +37,17 @@ const Typography: FC<TypographyProps> = ({
   const typographyFontSize = (fontSize: string, screensize: string) => {
     switch (fontSize) {
       case "h1":
-        return "text-4xl";
+        return "text-[16px] md:text-[20px] lg:text-[24px] xl:text-[36px]";
       case "h2":
-        return "text-2xl";
+        return "text-[14px] md:text-[18px] lg:text-[20px] xl:text-[32px]";
       case "h3":
-        return "text-xl";
+        return "text-[12px] md:text-[16px] lg:text-[18px] xl:text-[24px]";
       case "h4":
-        return "text-base";
+        return "text-[10px] md:text-[14px] lg:text-[16px] xl:text-[20px]";
       case "h5":
-        return "text-sm";
+        return "text-[8px] md:text-[12px] lg:text-[14px] xl:text-[16px]";
+      case "h6":
+        return "text-[5px] md:text-[10px] lg:text-[12px] xl:text-[14px]";
       default:
         return "text-base";
     }
@@ -74,6 +76,8 @@ const Typography: FC<TypographyProps> = ({
         return "text-[#207BFF]";
       case "grey":
         return "text-[#00000099]";
+      case "white":
+        return "text-[#fff]";
       default:
         return "text-[#000000]";
     }
