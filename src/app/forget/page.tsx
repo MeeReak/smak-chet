@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { InputData, Typography, Button } from "@/components";
 import Link from "next/link";
+import schema from "@/utils/signUpSchema";
 
 const page = () => {
   return (
@@ -23,7 +24,7 @@ const page = () => {
           align="center"
           fontSize="h3"
           fontWeight="bold"
-          className="mt-16 mb-4"
+          className="mt-16 mb-6"
         >
           Forget Your Password
         </Typography>
@@ -38,8 +39,9 @@ const page = () => {
           {/* email input */}
           <InputData
             type="email"
-            placeholder={"email"}
-            className={"w-[350px] border border-gray-500 h-12 my-4 "}
+            name="email"
+            placeholder={"Email"}
+            className={"w-[350px] border text-base border-gray-200  mb-4 mt-4"}
           />
           <br />
           {/*  continue button */}

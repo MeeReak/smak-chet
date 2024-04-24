@@ -4,7 +4,7 @@ import React from "react";
 
 interface InputDataProps {
   placeholder?: string;
-  type: string;
+  type?: string;
   onChange?: (event: any) => void;
   className?: string;
   id?:string

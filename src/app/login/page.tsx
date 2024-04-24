@@ -4,6 +4,8 @@ import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 import { LoginProps } from "../../@types/auth";
+import logInSchema from "@/utils/logInSchema";
+import { setLocalStorage } from "@/utils/localStorage";
 
 const Page = () => {
   const [data, setData] = useState<LoginProps>({
@@ -11,17 +13,39 @@ const Page = () => {
     password: "",
   });
 
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
+
   function handleChange(e: any) {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setData((pre) => ({ ...pre, [name]: value }));
+    setErrors((pre) => ({ ...pre, [name]: "" }));
   }
 
-  function handleSubmit(e: any) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
-    console.log(data);
+    try {
+      await logInSchema.validate(data, { abortEarly: false });
+      const isLogin = true;
+      setLocalStorage("isLogin", isLogin);
+    } catch (error: any | unknown) {
+      const fieldErrors: { [key: string]: string } = {};
+
+      // Error From Yup
+      error.inner.forEach((err: any) => {
+        fieldErrors[err.path] = err.message;
+      });
+      console.log("Field Error", fieldErrors);
+      setErrors((prev) => ({
+        ...prev,
+        ...fieldErrors,
+      }));
+      return;
+    }
   }
+
   return (
     <div>
       {/* logo */}
@@ -56,8 +80,13 @@ const Page = () => {
               handleChange(e);
             }}
             placeholder={"Email"}
-            className={"w-[350px] text-base border border-gray-200 mb-2 mt-2"}
+            className={
+              errors.email
+                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 mt-4"
+                : "w-[350px] border text-base border-gray-200  mb-2 mt-4"
+            }
           />
+          {errors.email && <p className="text-[#EB5757]">{errors.email}</p>}
           <br />
           {/* password input */}
           <InputData
@@ -67,8 +96,15 @@ const Page = () => {
               handleChange(e);
             }}
             placeholder={"Password"}
-            className={"w-[350px] border text-base  border-gray-200 my-2"}
+            className={
+              errors.password
+                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2"
+                : "w-[350px] border text-base border-gray-200  mb-2 "
+            }
           />
+          {errors.password && (
+            <p className="text-[#EB5757]">{errors.password}</p>
+          )}
           <br />
           {/* forget password ? link */}
           <Link href={"../forget"}>
@@ -78,16 +114,15 @@ const Page = () => {
           </Link>
           <br />
           {/*  continue button */}
-          <Link href={"/"}>
-            <Button
-              onclick={(e) => {
-                handleSubmit(e);
-              }}
-              className="bg-blue-500 py-4 w-[350px] align-middle justify-center text-white rounded-[10px] hover:cursor-pointer"
-            >
-              Continue
-            </Button>
-          </Link>
+
+          <Button
+            onclick={(e) => {
+              handleSubmit(e);
+            }}
+            className="bg-blue-500 py-4 w-[350px] align-middle justify-center text-white rounded-[10px] hover:cursor-pointer"
+          >
+            Continue
+          </Button>
           <br />
 
           {/* signup if don't have account */}
