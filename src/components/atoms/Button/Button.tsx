@@ -17,6 +17,7 @@ interface ButtonProps {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   onclick?: (e: any) => void;
+  onClickParam?: (param: any) => void;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -29,6 +30,7 @@ const Button: FC<ButtonProps> = ({
   leftIcon,
   rightIcon,
   onclick,
+  onClickParam,
 }) => {
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
@@ -82,15 +84,17 @@ const Button: FC<ButtonProps> = ({
   const getSizeClass = (size: string) => {
     switch (size) {
       case "h1":
-        return "text-4xl";
+        return "text-[16px] md:text-[20px] lg:text-[24px] xl:text-[36px]";
       case "h2":
-        return "text-2xl";
+        return "text-text-[14px] md:text-[18px] lg:text-[20px] xl:text-[32px]";
       case "h3":
-        return "text-xl";
+        return "text-[12px] md:text-[16px] lg:text-[18px] xl:text-[24px]-";
       case "h4":
-        return "text-base";
+        return "text-[10px] md:text-[14px] lg:text-[16px] xl:text-[20px]";
       case "h5":
-        return "text-sm";
+        return "text-[10px] md:text-[14px] lg:text-[16px] xl:text-[20px]";
+      case "h6":
+        return "text-[5px] md:text-[10px] lg:text-[12px] xl:text-[14px]";
       default:
         return "text-base";
     }
@@ -104,7 +108,7 @@ const Button: FC<ButtonProps> = ({
   const combinedClassName = `flex items-center justify-start border-[1px] ${colorSchemeClass} ${sizeClass} ${bgColorClass} ${roundClass} ${className}`;
 
   return (
-    <button className={combinedClassName} onClick={onclick}>
+    <button className={combinedClassName} onClick={onclick || onClickParam}>
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
       {rightIcon && <span className="ml-2">{rightIcon}</span>}
