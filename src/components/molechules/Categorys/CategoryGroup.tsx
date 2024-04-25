@@ -22,7 +22,7 @@ export const CategoryGroup: React.FC<CategoryGroupProps> = ({
     "Environmental",
     "Charity",
     "Sport",
-    "Technology"
+    "Technology",
   ]);
 
   return (
