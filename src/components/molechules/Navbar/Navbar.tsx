@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { InputSearch, Button, ButtonIcon, NotiDropdown } from "@/components";
+import { InputSearch, Button, ButtonIcon, NotiDropdown, UserProfileDropdown } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getLocalStorage } from "@/utils/localStorage";
@@ -136,7 +136,7 @@ const Navbar = () => {
                 {pathname !== "/notification" && <NotiDropdown />}
 
                 {/* Profile */}
-                <ButtonIcon
+                {/* <ButtonIcon
                   className="bg-[#D2E5FF] text-white rounded-full p-2 ml-[10px]  max-[640px]:hidden"
                   icon={
                     <svg
@@ -153,7 +153,8 @@ const Navbar = () => {
                       <circle cx="12" cy="8" r="5" fill="#207BFF" />
                     </svg>
                   }
-                />
+                /> */}
+                {pathname !== "" && <UserProfileDropdown />}
 
                 {/* Hamburger Bar*/}
                 <Link href={"/"}>
