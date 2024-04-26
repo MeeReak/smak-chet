@@ -1,30 +1,35 @@
 "use client";
 import React, { useState } from "react";
 
-import { Button, ButtonIcon, Typography } from "@/components/atoms";
+import { ButtonIcon } from "@/components/atoms";
 import Link from "next/link";
 
 const UserProfileDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
-
   return (
     <div className="relative">
       <ButtonIcon
         onclick={() => setIsOpen(!isOpen)}
-        className="bg-gray-100 text-black rounded-full p-2 ml-[10px] hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
+        className="ml-[10px] bg-gray-100 hover:bg-[#bdd8ff] text-white rounded-full p-2 max-[640px]:hidden"
         icon={
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="44" height="44" rx="22" fill="#D2E5FF"/>
-<path d="M29.6515 29.4054C30.2043 29.2902 30.5336 28.7117 30.2589 28.2183C29.6533 27.1307 28.6993 26.1749 27.4788 25.4465C25.907 24.5085 23.9812 24 22 24C20.0188 24 18.0929 24.5085 16.5211 25.4465C15.3007 26.1749 14.3467 27.1307 13.7411 28.2183C13.4664 28.7117 13.7956 29.2902 14.3484 29.4054C19.3952 30.4572 24.6047 30.4572 29.6515 29.4054Z" fill="#207BFF"/>
-<circle cx="22" cy="18" r="5" fill="#207BFF"/>
-</svg>
-
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.6496 19.4054C20.2024 19.2902 20.5316 18.7117 20.2569 18.2183C19.6513 17.1307 18.6973 16.1749 17.4769 15.4465C15.9051 14.5085 13.9792 14 11.998 14C10.0168 14 8.09097 14.5085 6.51917 15.4465C5.29873 16.1749 4.34471 17.1307 3.73913 18.2183C3.46443 18.7117 3.79367 19.2902 4.34648 19.4054V19.4054C9.39329 20.4572 14.6027 20.4572 19.6496 19.4054V19.4054Z"
+              fill="#207BFF"
+            />
+            <circle cx="12" cy="8" r="5" fill="#207BFF" />
+          </svg>
         }
       />
       {isOpen && (
-        <div className="pl-4 absolute -right-[20%] mt-2 bg-white w-[270px] h-[162px] shadow-lg rounded-[10px] box-shadow: 1px -1px 5px 0px #00000040;">
+        <div className="pl-4 absolute right-[5px] mt-2 bg-white w-[270px] h-[162px] shadow-lg rounded-[10px] box-shadow: 1px -1px 5px 0px #00000040;">
           <Link
             className="flex justify-between items-center"
             href={"/user-profile"}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ButtonIcon, FavPage, Typography } from "@/components";
 import { MyContext } from "@/contexts/CardContext";
@@ -42,13 +42,12 @@ const Page = () => {
             </Typography>
           </div>
           <div className="px-4 py-2 rounded-lg border-[1px] border-gray-200 text-center flex justify-center items-center ">
-            <Typography fontSize="h3" color="blue" >
+            <Typography fontSize="h3" color="blue">
               {data.length} Events
             </Typography>
           </div>
         </div>
         <FavPage />
-        
       </div>
     </>
   );
