@@ -143,9 +143,12 @@ const Page = () => {
 
           <Dropdown classname="mt-3 mb-5" options={locations} />
 
+          {/* Address of event */}
+
           <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
             Address
           </Typography>
+
           <MapBox />
 
           <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
@@ -213,7 +216,7 @@ const Page = () => {
             className="py-2 px-10"
             onclick={handleSubmit}
           >
-            Post
+            Next
           </Button>
         </div>
       </div>
