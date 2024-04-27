@@ -1,16 +1,27 @@
 "use client";
 import { ButtonIcon, Typography } from "@/components/atoms";
 import { NotiCardList } from "@/components/organisms";
-import { useState } from "react";
-import Link from 'next/link'
+import Link from "next/link";
+import React from "react";
 
-const NotiDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface NotiDropdownProps {
+  notiOpen: boolean;
+  setNotiOpen: (value: boolean) => void;
+  setIsOpen: (value: boolean) => void;
+}
 
+const NotiDropdown: React.FC<NotiDropdownProps> = ({
+  notiOpen,
+  setNotiOpen,
+  setIsOpen,
+}) => {
   return (
     <div className="relative">
       <ButtonIcon
-        onclick={() => setIsOpen(!isOpen)}
+        onclick={() => {
+          setNotiOpen(!notiOpen);
+          setIsOpen(false);
+        }}
         className="bg-gray-100 text-black rounded-full p-2 ml-[10px] hover:bg-[#bdd8ff] hover:text-[#207BFF] transition-all duration-300 ease-in-out hidden sm:flex"
         icon={
           <svg
@@ -34,17 +45,23 @@ const NotiDropdown = () => {
           </svg>
         }
       />
-      {isOpen && (
+      {notiOpen && (
         <div className="absolute -right-[100%] mt-2 w-[306px] bg-white rounded-md shadow-lg">
           <div className="p-2">
-            <Typography fontWeight="bold" fontSize="h3">Notification</Typography>
+            <Typography fontWeight="bold" fontSize="h3">
+              Notification
+            </Typography>
             <div className="flex justify-between my-[10px]">
-                <Typography fontSize="h5" fontWeight="semibold">Earlier</Typography>
-                <Link href="/notification">
-                    <Typography fontSize="h5" fontWeight="semibold" color="blue">See all</Typography>
-                </Link>
+              <Typography fontSize="h5" fontWeight="semibold">
+                Earlier
+              </Typography>
+              <Link href="/notification">
+                <Typography fontSize="h5" fontWeight="semibold" color="blue">
+                  See all
+                </Typography>
+              </Link>
             </div>
-            <NotiCardList></NotiCardList>
+            <NotiCardList />
           </div>
         </div>
       )}

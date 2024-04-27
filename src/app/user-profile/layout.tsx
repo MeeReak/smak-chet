@@ -23,8 +23,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <CardContext>{children}</CardContext>
-        <SecondNarbar />
-        <Footer />
+        {/* <SecondNarbar /> */}
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -2,7 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { InputSearch, Button, ButtonIcon, NotiDropdown, UserProfileDropdown } from "@/components";
+import {
+  InputSearch,
+  Button,
+  ButtonIcon,
+  NotiDropdown,
+  UserProfileDropdown,
+} from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getLocalStorage } from "@/utils/localStorage";
@@ -10,6 +16,8 @@ import { getLocalStorage } from "@/utils/localStorage";
 const Navbar = () => {
   const [hideNavbar, setHideNavbar] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [notiOpen, setNotiOpen] = useState(false);
 
   useEffect(() => {
     setIsLogin(getLocalStorage("isLogin") ? getLocalStorage("isLogin") : false);
@@ -133,28 +141,14 @@ const Navbar = () => {
 
                 {/* Notification */}
 
-                {pathname !== "/notification" && <NotiDropdown />}
+                {pathname !== "/notification" && (
+                  <NotiDropdown notiOpen={notiOpen} setNotiOpen={setNotiOpen} setIsOpen={setIsOpen}/>
+                )}
 
                 {/* Profile */}
-                {/* <ButtonIcon
-                  className="bg-[#D2E5FF] text-white rounded-full p-2 ml-[10px]  max-[640px]:hidden"
-                  icon={
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19.6496 19.4054C20.2024 19.2902 20.5316 18.7117 20.2569 18.2183C19.6513 17.1307 18.6973 16.1749 17.4769 15.4465C15.9051 14.5085 13.9792 14 11.998 14C10.0168 14 8.09097 14.5085 6.51917 15.4465C5.29873 16.1749 4.34471 17.1307 3.73913 18.2183C3.46443 18.7117 3.79367 19.2902 4.34648 19.4054V19.4054C9.39329 20.4572 14.6027 20.4572 19.6496 19.4054V19.4054Z"
-                        fill="#207BFF"
-                      />
-                      <circle cx="12" cy="8" r="5" fill="#207BFF" />
-                    </svg>
-                  }
-                /> */}
-                {pathname !== "" && <UserProfileDropdown />}
+                {pathname !== "" && (
+                  <UserProfileDropdown isOpen={isOpen} setIsOpen={setIsOpen} setNotiOpen={setNotiOpen}/>
+                )}
 
                 {/* Hamburger Bar*/}
                 <Link href={"/"}>
