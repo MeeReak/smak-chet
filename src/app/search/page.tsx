@@ -51,27 +51,35 @@ const SearchPage = () => {
             Search Result
           </Typography>
         </div>
-        {/* <div className="mt-[10px]  ">
-          <Buttontaps setFiltered={setFiltered} filtered={filtered} setCate={function (Cate: string): void {
-            throw new Error("Function not implemented.");
-          } } />
-        </div> */}
-        <div className="max-[1030px]:px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
-          {findCard.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                id={item.id}
-                src={item.src}
-                alt={item.alt}
-                title={item.title}
-                date={item.date}
-                location={item.location}
-                isFavorite={item.isFavorite}
-              ></Card>
-            );
-          })}
-        </div>
+        {findCard.length > 0 ? (
+          <div className="max-[1030px]:px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+            {findCard.map((item) => {
+              return (
+                <Card
+                  key={item.id}
+                  id={item.id}
+                  src={item.src}
+                  alt={item.alt}
+                  title={item.title}
+                  date={item.date}
+                  location={item.location}
+                  isFavorite={item.isFavorite}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div className="w-full">
+            <Typography
+              align="center"
+              fontSize="h2"
+              fontWeight="semibold"
+              color="grey"
+            >
+              No Event
+            </Typography>
+          </div>
+        )}
       </div>
     </>
   );
