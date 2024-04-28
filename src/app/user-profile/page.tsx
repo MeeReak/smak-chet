@@ -1,15 +1,30 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button, ButtonIcon, InputData, Typography } from "@/components";
 
-const page = () => {
+const Page = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    aboutUser: "",
+  });
+
+  function handleChange(e: any) {
+    const { name, value } = e.target;
+    setUser((pre) => ({ ...pre, [name]: value }));
+  }
+
   return (
     <>
-      <div className="w-[885px] mt-20 mx-auto ">
+      <div className="max-w-[885px] mt-20 sm:mx-auto max-[640px]:flex max-[640px]:flex-col max-[640px]:items-center">
         <Typography fontSize="h3" fontWeight="semibold" className="p-5">
           User Infomation
         </Typography>
-        <div className=" flex gap-x-14">
+        <div className="flex max-[640px]:flex-col max-[640px]:items-center sm:gap-x-5 sm:mx-5 lg:mx-0 lg:gap-x-14 ">
           {/* Profile Picture */}
           <div className="relative w-[200px] h-[200px]  ">
             <Image
@@ -40,17 +55,21 @@ const page = () => {
             />
           </div>
           {/* Information User */}
-          <div className=" grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <Typography className="text-gray-500 pb-2" fontSize="h4">
                 {/* Name */}
                 Full Name
               </Typography>
               <InputData
+                name="name"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 type="text"
                 defaultValue="Peng Maleap"
                 placeholder={"Enter your fullname"}
-                className="py-4 pl-4 pr-[70px] border text-base border-gray-200 bg-gray-100  mb-2 font-semibold"
+                className="py-4 pl-4 w-full sm:pr-[10px] md:pr-[60px] lg:pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
               />
             </div>
             <div>
@@ -59,10 +78,14 @@ const page = () => {
                 Email
               </Typography>
               <InputData
+                name="email"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 type="text"
                 defaultValue="pengmaleap456@gmail.com"
                 placeholder={"Enter yout email"}
-                className="py-4 pl-4 pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
+                className="py-4 pl-4 w-full sm:pr-[10px] md:pr-[60px] lg:pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
               />
             </div>
             <div>
@@ -71,10 +94,14 @@ const page = () => {
                 Phone Number
               </Typography>
               <InputData
+                name="phone"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 type="text"
                 defaultValue="012 345 678"
                 placeholder={"Enter yout phone number"}
-                className="py-4 pl-4 pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
+                className="py-4 pl-4 w-full sm:pr-[10px] md:pr-[60px] lg:pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
               />
             </div>
             <div>
@@ -83,32 +110,60 @@ const page = () => {
                 Address
               </Typography>
               <InputData
+                name="address"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 type="text"
                 defaultValue="Phnom Penh"
                 placeholder={"Enter your address"}
-                className="py-4 pl-4 pr-[70px] border text-base bg-gray-100 border-gray-200 mb-2 font-semibold"
+                className="py-4 pl-4 w-full sm:pr-[10px] md:pr-[60px] lg:pr-[70px] border text-base border-gray-200 bg-gray-100 mb-2 font-semibold"
               />
             </div>
           </div>
         </div>
-        <div>
+        <div className="sm:ml-5 sm:mr-5 lg:mx-0 ">
           {/* About user */}
           <Typography className="text-gray-500 py-2" fontSize="h4">
             About me
           </Typography>
           <textarea
-            name="about-user"
-            defaultValue={"This is me"}
-            className=" outline-none p-4 resize-none border border-gray-200 bg-gray-100 rounded-lg font-semibold"
-            cols={90}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            name="aboutUser"
+            defaultValue="This is me"
+            className="outline-none p-4 resize-none border w-full border-gray-200 bg-gray-100 rounded-lg font-semibold"
+            cols={23}
             rows={5}
           />
         </div>
-        <div className="flex gap-3 justify-end mt-10">
-          <Button className="px-8 py-3" round="xl" colorScheme="primary">
+        <div className="flex gap-3 justify-end mt-5">
+          <Button
+            onclick={() => {
+              setUser({
+                name: "",
+                email: "",
+                phone: "",
+                address: "",
+                aboutUser: "",
+              });
+            }}
+            className="px-8 py-3"
+            round="xl"
+            colorScheme="primary"
+          >
             Cancel
           </Button>
-          <Button className="px-10 py-3" round="xl" bgColor="primary" colorScheme="White">
+          <Button
+            onclick={() => {
+              console.log(user);
+            }}
+            className="px-10 py-3"
+            round="xl"
+            bgColor="primary"
+            colorScheme="White"
+          >
             Save
           </Button>
         </div>
@@ -117,4 +172,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

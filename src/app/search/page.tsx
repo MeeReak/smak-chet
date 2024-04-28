@@ -19,11 +19,11 @@ const SearchPage = () => {
         <div className="flex justify-center space-x-3">
           <div className="relative max-[640px] flex justify-between">
             <InputData
-              className="w-[350px] py-10 rounded-[10px] border-gray-200 flex justify-between "
+              className="w-[350px] py-3 pl-5 rounded-[10px] border-gray-200 flex justify-between "
               onChange={(event: any) => handleOnChange(event)}
               placeholder={"Search"}
               type={"string"}
-            ></InputData>
+            />
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,11 @@ const SearchPage = () => {
           </div>
         </div>
         <div>
-          <Typography className="mt-5 ml-5 sm:ml-auto" fontSize="h2" fontWeight="bold">
+          <Typography
+            className="mt-5 ml-5 sm:ml-auto"
+            fontSize="h2"
+            fontWeight="bold"
+          >
             Search Result
           </Typography>
         </div>

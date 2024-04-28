@@ -78,7 +78,7 @@ const Page = () => {
             name="name"
             type={"text"}
             placeholder="Event Name"
-            className="w-full mt-3 mb-5"
+            className="w-full mt-3 mb-5 py-3 pl-5"
           />
           <label htmlFor="category">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -147,9 +147,11 @@ const Page = () => {
 
           <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
             Address
-          </Typography>
+          </Typography> 
 
           <MapBox />
+
+          {/* Requirements */}
 
           <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
             Requirements
@@ -165,7 +167,7 @@ const Page = () => {
             id="age"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5"
+            className="w-full mt-3 mb-5 py-3 pl-5"
           />
           <label htmlFor="Language">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -178,8 +180,8 @@ const Page = () => {
             id="language"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5"
-          ></InputData>
+            className="w-full mt-3 mb-5 py-3 pl-5"
+          />
           <label htmlFor="Skill">
             <Typography fontWeight="semibold" fontSize="h3">
               Skill
@@ -191,7 +193,7 @@ const Page = () => {
             id="skill"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5"
+            className="w-full mt-3 mb-5 py-3 pl-5"
           />
           <label htmlFor="Time Commitment">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -204,7 +206,7 @@ const Page = () => {
             id="Time Commitment"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5"
+            className="w-full mt-3 mb-5 py-3 pl-5"
           />
         </form>
         <div className="flex justify-end my-5">
@@ -213,7 +215,7 @@ const Page = () => {
             round="md"
             bgColor="primary"
             colorScheme="White"
-            className="py-2 px-10"
+            className="py-3 px-10"
             onclick={handleSubmit}
           >
             Next
