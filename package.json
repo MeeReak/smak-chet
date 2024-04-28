@@ -22,6 +22,7 @@
     "react-dom": "^18",
     "react-icons": "^5.1.0",
     "react-map-gl": "^7.1.7",
+    "react-quill": "^2.0.0",
     "react-time-picker": "^6.6.0",
     "sst": "2.41.4",
     "tailwindcss-animate": "^1.0.7",

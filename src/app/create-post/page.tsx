@@ -11,6 +11,8 @@ import {
   InputDate,
 } from "@/components";
 import Dropdown from "@/components/molechules/Dropdown/Dropdown";
+import TextEditor from "@/components/organisms/TextEdit";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -77,7 +79,7 @@ const Page = () => {
             name="name"
             type={"text"}
             placeholder="Event Name"
-            className="w-full mt-3 mb-5 py-3 pl-5"
+            className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
           <label htmlFor="category">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -85,18 +87,14 @@ const Page = () => {
             </Typography>
           </label>
           <Dropdown classname="mt-3 mb-5" options={options} />
+
+          {/* Detail of event */}
           <label htmlFor="detail">
             <Typography fontWeight="semibold" fontSize="h3">
               Detail
             </Typography>
           </label>
-          <textarea
-            onChange={handleChange}
-            name="detail"
-            id="detail"
-            className="w-full mt-3 mb-5 border border-black py-[15px] pl-[20px] rounded-[10px] outline-none h-[150px]"
-            placeholder="Event Detail"
-          ></textarea>
+          <TextEditor />
           <Typography fontWeight="bold" fontSize="h2">
             Datetime and Location
           </Typography>
@@ -105,13 +103,13 @@ const Page = () => {
               <Typography fontWeight="semibold" fontSize="h3">
                 Start Date
               </Typography>
-              <InputDate className="border-[1px] border-black w-[98%] mt-3 mb-5 p-3 rounded-lg outline-none text-xs sm:text-sm" ></InputDate>
+              <InputDate className="border border-gray-200 w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"/>
             </div>
             <div className="w-[50%]">
               <Typography fontWeight="semibold" fontSize="h3">
                 End Date
               </Typography>
-              <InputDate className="border-[1px] border-black w-[98%] mt-3 mb-5 p-3 rounded-lg outline-none text-xs sm:text-sm"></InputDate>
+              <InputDate className="border border-gray-200  w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"></InputDate>
             </div>
           </div>
           <div className="flex gap-4 mt-5">
@@ -121,7 +119,7 @@ const Page = () => {
               </Typography>
               <CustomTimePicker
                 onSelectTime={handleTimeSelect}
-                classname="w-[98%] mt-3 mb-5"
+                classname="w-[98%] mt-3 mb-5 border text-gray-400 border-gray-200 py-4 pl-5"
               />
             </div>
             <div className="w-[50%]">
@@ -130,7 +128,7 @@ const Page = () => {
               </Typography>
               <CustomTimePicker
                 onSelectTime={handleTimeSelect}
-                classname="w-[98%] mt-3 mb-5"
+                classname="w-[98%] mt-3 mb-5 border text-gray-400 border-gray-200 py-4 pl-5"
               />
             </div>
           </div>
@@ -146,7 +144,7 @@ const Page = () => {
 
           <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
             Address
-          </Typography> 
+          </Typography>
 
           <MapBox />
 
@@ -166,7 +164,7 @@ const Page = () => {
             id="age"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5 py-3 pl-5"
+            className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
           <label htmlFor="Language">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -179,7 +177,7 @@ const Page = () => {
             id="language"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5 py-3 pl-5"
+            className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
           <label htmlFor="Skill">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -192,7 +190,7 @@ const Page = () => {
             id="skill"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5 py-3 pl-5"
+            className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
           <label htmlFor="Time Commitment">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -205,20 +203,23 @@ const Page = () => {
             id="Time Commitment"
             type={"text"}
             placeholder="Your Requirement"
-            className="w-full mt-3 mb-5 py-3 pl-5"
+            className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
         </form>
         <div className="flex justify-end my-5">
-          <Button
-            size="h3"
-            round="md"
-            bgColor="primary"
-            colorScheme="White"
-            className="py-3 px-10"
-            onclick={handleSubmit}
-          >
-            Next
-          </Button>
+          <Link href={"/form"}>
+            {" "}
+            <Button
+              size="h3"
+              round="md"
+              bgColor="primary"
+              colorScheme="White"
+              className="py-3 px-10"
+              onclick={handleSubmit}
+            >
+              Next
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
