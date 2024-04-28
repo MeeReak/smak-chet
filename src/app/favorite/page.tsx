@@ -1,6 +1,7 @@
 "use client"
 
 import { ButtonIcon, FavPage, Typography } from "@/components";
+import TableCard from "@/components/molechules/Card/TableCard";
 import { MyContext } from "@/contexts/CardContext";
 import React, { useContext } from "react";
 
@@ -48,6 +49,7 @@ const Page = () => {
           </div>
         </div>
         <FavPage />
+        <TableCard/>
         
       </div>
     </>

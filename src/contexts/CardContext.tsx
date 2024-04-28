@@ -12,6 +12,9 @@ export interface CardModal {
   location: string;
   isFavorite: boolean;
   cate: string;
+  name: string;
+  gmail: string;
+  profile: string;
 }
 
 interface CardContextProp {
@@ -94,6 +97,44 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     },
   ]);
 
+  const [CardUser, setCardUser] = useState([
+    {
+      id: "1",
+      name: "Peng maleap",
+      date: "Feb 08, 2020",
+      gmail: "pengmaleap@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "2",
+      name: "kimlarng",
+      date: "Feb 09, 2020",
+      gmail: "kimlarng@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "3",
+      name: "sarun",
+      date: "Feb 10, 2020",
+      gmail: "sarun@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "4",
+      name: "reak",
+      date: "Feb 11, 2020",
+      gmail: "reak@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "5",
+      name: "nith",
+      date: "Feb 12, 2020",
+      gmail: "nith@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+  ]);
+
   useEffect(() => {
     const data = getLocalStorage("cardInfo")
       ? getLocalStorage("cardInfo")
@@ -119,6 +160,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     toggleFavorite,
     CardInfo,
     setCardInfo,
+    CardUser,
+    setCardUser,
   };
   return (
     <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>
