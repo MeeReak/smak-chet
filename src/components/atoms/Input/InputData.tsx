@@ -21,7 +21,7 @@ const InputData: React.FC<InputDataProps> = ({
   name,
   defaultValue,
 }) => {
-  const combinedClassName = `border border-black py-[15px] pl-[20px] rounded-[10px] outline-none ${className}`;
+  const combinedClassName = `border border-black rounded-[10px] outline-none ${className}`;
 
   return (
     <input

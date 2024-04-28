@@ -1,4 +1,5 @@
 interface SignUpProps {
+  [x: string]: string;
   username: string;
   email: string;
   password: string;

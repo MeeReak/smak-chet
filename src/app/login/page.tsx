@@ -82,8 +82,8 @@ const Page = () => {
             placeholder={"Email"}
             className={
               errors.email
-                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 mt-4"
-                : "w-[350px] border text-base border-gray-200  mb-2 mt-4"
+                ? "w-[350px] py-4 pl-5 border-[2px] text-base border-[#EB5757] mb-2 mt-4"
+                : "w-[350px] py-4 pl-5 border text-base border-gray-200  mb-2 mt-4"
             }
           />
           {errors.email && <p className="text-[#EB5757]">{errors.email}</p>}
@@ -98,8 +98,8 @@ const Page = () => {
             placeholder={"Password"}
             className={
               errors.password
-                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2"
-                : "w-[350px] border text-base border-gray-200  mb-2 "
+                ? "w-[350px] py-4 pl-5 border-[2px] text-base border-[#EB5757] mb-2"
+                : "w-[350px] py-4 pl-5 border text-base border-gray-200  mb-2 "
             }
           />
           {errors.password && (

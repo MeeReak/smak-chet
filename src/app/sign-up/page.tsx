@@ -83,8 +83,8 @@ const Page = () => {
             placeholder={"Username"}
             className={
               errors.username
-                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 mt-4"
-                : "w-[350px] border text-base border-gray-200  mb-2 mt-4"
+                ? "w-[350px] py-4 pl-4 border-[2px] text-base !border-[#EB5757] mb-2 mt-4"
+                : "w-[350px] py-4 pl-4 border text-base border-gray-200  mb-2 mt-4"
             }
           />
           {errors.username && (
@@ -101,8 +101,8 @@ const Page = () => {
             placeholder={"Email"}
             className={
               errors.email
-                ? "w-[350px] border-[2px] text-base border-[#EB5757] mb-2 "
-                : "w-[350px] border text-base  border-gray-200  mb-2"
+                ? "w-[350px] py-4 pl-4 border-[2px] text-base !border-[#EB5757] mb-2 "
+                : "w-[350px] py-4 pl-4 border text-base  border-gray-200  mb-2"
             }
           />
           {errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -117,8 +117,8 @@ const Page = () => {
             placeholder={"Password"}
             className={
               errors.username
-                ? "w-[350px] border-[2px] text-base  border-[#EB5757] mb-2"
-                : "w-[350px] border text-base  border-gray-200  mb-2"
+                ? "w-[350px] py-4 pl-4 border-[2px] text-base !border-[#EB5757] mb-2"
+                : "w-[350px] py-4 pl-4 border text-base  border-gray-200  mb-2"
             }
           />
           {errors.password && <p className="text-red-500">{errors.password}</p>}
@@ -128,7 +128,7 @@ const Page = () => {
             onclick={(e) => {
               handleSubmit(e);
             }}
-            className="bg-blue-500 py-4 my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
+            className="bg-blue-500 h-[60px] my-6 w-[350px] align-middle justify-center text-white rounded-[10px]  hover:cursor-pointer"
           >
             Continue
           </Button>
