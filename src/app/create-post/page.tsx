@@ -8,6 +8,7 @@ import {
   CustomTimePicker,
   Button,
   MapBox,
+  InputDate,
 } from "@/components";
 import Dropdown from "@/components/molechules/Dropdown/Dropdown";
 import React, { useState } from "react";
@@ -47,9 +48,7 @@ const Page = () => {
 
   const handleFileUpload = (files: FileList) => {
     // Handle the uploaded files here
-    // console.log("Selected files:", files[0].name);
     setInfo({ ...info, imageSrc: files[0].name });
-    // You can perform further actions with the selected files
   };
 
   const handleTimeSelect = (time: string) => {
@@ -106,13 +105,13 @@ const Page = () => {
               <Typography fontWeight="semibold" fontSize="h3">
                 Start Date
               </Typography>
-              <DatePicker classname="pr-[60px] mt-3 mb-5 sm:w-[300px] md:w-[400px] lg:w-[500px]" />
+              <InputDate className="border-[1px] border-black w-[98%] mt-3 mb-5 p-3 rounded-lg outline-none text-xs sm:text-sm" ></InputDate>
             </div>
             <div className="w-[50%]">
               <Typography fontWeight="semibold" fontSize="h3">
                 End Date
               </Typography>
-              <DatePicker classname="pr-[60px] mt-3 mb-5 sm:w-[300px] md:w-[400px] lg:w-[500px]" />
+              <InputDate className="border-[1px] border-black w-[98%] mt-3 mb-5 p-3 rounded-lg outline-none text-xs sm:text-sm"></InputDate>
             </div>
           </div>
           <div className="flex gap-4 mt-5">
