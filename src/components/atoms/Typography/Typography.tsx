@@ -6,7 +6,7 @@ interface TypographyProps {
   align?: "left" | "justify" | "right" | "center";
   fontSize?: "h1" | "h2" | "h3" | "h4" | "h5";
   fontWeight?: "normal" | "medium" | "semibold" | "bold";
-  color?: "black" | "red" | "blue" | "grey" | "white";
+  color?: "black" | "red" | "blue" | "grey" | "white" | "green";
   screensize?: "xl" | "sm";
 }
 
@@ -95,6 +95,8 @@ const Typography: FC<TypographyProps> = ({
         return "text-[#00000099]";
       case "white":
         return "text-[#fff]";
+      case "green":
+        return "text-[#27AE60]";
       default:
         return "text-[#000000]";
     }
