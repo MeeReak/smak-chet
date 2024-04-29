@@ -4,9 +4,10 @@ import React, { useState } from "react";
 interface DropdownProps {
   classname?: string;
   options: string[];
+  onChange?: (value: string) => void; // Add the onChange prop
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ classname, options }) => {
+const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange}) => {
   const [isOpen, setisOpen] = useState(false);
   const [selectedOption, setselectedOption] = useState(null);
 
@@ -17,6 +18,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options }) => {
   const onOptionClicked = (value: any) => () => {
     setselectedOption(value);
     setisOpen(false);
+    onChange?.(value);
   };
 
   return (
