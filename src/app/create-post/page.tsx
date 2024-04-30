@@ -44,8 +44,12 @@ const Page = () => {
     console.log(info);
   }
 
-  const handleOptionSelect = (selectedOption: string) => {
-    console.log("Selected Option:", selectedOption);
+  const handleSelectCategory = (selectedOption: string) => {
+    setInfo({ ...info, category: selectedOption });
+  };
+
+  const handleSelectlocation = (selectedOption: string) => {
+    setInfo({ ...info, location: selectedOption });
   };
 
   const handleFileUpload = (files: FileList) => {
@@ -54,8 +58,19 @@ const Page = () => {
   };
 
   const handleTimeSelect = (time: string) => {
-    console.log(`Selected time: ${time}`);
-    // You can handle the selected time here (e.g., save to state, pass to another component, etc.)
+    setInfo({ ...info, startTime: time });
+  };
+
+  const handleStartDate = (date: string) => {
+    setInfo({ ...info, startDate: date });
+  };
+
+  const handleEndDate = (date: string) => {
+    setInfo({ ...info, endDate: date });
+  };
+
+  const handleSelectEndTime = (time: string) => {
+    setInfo({ ...info, endTime: time });
   };
 
   return (
@@ -86,9 +101,11 @@ const Page = () => {
               Category
             </Typography>
           </label>
-          <Dropdown classname="mt-3 mb-5" options={options} />
-
-          {/* Detail of event */}
+          <Dropdown
+            classname="mt-3 mb-5"
+            options={options}
+            onChange={handleSelectCategory}
+          />
           <label htmlFor="detail">
             <Typography fontWeight="semibold" fontSize="h3">
               Detail
@@ -103,13 +120,19 @@ const Page = () => {
               <Typography fontWeight="semibold" fontSize="h3">
                 Start Date
               </Typography>
-              <InputDate className="border border-gray-200 w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"/>
+              <InputDate
+                className="border border-gray-200 w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"
+                onchange={handleStartDate}
+              />
             </div>
             <div className="w-[50%]">
               <Typography fontWeight="semibold" fontSize="h3">
                 End Date
               </Typography>
-              <InputDate className="border border-gray-200  w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"></InputDate>
+              <InputDate
+                className="border border-gray-200  w-[98%] mt-3 mb-5 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"
+                onchange={handleEndDate}
+              />
             </div>
           </div>
           <div className="flex gap-4 mt-5">
@@ -127,7 +150,7 @@ const Page = () => {
                 End Time
               </Typography>
               <CustomTimePicker
-                onSelectTime={handleTimeSelect}
+                onSelectTime={handleSelectEndTime}
                 classname="w-[98%] mt-3 mb-5 border text-gray-400 border-gray-200 py-4 pl-5"
               />
             </div>
@@ -138,7 +161,11 @@ const Page = () => {
             </Typography>
           </label>
 
-          <Dropdown classname="mt-3 mb-5" options={locations} />
+          <Dropdown
+            classname="mt-3 mb-5"
+            options={locations}
+            onChange={handleSelectlocation}
+          />
 
           {/* Address of event */}
 

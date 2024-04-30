@@ -12,10 +12,9 @@ const CustomTimePicker: React.FC<TimePickerProps> = ({ onSelectTime , classname 
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedTime(event.target.value);
-  };
-
-  const handleTimeSubmit = () => {
-    onSelectTime(selectedTime);
+    if (onSelectTime) {
+      onSelectTime(event.target.value); // Call the callback with selected date
+    }
   };
 
   return (
@@ -26,12 +25,6 @@ const CustomTimePicker: React.FC<TimePickerProps> = ({ onSelectTime , classname 
         onChange={handleTimeChange}
         className={`px-3 py-2 border border-black rounded-md ${classname}`}
       />
-      {/* <button
-        onClick={handleTimeSubmit}
-        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-      >
-        Set Time
-      </button> */}
     </div>
   );
 };
