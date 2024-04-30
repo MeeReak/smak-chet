@@ -102,6 +102,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       isFavorite: false,
       cate: "Education",
     },
+    
   ]);
 
   const [CardUser, setCardUser] = useState([
@@ -138,6 +139,13 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       name: "nith",
       date: "Feb 12, 2020",
       gmail: "nith@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "6",
+      name: "heloo",
+      date: "Feb 12, 2020",
+      gmail: "helloo@gmail.com",
       profile: "/assets/image/leap.svg",
     },
   ]);
