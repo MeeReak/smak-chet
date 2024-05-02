@@ -7,7 +7,7 @@ import ".././globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Smakchet",
+  title: "Smakchet | Post",
   description: `"SmakChet" is a Website that include all your needed about volunteers. We have process all of your detail about event, date mange users etc.`,
   // icons: "/icons/logo.svg",
 };

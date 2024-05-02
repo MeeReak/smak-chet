@@ -102,9 +102,10 @@ const Page = () => {
             </Typography>
           </label>
           <Dropdown
-            classname="mt-3 mb-5"
+            classname="mt-3 mb-5 w-full"
             options={options}
             onChange={handleSelectCategory}
+            placeholder={"Select Event's category"}
           />
           <label htmlFor="detail">
             <Typography fontWeight="semibold" fontSize="h3">
@@ -162,9 +163,10 @@ const Page = () => {
           </label>
 
           <Dropdown
-            classname="mt-3 mb-5"
+            classname="mt-3 mb-5 w-full"
             options={locations}
             onChange={handleSelectlocation}
+            placeholder={"Select Event's Location"}
           />
 
           {/* Address of event */}
@@ -235,7 +237,6 @@ const Page = () => {
         </form>
         <div className="flex justify-end my-5">
           <Link href={"/form"}>
-            {" "}
             <Button
               size="h3"
               round="md"

@@ -7,7 +7,7 @@ import React, { useContext } from "react";
 const Page = () => {
   const { CardInfo } = useContext(MyContext);
 
-  const data = CardInfo.filter((item) => item.isFavorite === true);
+  const data = CardInfo.filter((item:any) => item.isFavorite === true);
 
   return (
     <>

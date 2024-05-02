@@ -2,7 +2,7 @@
 
 import { CategoryGroup, FilterButton } from "@/components/molechules";
 import React, { useState } from "react";
-import { CardList } from "../CardList";
+import { CardList } from "../cardList";
 
 const FilteredCardDisplay = () => {
   
