@@ -5,13 +5,21 @@ import Image from "next/image";
 import { Button, Typography } from "@/components";
 import Link from "next/link";
 
+
+
+const roles = {
+  "1": "Organizer" ,
+  "2": "Volunteer" 
+};
+
 const RoleChoosing = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState<string>("");
 
   function handleClick(
     e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>
   ) {
     setActive(e.currentTarget.id);
+  
   }
 
   return (
@@ -84,7 +92,7 @@ const RoleChoosing = () => {
             </button>
           </div>
 
-          <Link href={"/sign-up"}>
+          <Link href={`/sign-up?role=${roles[active]}`}>
             <Button className="bg-[#207BFF] align-middle justify-center text-white py-4 px-48 rounded-lg font-semibold hover:cursor-pointer">
               Continue
             </Button>
