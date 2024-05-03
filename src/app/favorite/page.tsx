@@ -1,12 +1,13 @@
 "use client";
 
 import { ButtonIcon, FavPage, Typography } from "@/components";
+import SubmitForm from "@/components/organisms/submitForm/submitForm";
 import { MyContext } from "@/contexts/CardContext";
 import React, { useContext } from "react";
 
 const Page = () => {
   const { CardInfo } = useContext(MyContext);
-
+ 
   const data = CardInfo.filter((item) => item.isFavorite === true);
 
   return (
