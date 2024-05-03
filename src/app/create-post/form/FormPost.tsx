@@ -8,32 +8,84 @@ import {
   StaticQuestion,
 } from "@/components";
 
-interface Question {
+interface EventInfoData {
   id: string;
-  question: string;
-  answer: any; // Add answer property for each question
+  name: string;
+  imageSrc: string;
+  category: string;
+  detail: string;
+  startDate: string;
+  endDate: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+  age: string;
+  language: string;
+  skill: string;
+  timeCommitment: string;
 }
 
-const Page = () => {
+interface Question {
+  id: string;
+  type: string;
+  question: string;
+  answer: any;
+}
+
+interface FormData {
+  info: EventInfoData;
+  questions: Question[];
+}
+
+const FormPost = ({onNext , eventInfo}:{onNext:()=>void , eventInfo:any}) => {
   const [questions, setQuestions] = useState<Question[]>([
     {
-      // Initial state with one empty question object
       id: Math.random().toString(36).substring(2, 15),
+      type: "",
       question: "",
       answer: "",
     },
   ]);
 
+  const [formData, setFormData] = useState<FormData>({
+    info: {
+      id: Math.random().toString(36).substring(2, 15),
+      name: '',
+      imageSrc: '',
+      category: '',
+      detail: '',
+      startDate: '',
+      endDate: '',
+      startTime: '',
+      endTime: '',
+      location: '',
+      age: '',
+      language: '',
+      skill: '',
+      timeCommitment: '',
+    },
+    questions: [
+      {
+        id: Math.random().toString(36).substring(2, 15),
+        type: '',
+        question: '',
+        answer: '',
+      },
+    ],
+  });
+
   const handleQuestionChange = (
     updatedQuestionText: string,
     updatedAnswer: any,
-    questionId: string
+    questionId: string,
+    QAtype: string
   ) => {
     setQuestions((prevQuestions) =>
       prevQuestions.map((question) =>
         question.id === questionId
           ? {
               ...question,
+              type: QAtype,
               question: updatedQuestionText,
               answer: updatedAnswer,
             }
@@ -47,6 +99,7 @@ const Page = () => {
       ...prevQuestions,
       {
         id: Math.random().toString(36).substring(2, 15),
+        type: "",
         question: "",
         answer: "",
       }, // Add new question object
@@ -60,10 +113,18 @@ const Page = () => {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    
-  }
+    // setFormData((prevFormData) => ({
+    //   ...prevFormData,
+    //   info: {
+    //     ...prevFormData.info,
+    //     ...eventInfo, // Update info data with eventInfo props
+    //   },
+    //   questions: [...questions], // Update questions array
+    // }));
 
-  console.log(questions);
+    // console.log(formData);
+    console.log(eventInfo);
+  };
 
   return (
     <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
@@ -79,7 +140,7 @@ const Page = () => {
           />
         </div>
       </div>
-      <form action="" onSubmit={handleSubmit} className="space-y-5">
+      <form action="" className="space-y-5">
         <div className="w-full bg-[#F8F8F8] py-10 px-3 rounded-lg">
           <StaticQuestion>Full Name</StaticQuestion>
         </div>
@@ -95,27 +156,37 @@ const Page = () => {
         {questions.map((question) => (
           <div key={question.id}>
             <QuestionForm
-              question={question} // Pass the entire question object as a prop
+              question={question}
               removeQuestion={() => handleRemoveQuestion(question.id)}
-              onQuestionChange={(updatedQuestionText, updatedAnswer) =>
+              onQuestionChange={(
+                updatedQuestionText,
+                updatedAnswer,
+                questionType
+              ) =>
                 handleQuestionChange(
                   updatedQuestionText,
                   updatedAnswer,
-                  question.id
+                  question.id,
+                  questionType
                 )
-              } 
+              }
             />
           </div>
         ))}
-        <Button type="button" onclick={handleAddQuestion} className="border-none">
+
+        <Button
+          type="button"
+          onclick={handleAddQuestion}
+          className="border-none"
+        >
           <Typography color="blue">+ Add More Questions</Typography>
         </Button>
-        <Button type="submit" className="bg-[#207BFF] p-3 float-end">
-          <Typography color="white">Simulate Submit</Typography>
+        <Button type="button" className="bg-[#207BFF] p-3 float-end" onclick={handleSubmit}>
+          <Typography color="white">Publish</Typography>
         </Button>
       </form>
     </div>
   );
-}
+};
 
-export default Page;
+export default FormPost;

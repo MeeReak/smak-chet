@@ -32,7 +32,7 @@ export default function MapBox() {
           latitude: 12.5657,
           zoom: 7,
         }}
-        style={{ width: 1024, height: 400, zIndex: 10 }}
+        style={{ width: "screen", height: 400, zIndex: 10 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         onClick={handleMapClick}
       >
