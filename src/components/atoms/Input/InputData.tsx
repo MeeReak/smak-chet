@@ -10,6 +10,7 @@ interface InputDataProps {
   id?: string;
   name?: string;
   defaultValue?: string;
+  value?: string;
 }
 
 const InputData: React.FC<InputDataProps> = ({
@@ -20,6 +21,8 @@ const InputData: React.FC<InputDataProps> = ({
   id,
   name,
   defaultValue,
+  value
+
 }) => {
   const combinedClassName = `border border-black rounded-[10px] outline-none ${className}`;
 
@@ -32,6 +35,7 @@ const InputData: React.FC<InputDataProps> = ({
       id={id}
       name={name}
       defaultValue={defaultValue}
+      value={value}
     />
   );
 };
