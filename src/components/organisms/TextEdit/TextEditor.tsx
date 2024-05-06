@@ -1,7 +1,11 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from "react";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic"; // Import dynamic from next/dynamic
+
+// Dynamically import ReactQuill to ensure it's only loaded in the browser
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
 import "react-quill/dist/quill.snow.css";
 
 const TextEditor = () => {
@@ -13,7 +17,7 @@ const TextEditor = () => {
   };
 
   useEffect(() => {
-    setIsBrowser(typeof document !== "undefined");
+    setIsBrowser(typeof window !== "undefined"); // Check for window instead of document
   }, []);
 
   const modules = {
