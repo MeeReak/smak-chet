@@ -1,7 +1,7 @@
-"use client";
-import { SubmitFormProps } from "@/components/organisms/submitForm/submitForm";
-import { SubmitForm } from "@/components";
-import React, { useState } from "react";
+"use client"
+import  { SubmitForm } from '@/components/organisms/submitForm/submitForm'
+import { MyContext } from '@/contexts/CardContext';
+import React, { useContext, useState } from 'react'
 
 interface SubmitFormProp {
   name: string;
@@ -13,6 +13,9 @@ interface SubmitFormProp {
 }
 
 const Page = () => {
+
+  const { CardInfo } = useContext(MyContext);
+
   const [submitForm, setSubmitForm] = useState<SubmitFormProp>({
     name: "",
     address: "",

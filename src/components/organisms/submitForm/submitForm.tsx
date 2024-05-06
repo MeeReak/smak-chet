@@ -1,7 +1,10 @@
 "use client";
-import { Button, InputData, Typography } from "@/components/atoms";
+import { Button, Typography } from "@/components/atoms";
+import Question from "@/components/molechules/SubmitForm/Question";
+import { YesNo } from "@/components/molechules/SubmitForm/YesNo";
 import { validationSchema } from "@/utils/validationSchema";
 import React, { useState } from "react";
+import { Checkbox } from "@/components/molechules/SubmitForm/Checkbox";
 import * as Yup from "yup";
 
 export interface SubmitFormProps {
@@ -37,16 +40,16 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
     email: "",
     phonenumber: "",
     reason: "",
-    joinbefore: ""
+    joinbefore: "",
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<Record<string, string>>({
     name: "",
     address: "",
     email: "",
     phonenumber: "",
     reason: "",
-    joinbefore: ""
+    joinbefore: "",
   });
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,7 +67,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
         updatedForm.email,
         updatedForm.phonenumber,
         updatedForm.reason,
-        updatedForm.joinbefore,
+        updatedForm.joinbefore
       );
       return updatedForm;
     });
@@ -81,11 +84,18 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
         email: "",
         phonenumber: "",
         reason: "",
-        joinbefore: ""
+        joinbefore: "",
       });
 
       // Since the form is valid, call the onchange function
-      onchange(form.name, form.address, form.email, form.phonenumber, form.reason, form.joinbefore);
+      onchange(
+        form.name,
+        form.address,
+        form.email,
+        form.phonenumber,
+        form.reason,
+        form.joinbefore
+      );
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const newErrors: Record<string, string> = {}; // Define the object with an index signature
@@ -153,7 +163,9 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
             }
             placeholder="Short Answer"
           />
-          {errors.address && <p className="pl-5 text-[#EB5757]">{errors.address}</p>}
+          {errors.address && (
+            <p className="pl-5 text-[#EB5757]">{errors.address}</p>
+          )}
         </div>
       </div>
 
@@ -175,7 +187,9 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
             }
             placeholder="Short Answer"
           />
-          {errors.email && <p className="pl-5 text-[#EB5757]">{errors.email}</p>}
+          {errors.email && (
+            <p className="pl-5 text-[#EB5757]">{errors.email}</p>
+          )}
         </div>
       </div>
 
@@ -215,7 +229,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
             className=" lg:w-[900px] w-2/3 mx-4 lg:py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500 bg-[#F8F8F8]"
             placeholder="Short Answer"
           />
-           {errors.phonenumber && (
+          {errors.phonenumber && (
             <p className="pl-5 text-[#EB5757]">{errors.reason}</p>
           )}
         </div>

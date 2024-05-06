@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button, ButtonIcon, InputData, Typography } from "@/components/atoms";
+import { Button, ButtonIcon, Typography } from "@/components/atoms";
 
 interface MultiChoiceQuestionProp {
   onchange: (option: any) => void;

@@ -1,5 +1,4 @@
 export * from "./ReqCards"
-export * from "./cardList"
 export * from "./FilteredCardDisplay"
 export * from "./mapbox"
 export * from "./PostAboutDisplay"

@@ -259,7 +259,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
           />
         </form>
         <div className="flex justify-end my-5">
-          <Link href={"/create-post/form"}>
+          <Link href={"/create-post"}>
             <Button
               type="button"
               size="h3"

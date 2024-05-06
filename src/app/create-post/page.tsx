@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import EventInfo from './event-info/EventInfo';
 import FormPost from './form/FormPost';
 
-const page = () => {
+const Page = () => {
     const [step, setStep] = useState(1);
     const [info, setInfo] = useState({});
 
@@ -30,4 +30,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

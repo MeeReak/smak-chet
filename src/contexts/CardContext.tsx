@@ -24,6 +24,7 @@ interface CardUser {
 
 interface CardContextProp {
   children: ReactNode;
+
 }
 
 interface ContextProps {
@@ -60,8 +61,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Oct 25 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate: "Charity",
-    },
+      cate: "Charity",    },
     {
       id: "3",
       src: "/assets/image/ace_volunteer.png",
@@ -80,8 +80,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Mar 03 2024",
       location: "Phnom Penh",
       isFavorite: false,
-      cate: "Sport",
-    },
+      cate: "Sport",    },
     {
       id: "5",
       src: "/assets/image/cambodia_book_fair.png",
@@ -102,7 +101,6 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       isFavorite: false,
       cate: "Education",
     },
-    
   ]);
 
   const [CardUser, setCardUser] = useState([
