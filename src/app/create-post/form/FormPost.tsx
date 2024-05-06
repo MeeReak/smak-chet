@@ -113,18 +113,14 @@ const FormPost = ({onNext , eventInfo}:{onNext:()=>void , eventInfo:any}) => {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    // setFormData((prevFormData) => ({
-    //   ...prevFormData,
-    //   info: {
-    //     ...prevFormData.info,
-    //     ...eventInfo, // Update info data with eventInfo props
-    //   },
-    //   questions: [...questions], // Update questions array
-    // }));
-
-    // console.log(formData);
-    console.log(eventInfo);
-  };
+    setFormData({
+      info: {
+        ...eventInfo, // Update info data with eventInfo props
+      },
+      questions: [...questions], // Update questions array
+    })
+    };
+    console.log(formData);
 
   return (
     <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
