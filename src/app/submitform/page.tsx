@@ -1,12 +1,15 @@
-"use client"
-import SubmitForm, { SubmitFormProps } from '@/components/organisms/submitForm/submitForm'
-import React, { useState } from 'react'
+"use client";
+import { SubmitFormProps } from "@/components/organisms/submitForm/submitForm";
+import { SubmitForm } from "@/components";
+import React, { useState } from "react";
 
 interface SubmitFormProp {
   name: string;
   address: string;
   email: string;
   phonenumber: string;
+  reason: string;
+  joinbefore: string;
 }
 
 const Page = () => {
@@ -14,24 +17,39 @@ const Page = () => {
     name: "",
     address: "",
     email: "",
-    phonenumber: ""   
-  })
-  
-   const handleOnChange = (name:string, address:string, email:string, phonenumber:string) => {
-     setSubmitForm((pre) => ({
-       ...pre,
-       name: name,
-       address: address,
-       email: email,
-       phonenumber: phonenumber,
-     }));
-     console.log(submitForm);
-   };
-    return (
-      <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
-        <SubmitForm onchange={(name, address, email, phonenumber)=>handleOnChange(name, address, email, phonenumber)} />  
-      </div>
-    );
-}
+    phonenumber: "",
+    reason: "",
+    joinbefore: "",
+  });
 
-export default Page
+  const handleOnChange = (
+    name: string,
+    address: string,
+    email: string,
+    phonenumber: string,
+    reason: string,
+    joinbefore: string
+  ) => {
+    setSubmitForm((pre) => ({
+      ...pre,
+      name: name,
+      address: address,
+      email: email,
+      phonenumber: phonenumber,
+      reason: reason,
+      joinbefore: joinbefore
+    }));
+    console.log(submitForm);
+  };
+  return (
+    <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
+      <SubmitForm
+        onchange={(name, address, email, phonenumber, reason, joinbefore) =>
+          handleOnChange(name, address, email, phonenumber, reason, joinbefore)
+        }
+      />
+    </div>
+  );
+};
+
+export default Page;

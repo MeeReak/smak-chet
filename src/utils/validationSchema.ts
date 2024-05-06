@@ -7,4 +7,6 @@ export const validationSchema = Yup.object({
     .email("Invalid email format")
     .required("Email is required"),
   phonenumber: Yup.string().required("Phone number is required"),
+  reason: Yup.string().required("reason is required"),
+  joinbefore: Yup.string().required("Have you joined before?")
 });
