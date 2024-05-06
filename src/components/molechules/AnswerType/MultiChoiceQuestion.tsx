@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button, ButtonIcon, InputData, Typography } from "@/components/atoms";
+import { Button, ButtonIcon, Typography } from "@/components/atoms";
 
 interface MultiChoiceQuestionProp {
   onchange: (option: any) => void;
@@ -68,7 +68,7 @@ const MultiChoiceQuestion: React.FC<MultiChoiceQuestionProp> = ({
         </div>
       ))}
       <Button
-        type={"button"}
+        type="button"
         onclick={handleAddOption}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
