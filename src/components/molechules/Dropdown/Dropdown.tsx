@@ -5,9 +5,10 @@ interface DropdownProps {
   classname?: string;
   options: string[];
   onChange?: (value: string) => void; // Add the onChange prop
+  placeholder: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange}) => {
+const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange , placeholder}) => {
   const [isOpen, setisOpen] = useState(false);
   const [selectedOption, setselectedOption] = useState(null);
 
@@ -22,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange}) => 
   };
 
   return (
-    <div className={`inline-flex w-full ${classname}`}>
+    <div className={`inline-flex ${classname}`}>
       <div className="w-full h-[50px] relative flex items-center justify-between border border-gray-200 py-4 pl-5 rounded-[10px] outline-none">
         <a
           onClick={toggling}
@@ -31,7 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange}) => 
             selectedOption ? "text-black" : "text-gray-400"
           }`}
         >
-          {selectedOption || "Select Option"}
+          {selectedOption || `${placeholder}`}
         </a>
         <div className="relative">
           <button
@@ -55,7 +56,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange}) => 
           </button>
         </div>
         {isOpen && (
-          <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-200 bg-white shadow-lg grid">
+          <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-300 bg-white shadow-lg grid">
             {options.map((option, index) => (
               <button
                 type="button"

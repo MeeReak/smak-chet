@@ -18,6 +18,7 @@ interface ButtonProps {
   rightIcon?: ReactNode;
   onclick?: (e: any) => void;
   onClickParam?: (param: any) => void;
+  type ?: any | string;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -31,6 +32,7 @@ const Button: FC<ButtonProps> = ({
   rightIcon,
   onclick,
   onClickParam,
+  type,
 }) => {
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
@@ -126,7 +128,7 @@ const Button: FC<ButtonProps> = ({
   const combinedClassName = `flex items-center justify-start border-[1px] ${colorSchemeClass} ${sizeClass} ${bgColorClass} ${roundClass} ${className}`;
 
   return (
-    <button className={combinedClassName} onClick={onclick || onClickParam}>
+    <button className={combinedClassName} onClick={onclick || onClickParam} type={type}>
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
       {rightIcon && <span className="ml-2">{rightIcon}</span>}
