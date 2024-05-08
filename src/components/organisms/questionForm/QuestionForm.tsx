@@ -42,16 +42,16 @@ const QuestionForm: React.FC<QuestionFormProps> = ({
 
   return (
     <div className="w-full bg-[#F8F8F8] py-10 px-3 rounded-lg">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 gap-3">
         <InputData
           type="text"
           placeholder="Question"
-          className="w-[60%] h-[50px] px-5 border-gray-300"
+          className="w-[60%] h-[50px] px-2 border-gray-300 lg:w-[900px]  mx- lg:py-2 border-b focus:outline-none focus:border-blue-500 bg-[#F8F8F8]"
           onChange={handleQuestionChange}
         />
         <Dropdown
           options={["Writing Answer", "Multi Choice", "Yes/No"]}
-          classname="w-[30%] h-[50px] bg-white"
+          classname="w-[30%] h-[50px] bg-[#F8F8F8]"
           placeholder="Type of Answer"
           onChange={handleSelectType}
         />
