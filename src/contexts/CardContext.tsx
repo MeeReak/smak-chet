@@ -102,6 +102,66 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       isFavorite: false,
       cate: "Education",
     },
+    {
+      id: "7",
+      src: "/assets/image/National_day_of_Science,Technology_and_Innovation.png",
+      alt: "National day of Science, Technology and Innovation 2024",
+      title: "National day of Science, Technology and Innovation 2024",
+      date: "Mar 12 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Exhibition",
+    },
+    {
+      id: "8",
+      src: "/assets/image/cambodia_book_fair.png",
+      alt: "Cambodia Book Fair",
+      title: "Cambodia Book Fair",
+      date: "Oct 25 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Charity",
+    },
+    {
+      id: "9",
+      src: "/assets/image/ace_volunteer.png",
+      alt: "ACE Graduation Ceremony",
+      title: "ACE Graduation Ceremony",
+      date: "May 18 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Environmental",
+    },
+    {
+      id: "10",
+      src: "/assets/image/National_day_of_Science,Technology_and_Innovation.png",
+      alt: "National day of Science, Technology and Innovation 2024",
+      title: "National day of Science, Technology and Innovation 2024",
+      date: "Mar 03 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Sport",
+    },
+    {
+      id: "11",
+      src: "/assets/image/cambodia_book_fair.png",
+      alt: "Cambodia Book Fair",
+      title: "Cambodia Book Fair",
+      date: "Oct 25 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Workshop",
+    },
+    {
+      id: "12",
+      src: "/assets/image/ace_volunteer.png",
+      alt: "ACE Graduation Ceremony",
+      title: "ACE Graduation Ceremony",
+      date: "May 18 2024",
+      location: "Phnom Penh",
+      isFavorite: false,
+      cate: "Education",
+    },
     
   ]);
 
@@ -148,6 +208,48 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "helloo@gmail.com",
       profile: "/assets/image/leap.svg",
     },
+    {
+      id: "7",
+      name: "Peng maleap",
+      date: "Feb 08, 2020",
+      gmail: "pengmaleap@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "8",
+      name: "kimlarng",
+      date: "Feb 09, 2020",
+      gmail: "kimlarng@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "9",
+      name: "sarun",
+      date: "Feb 10, 2020",
+      gmail: "sarun@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "10",
+      name: "reak",
+      date: "Feb 11, 2020",
+      gmail: "reak@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "11",
+      name: "nith",
+      date: "Feb 12, 2020",
+      gmail: "nith@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
+    {
+      id: "12",
+      name: "heloo",
+      date: "Feb 12, 2020",
+      gmail: "helloo@gmail.com",
+      profile: "/assets/image/leap.svg",
+    },
   ]);
 
   useEffect(() => {
@@ -155,7 +257,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       ? getLocalStorage("cardInfo")
       : CardInfo;
     setCardInfo(data);
-  }, []);
+  },[]);
 
   function toggleFavorite(id: string) {
     const updatedCard = CardInfo.map((card) => {
