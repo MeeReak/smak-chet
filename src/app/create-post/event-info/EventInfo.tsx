@@ -4,7 +4,6 @@ import {
   FileInput,
   InputData,
   Typography,
-  DatePicker,
   CustomTimePicker,
   Button,
   MapBox,
@@ -97,7 +96,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
   };
 
   return (
-    <div className="lg:w-[1024px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
+    <div className="lg:w-[855px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
       <Typography fontWeight="bold" fontSize="h2" className="max-[1030px]:ml-3">
         Event’s Detail
       </Typography>
@@ -107,7 +106,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
       <div>
         <form action="" className="max-[1030px]:mx-5">
           <label htmlFor="evenname">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="medium" fontSize="h3">
               Event Name
             </Typography>
           </label>
@@ -120,7 +119,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
             className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
           <label htmlFor="category">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="medium" fontSize="h3">
               Category
             </Typography>
           </label>
@@ -257,8 +256,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
             placeholder="Your Requirement"
             className="w-full mt-3 mb-5 py-4 pl-5 border border-gray-200"
           />
-        </form>
-        <div className="flex justify-end my-5">
+          <div className="flex justify-end my-5">
           <Link href={"/create-post"}>
             <Button
               type="button"
@@ -273,6 +271,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
             </Button>
           </Link>
         </div>
+        </form>
       </div>
     </div>
   );

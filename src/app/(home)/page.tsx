@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Trending, FilteredCardDisplay } from "@/components";
+import { Trending, FilteredCardDisplay} from "@/components";
 import Image from "next/image";
+
 
 const Homepage = () => {
   return (

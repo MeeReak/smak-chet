@@ -3,13 +3,13 @@ import { Button, InputDate, Typography } from "@/components/atoms";
 
 const FilterForm = () => {
   return (
-    <>
+    <div className="w-full">
       <div>
         <Typography className="text-base sm:text-lg md:text-xl" fontWeight="bold">
           Filter
         </Typography>
       </div>
-      <form action="submit" className="mt-3 sm:mt-4 md:mt-5">
+      <form className="mt-3 sm:mt-4 md:mt-5">
         <div className="mb-3 ">
           <label htmlFor="date">
             <Typography fontSize="h5" fontWeight="semibold" className="mb-2 sm:text-base md:text-lg">
@@ -45,7 +45,7 @@ const FilterForm = () => {
           </Button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

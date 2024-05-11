@@ -15,3 +15,4 @@ export * from "./Favoritepage"
 export * from './NotiDropdown'
 export * from "./UserProfileDropdown"
 export * from "./AnswerType"
+export * from "./Select"
