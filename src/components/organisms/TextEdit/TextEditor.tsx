@@ -8,12 +8,19 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 import "react-quill/dist/quill.snow.css";
 
-const TextEditor = () => {
+interface TextEditorProp{
+  onchange?: (str: string) => void;
+}
+
+const TextEditor:React.FC<TextEditorProp> = ({onchange}) => {
   const [content, setContent] = useState("");
   const [isBrowser, setIsBrowser] = useState(false);
 
   const handleChange = (content: string) => {
     setContent(content);
+    if(onchange){
+      onchange(content);
+    }
   };
 
   useEffect(() => {
@@ -36,6 +43,7 @@ const TextEditor = () => {
       ["clean"],
     ],
   };
+
 
   return (
     <>

@@ -29,6 +29,7 @@ interface EventInfoData {
   startTime: string;
   endTime: string;
   location: string;
+  address: any;
   age: string;
   language: string;
   skill: string;
@@ -50,6 +51,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
     startTime: "",
     endTime: "",
     location: "",
+    address:"",
     age: "",
     language: "",
     skill: "",
@@ -95,6 +97,15 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
     setInfo({ ...info, endTime: time });
   };
 
+  const handleDetail = (str:string) => {
+    setInfo({...info,detail:str});
+  }
+
+  const handleAddress = (markers:any) =>{
+    setInfo({...info,address:markers});
+  }
+
+
   return (
     <div className="lg:w-[855px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
       <Typography fontWeight="bold" fontSize="h2" className="max-[1030px]:ml-3">
@@ -134,7 +145,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
               Detail
             </Typography>
           </label>
-          <TextEditor />
+          <TextEditor onchange={handleDetail}/>
           <Typography fontWeight="bold" fontSize="h2">
             Datetime and Location
           </Typography>
@@ -197,7 +208,7 @@ const EventInfo:React.FC<EventInfoProps>= ({onNext}) => {
             Address
           </Typography>
 
-          <MapBox />
+          <MapBox onchange={handleAddress}/>
 
           {/* Requirements */}
 
