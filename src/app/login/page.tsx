@@ -128,7 +128,7 @@ const Page = () => {
           {/* signup if don't have account */}
           <Typography align="center" fontSize="h4">
             Don&apos;t have an account ?
-            <Link href={"/signup"} className="text-blue-500">
+            <Link href={"/sign-up"} className="text-blue-500">
               {" "}
               Sign up
             </Link>
