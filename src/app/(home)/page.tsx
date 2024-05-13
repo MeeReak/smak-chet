@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { Trending, FilteredCardDisplay } from "@/components";
+import { Trending, FilteredCardDisplay} from "@/components";
 import Image from "next/image";
+
 
 const Homepage = () => {
   return (
     <>
-     
       <div className="max-w-[1024px] m-auto space-y-5 z-10 mt-[100px] mb-20">
         <Trending
           className="flex gap-4 max-[640px]:overflow-hidden max-[640px]:overflow-x-auto"

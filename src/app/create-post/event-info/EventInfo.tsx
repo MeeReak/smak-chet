@@ -4,7 +4,6 @@ import {
   FileInput,
   InputData,
   Typography,
-  DatePicker,
   CustomTimePicker,
   Button,
   MapBox,
@@ -64,7 +63,6 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
 
   function handleChange(e: any) {
     setInfo({ ...info, [e.target.name]: e.target.value });
-    console.log(e.target.value);
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -118,11 +116,11 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
     setInfo({ ...info, startTime: time });
   };
 
-  const handleStartDate = (date: null ) => {
+  const handleStartDate = (date: null) => {
     setInfo({ ...info, startDate: date });
   };
 
-  const handleEndDate = (date: null ) => {
+  const handleEndDate = (date: null) => {
     setInfo({ ...info, endDate: date });
   };
 
@@ -134,18 +132,20 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
     setInfo({ ...info, detail: content });
   };
   return (
-    <div className="lg:w-[1024px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
-      <Typography fontWeight="bold" fontSize="h2" className="max-[1030px]:ml-3">
+    <div className="lg:w-[855px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
+      <Typography fontWeight="bold" fontSize="h3" className="max-[1030px]:ml-3">
         Event’s Detail
       </Typography>
       <div className="container mx-auto mt-8">
         <FileInput onChange={handleFileUpload} />
       </div>
-      {errors.imageSrc && <p className="text-red-500 mb-2 pl-8">{errors.imageSrc}</p>}
+      {errors.imageSrc && (
+        <p className="text-red-500 mb-2 pl-8">{errors.imageSrc}</p>
+      )}
       <div>
         <form action="" className="max-[1030px]:mx-5">
           <label htmlFor="evenname">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="medium" fontSize="h4">
               Event Name
             </Typography>
           </label>
@@ -158,12 +158,10 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
           />
 
-          {errors.name && (
-            <p className="text-red-500 mb-2 pl-5">{errors.name}</p>
-          )}
+          {errors.name && <p className="text-red-500 mb-2">{errors.name}</p>}
 
           <label htmlFor="category">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="medium" fontSize="h4">
               Category
             </Typography>
           </label>
@@ -174,23 +172,23 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             placeholder={"Select Event's category"}
           />
           {errors.category && (
-            <p className="text-red-500 mb-2 pl-5">{errors.category}</p>
+            <p className="text-red-500 mb-2">{errors.category}</p>
           )}
           <label htmlFor="detail">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Detail
             </Typography>
           </label>
           <TextEditor onchange={handleChangeContent} />
           {errors.detail && (
-            <p className="text-red-500 mb-3 pl-5">{errors.detail}</p>
+            <p className="text-red-500 mb-3">{errors.detail}</p>
           )}
-          <Typography fontWeight="bold" fontSize="h2">
+          <Typography fontWeight="bold" fontSize="h3">
             Datetime and Location
           </Typography>
           <div className="flex gap-4 mt-5">
             <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h3">
+              <Typography fontWeight="semibold" fontSize="h4">
                 Start Date
               </Typography>
               <InputDate
@@ -198,11 +196,11 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
                 onchange={handleStartDate}
               />
               {errors.startDate && (
-                <p className="text-red-500 mb-2 pl-5">{errors.startDate}</p>
+                <p className="text-red-500 mb-2">{errors.startDate}</p>
               )}
             </div>
             <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h3">
+              <Typography fontWeight="semibold" fontSize="h4">
                 End Date
               </Typography>
               <InputDate
@@ -212,7 +210,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
                 onchange={handleEndDate}
               />
               {errors.endDate && (
-                <p className="text-red-500 mb-2 pl-5">{errors.endDate}</p>
+                <p className="text-red-500 mb-2">{errors.endDate}</p>
               )}
               {!isEnddateValidate && (
                 <p className="text-red-500 text-xs sm:text-sm">
@@ -224,7 +222,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
           </div>
           <div className="flex gap-4 mt-5">
             <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h3">
+              <Typography fontWeight="semibold" fontSize="h4">
                 Start Time
               </Typography>
               <CustomTimePicker
@@ -232,11 +230,11 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
                 classname="w-[98%] mt-3 mb-3 border text-gray-400 border-gray-200 py-4 pl-5"
               />
               {errors.startTime && (
-                <p className="text-red-500 mb-2 pl-5 ">{errors.startTime}</p>
+                <p className="text-red-500 mb-2 ">{errors.startTime}</p>
               )}
             </div>
             <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h3">
+              <Typography fontWeight="semibold" fontSize="h4">
                 End Time
               </Typography>
               <CustomTimePicker
@@ -244,12 +242,12 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
                 classname="w-[98%] mt-3 mb-3 border text-gray-400 border-gray-200 py-4 pl-5"
               />
               {errors.endTime && (
-                <p className="text-red-500 mb-2 pl-5">{errors.endTime}</p>
+                <p className="text-red-500 mb-2">{errors.endTime}</p>
               )}
             </div>
           </div>
           <label htmlFor="location">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Location
             </Typography>
           </label>
@@ -261,23 +259,23 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             placeholder={"Select Event's Location"}
           />
           {errors.location && (
-            <p className="text-red-500 mb-2 pl-5">{errors.location}</p>
+            <p className="text-red-500 mb-2">{errors.location}</p>
           )}
+
           {/* Address of event */}
 
-          <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
+          <Typography fontWeight="bold" fontSize="h3" className="mt-5 mb-5">
             Address
           </Typography>
-
           <MapBox />
 
           {/* Requirements */}
 
-          <Typography fontWeight="bold" fontSize="h2" className="mt-5 mb-5">
+          <Typography fontWeight="bold" fontSize="h3" className="mt-5 mb-5">
             Requirements
           </Typography>
           <label htmlFor="age">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Age
             </Typography>
           </label>
@@ -289,9 +287,9 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             placeholder="Your Requirement"
             className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
           />
-          {errors.age && <p className="text-red-500 mb-2 pl-5">{errors.age}</p>}
+          {errors.age && <p className="text-red-500 mb-2">{errors.age}</p>}
           <label htmlFor="Language">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Language
             </Typography>
           </label>
@@ -304,10 +302,10 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
           />
           {errors.language && (
-            <p className="text-red-500 mb-2 pl-5">{errors.language}</p>
+            <p className="text-red-500 mb-2">{errors.language}</p>
           )}
           <label htmlFor="Skill">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Skill
             </Typography>
           </label>
@@ -319,11 +317,9 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             placeholder="Your Requirement"
             className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
           />
-          {errors.skill && (
-            <p className="text-red-500 mb-2 pl-5">{errors.skill}</p>
-          )}
+          {errors.skill && <p className="text-red-500 mb-2">{errors.skill}</p>}
           <label htmlFor="Time Commitment">
-            <Typography fontWeight="semibold" fontSize="h3">
+            <Typography fontWeight="semibold" fontSize="h4">
               Time Commitment
             </Typography>
           </label>
@@ -336,14 +332,14 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
             className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
           />
           {errors.timeCommitment && (
-            <p className="text-red-500 mb-2 pl-5">{errors.timeCommitment}</p>
+            <p className="text-red-500 mb-2">{errors.timeCommitment}</p>
           )}
         </form>
         <div className="flex justify-end my-5">
           <Link href={"/create-post"}>
             <Button
               type="button"
-              size="h3"
+              size="h4"
               round="md"
               bgColor="primary"
               colorScheme="White"

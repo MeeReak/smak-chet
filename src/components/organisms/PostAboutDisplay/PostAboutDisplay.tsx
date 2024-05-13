@@ -1,8 +1,7 @@
 "use client"
-import { Typography } from '@/components/atoms'
+
 import { PostAboutGroup } from '@/components/molechules'
 import React, { useState } from 'react'
-import { CardList } from '../CardList'
 
 const PostAboutDisplay = () => {
 
