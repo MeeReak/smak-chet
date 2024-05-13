@@ -1,6 +1,6 @@
 "use client";
 import { ButtonIcon, Typography } from "@/components/atoms";
-import { NotiCardList } from "@/components/organisms";
+import { NotiCardList } from "@/components/organisms/cardList";
 import Link from "next/link";
 import React from "react";
 
@@ -61,7 +61,7 @@ const NotiDropdown: React.FC<NotiDropdownProps> = ({
                 </Typography>
               </Link>
             </div>
-            <NotiCardList />
+            <NotiCardList/>
           </div>
         </div>
       )}

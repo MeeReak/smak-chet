@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic"; // Import dynamic from next/dynamic
@@ -8,13 +8,13 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 import "react-quill/dist/quill.snow.css";
 
-const TextEditor = ({onchange}:{onchange:any}) => {
+const TextEditor = ({ onchange }: { onchange: any }) => {
   const [content, setContent] = useState("");
   const [isBrowser, setIsBrowser] = useState(false);
 
   const handleChange = (content: string) => {
     setContent(content);
-    onchange(content)
+    onchange(content);
   };
 
   useEffect(() => {
@@ -27,14 +27,8 @@ const TextEditor = ({onchange}:{onchange:any}) => {
       [{ font: [] }],
 
       [{ list: "ordered" }, { list: "bullet" }],
-      [{ script: "sub" }, { script: "super" }], // superscript/subscript
 
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-      [{ color: [] }, { background: [] }],
-      [{ align: [] }],
-
-      ["clean"],
     ],
   };
 

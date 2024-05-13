@@ -1,6 +1,6 @@
 "use client";
 
-import { CategoryGroup, FilterButton } from "@/components/molechules";
+import { CategoryGroup } from "@/components/molechules";
 import React, { useState } from "react";
 import { CardList } from "../cardList";
 

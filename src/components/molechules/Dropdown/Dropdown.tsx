@@ -8,7 +8,12 @@ interface DropdownProps {
   placeholder: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange , placeholder}) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  classname,
+  options,
+  onChange,
+  placeholder,
+}) => {
   const [isOpen, setisOpen] = useState(false);
   const [selectedOption, setselectedOption] = useState(null);
 
@@ -27,7 +32,6 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange , pla
       <div className="w-full h-[50px] relative flex items-center justify-between border border-gray-200 py-4 pl-5 rounded-[10px] outline-none">
         <a
           onClick={toggling}
-          href="javascript:void(0)"
           className={`w-[100%] rounded-l-md py-2 ${
             selectedOption ? "text-black" : "text-gray-400"
           }`}
@@ -38,22 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({ classname, options , onChange , pla
           <button
             type="button"
             className="border-1 border-gray-100 inline-flex h-full items-center justify-center rounded-r-md px-2 text-gray-600 hover:text-gray-700"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </button>
+          ></button>
         </div>
         {isOpen && (
           <div className="w-full absolute top-6 right-0 z-10 mt-4 min-w-[200px] origin-top-right rounded-md border-gray-300 bg-white shadow-lg grid">
