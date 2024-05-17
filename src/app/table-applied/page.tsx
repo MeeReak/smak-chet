@@ -14,7 +14,7 @@ const Page = () => {
     <div className="bg-[#F4FBFF]">
       <div className="bg-white mx-auto">
         <div className="lg:w-[1024px] lg:flex lg:flex-row lg:justify-between lg:mt-12 lg:items-center mt-24 px-4 mx-auto flex flex-col justify-start">
-          <Typography fontWeight="bold" className="lg:text-[40px] text-[32px] lg:text-start text-center">
+          <Typography  className="lg:text-[40px] text-[32px] lg:text-start text-center">
             Table of Volunteers
           </Typography>
           <div className="flex flex-row justify-center items-center lg:gap-6 mt-12 gap-3">
@@ -28,7 +28,7 @@ const Page = () => {
                   {`${totalCondidate}`}
                   {/* Dynamically display the count of CardUser */}
                 </Typography>
-                <Typography fontSize="h5" color="grey" className="mt-1 hidden lg:block ">
+                <Typography fontSize="h5" fontWeight="medium" color="grey" className="mt-1 hidden lg:block ">
                   Candidates
                 </Typography>
               </div>
