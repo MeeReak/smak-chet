@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
+import { action } from "@storybook/addon-actions";
 
+
+// Define the metadata for the Button component stories
 const meta: Meta<typeof Button> = {
   title: "Smakchet/Atoms/Button",
   component: Button,
@@ -13,6 +16,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+// Define the default story for the Button component
 export const Default: Story = {
   args: {
     children: "Button",
@@ -20,5 +24,6 @@ export const Default: Story = {
     bgColor: "primary",
     size: "h4",
     round: "md",
+    onclick: action('click'),
   },
 };
