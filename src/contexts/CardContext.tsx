@@ -20,6 +20,7 @@ interface CardUser {
   date: string;
   gmail: string;
   profile: string;
+  status: string
 }
 
 interface CardContextProp {
@@ -110,6 +111,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 08, 2020",
       gmail: "pengmaleap@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Accepted",
     },
     {
       id: "2",
@@ -117,6 +119,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 09, 2020",
       gmail: "kimlarng@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Accepted",
     },
     {
       id: "3",
@@ -124,6 +127,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 10, 2020",
       gmail: "sarun@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Accepted",
     },
     {
       id: "4",
@@ -131,6 +135,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 11, 2020",
       gmail: "reak@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Rejected",
     },
     {
       id: "5",
@@ -138,6 +143,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 12, 2020",
       gmail: "nith@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Pending",
     },
     {
       id: "6",
@@ -145,6 +151,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 12, 2020",
       gmail: "helloo@gmail.com",
       profile: "/assets/image/leap.svg",
+      status: "Pending",
     },
   ]);
 
