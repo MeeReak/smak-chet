@@ -1,4 +1,5 @@
-import { MyEventCardList, Typography } from "@/components";
+import MyEventCardList  from "@/components/organisms/cardList/MyEventCardList";
+import { Typography } from "@/components";
 import React from "react";
 
 const page = () => {
