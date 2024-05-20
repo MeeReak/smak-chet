@@ -4,12 +4,13 @@ import { Typography, Button } from "@/components";
 import { MyContext } from "@/contexts/CardContext";
 import Image from "next/image";
 import { Table } from "@nextui-org/react";
+import Link  from "next/link";
 
 const Page = () => {
   const { CardUser } = useContext(MyContext);
 
   const totalCandidate = CardUser.length;
-
+  const acceptedCandidate = CardUser.filter(user => user.status === "Accepted").length
   console.log(totalCandidate);
 
   return (
@@ -19,7 +20,7 @@ const Page = () => {
         {/* Header section */}
         <div className="mt-[30px] mb-[55px] flex flex-row items-center justify-between">
           {/* Go back */}
-          <div>
+          <div> 
             <Button
               className="!outline-none !border-none"
               leftIcon={
@@ -60,7 +61,7 @@ const Page = () => {
                 />
               }
             >
-              <Typography>{`${totalCandidate}`} Accepted</Typography>
+              <Typography>{`${acceptedCandidate}`} Accepted</Typography>
             </Button>
           </div>
         </div>
@@ -100,8 +101,11 @@ const Page = () => {
                   <td className={`${item.status === "Accepted" ? "text-green-500": item.status === "Rejected"? "text-red-500": "text-gray-500"}`}>{item.status}</td>
                   <td>{item.date}</td>
                   <td>
-                      <Button className="flex items-center hover:bg-[#207BFF] w-[50px] h-[23px] rounded-[15px] text-center justify-center bg-white hover:text-white !text-[10px] text-[#757575]">
+                      <Button className="flex items-center w-[75px] h-[35px] hover:bg-[#207BFF] !rounded-[15px] text-center justify-center bg-white hover:text-white !text-[12px] text-[#757575]">
+                        <Link href={`applicantTable/${item.id}`}>
+                        
                         View
+                        </Link>
                       </Button>
                   </td>
                 </tr>

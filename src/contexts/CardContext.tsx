@@ -14,12 +14,12 @@ export interface CardModal {
   cate: string;
 }
 
-interface CardUser {
+export interface CardUser {
   id: string;
   name: string;
   date: string;
   gmail: string;
-  profile: string;
+  profile: string;     
   status: string
 }
 
@@ -32,14 +32,20 @@ interface ContextProps {
   CardInfo: CardModal[];
   CardUser: CardUser[];
   setCardInfo: React.Dispatch<React.SetStateAction<CardModal[]>>;
+  setUserInfo: React.Dispatch<React.SetStateAction<CardUser[]>>
   toggleFavorite: (id: string) => void;
+  setAccept: (id: string)=> void;
+  setDecline: (id: string)=> void;
 }
 
 export const MyContext = createContext<ContextProps>({
   CardInfo: [],
   CardUser: [],
   setCardInfo: () => {},
+  setUserInfo: () => {},
   toggleFavorite: () => {},
+  setAccept: () => {},
+  setDecline: () => {},
 });
 
 const CardContext: React.FC<CardContextProp> = ({ children }) => {
@@ -111,7 +117,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 08, 2020",
       gmail: "pengmaleap@gmail.com",
       profile: "/assets/image/leap.svg",
-      status: "Accepted",
+      status: "Pending",
     },
     {
       id: "2",
@@ -119,7 +125,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 09, 2020",
       gmail: "kimlarng@gmail.com",
       profile: "/assets/image/leap.svg",
-      status: "Accepted",
+      status: "Pending",
     },
     {
       id: "3",
@@ -127,7 +133,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 10, 2020",
       gmail: "sarun@gmail.com",
       profile: "/assets/image/leap.svg",
-      status: "Accepted",
+      status: "Pending",
     },
     {
       id: "4",
@@ -135,7 +141,7 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       date: "Feb 11, 2020",
       gmail: "reak@gmail.com",
       profile: "/assets/image/leap.svg",
-      status: "Rejected",
+      status: "Pending",
     },
     {
       id: "5",
@@ -176,12 +182,45 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
     setCardInfo(updatedCard);
   }
 
+  function setAccept(id: string) {
+    const updatedUsers = CardUser.map((user) => {
+      if (user.id === id && user.status === "Pending") {
+        return {
+          ...user,
+          status: "Accepted",
+        };
+      }
+      console.log("accept function is working")
+      return user;
+    });
+    setLocalStorage("applicantInfo", updatedUsers)
+    setCardUser(updatedUsers);
+  }
+
+  function setDecline(id: string) {
+    const updatedUsers = CardUser.map((user) => {
+      if (user.id === id && user.status === "Pending") {
+        return {
+          ...user,
+          status: "Rejected",
+        };
+      }
+      console.log("decline function is working")
+      return user;
+    });
+    setLocalStorage("applicantInfo", updatedUsers)
+    setCardUser(updatedUsers);
+  }
+
+
   const Contextvalue = {
     toggleFavorite,
     CardInfo,
     setCardInfo,
     CardUser,
     setCardUser,
+    setAccept,
+    setDecline,
   };
   return (
     <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>
