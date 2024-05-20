@@ -15,8 +15,8 @@ const Page = () => {
 
   return (
  
-    <div className="bg-[#FAFAFA]">
-      <div className="ml-[121px] mr-[128px]">
+    <div className="bg-[#FAFAFA] w-full h-screen justify-center items-start flex">
+      <div className="w-fit ml-[121px] mr-[128px]">
         {/* Header section */}
         <div className="mt-[30px] mb-[55px] flex flex-row items-center justify-between">
           {/* Go back */}
@@ -67,24 +67,24 @@ const Page = () => {
         </div>
         {/* Table of applied volunteer */}
         <div>
-          <table className="w-full table-auto rounded-t-[15px] overflow-hidden ">
+          <table className="w-fit table-auto rounded-t-[15px] mb-20 overflow-hidden ">
             {/* table header */}
-            <thead className="bg-[#D2E5FF] h-[68px] text-start">
-              <tr className="text-center">
-                <th className="pl-[30px]">
+            <thead className="bg-[#D2E5FF] h-[68px] text-start ">
+              <tr className="text-center w-fit">
+                <th className="pl-[30px] w-[112px] ">
                   <Typography align="left"
                    fontSize="h3" color="grey">N°</Typography>
                 </th>
-                <th>
+                <th className="w-[237px]">
                   <Typography align="left" fontSize="h3" color="grey">Name</Typography>
                 </th>
-                <th  >
+                <th  className="w-[285px]">
                   <Typography align="left" fontSize="h3" color="grey">Email</Typography>
                 </th>
-                <th >
+                <th className="w-[193px]">
                   <Typography align="left" fontSize="h3" color="grey">Status</Typography>
                 </th>
-                <th >
+                <th className="w-[153px]">
                   <Typography align="left" fontSize="h3" color="grey">Date</Typography>
                 </th>
                 <th></th>
@@ -100,8 +100,8 @@ const Page = () => {
                   <td>{item.gmail}</td>
                   <td className={`${item.status === "Accepted" ? "text-green-500": item.status === "Rejected"? "text-red-500": "text-gray-500"}`}>{item.status}</td>
                   <td>{item.date}</td>
-                  <td>
-                      <Button className="flex items-center w-[75px] h-[35px] hover:bg-[#207BFF] !rounded-[15px] text-center justify-center bg-white hover:text-white !text-[12px] text-[#757575]">
+                  <td className="pr-[57px]">
+                      <Button className="flex  items-center w-[75px] h-[35px] hover:bg-[#207BFF] !rounded-[15px] text-center justify-center bg-white hover:text-white !text-[12px] text-[#757575]">
                         <Link href={`applicantTable/${item.id}`}>
                         
                         View
