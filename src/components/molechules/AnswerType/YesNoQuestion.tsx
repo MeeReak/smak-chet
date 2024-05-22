@@ -11,14 +11,14 @@ const YesNoQuestion = () => {
   console.log(answer);
   return (
     <div>
-      <div>
+      <div className='flex flex-col gap-y-5'>
         <label className="inline-flex items-center mr-4">
           <input
             type="radio"
             value="yes"
             checked={answer === "yes"}
             onChange={() => handleAnswerChange("yes")}
-            className="form-radio h-5 w-5 text-blue-600"
+            className=" h-5 w-5 text-blue-600"
           />
           <span className="ml-2">Yes</span>
         </label>

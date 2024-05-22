@@ -23,7 +23,7 @@ const TextEditor = ({ onchange }: { onchange: any }) => {
 
   const modules = {
     toolbar: [
-      ["bold", "italic", "underline"], // toggled buttons
+      ["bold", "italic", "underline", "strikeout"], // toggled buttons
       [{ font: [] }],
 
       [{ list: "ordered" }, { list: "bullet" }],

@@ -12,7 +12,9 @@ import {
 import Dropdown from "@/components/molechules/Dropdown/Dropdown";
 import TextEditor from "@/components/organisms/TextEdit";
 import { eventValidationSchema } from "@/utils/eventValidationSchema";
+import Image from "next/image";
 import Link from "next/link";
+import { Input } from "postcss";
 import React, { useState } from "react";
 
 interface EventInfoProps {
@@ -132,223 +134,309 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
     setInfo({ ...info, detail: content });
   };
   return (
-    <div className="lg:w-[855px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
-      <Typography fontWeight="bold" fontSize="h3" className="max-[1030px]:ml-3">
-        Event’s Detail
-      </Typography>
-      <div className="container mx-auto mt-8">
-        <FileInput onChange={handleFileUpload} />
-      </div>
-      {errors.imageSrc && (
-        <p className="text-red-500 mb-2 pl-8">{errors.imageSrc}</p>
-      )}
-      <div>
-        <form action="" className="max-[1030px]:mx-5">
-          <label htmlFor="evenname">
-            <Typography fontWeight="medium" fontSize="h4">
-              Event Name
-            </Typography>
-          </label>
-          <InputData
-            id=""
-            onChange={handleChange}
-            name="name"
-            type={"text"}
-            placeholder="Event Name"
-            className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
-          />
-
-          {errors.name && <p className="text-red-500 mb-2">{errors.name}</p>}
-
-          <label htmlFor="category">
-            <Typography fontWeight="medium" fontSize="h4">
-              Category
-            </Typography>
-          </label>
-          <Dropdown
-            classname="mt-3 mb-3 w-full"
-            options={options}
-            onChange={handleSelectCategory}
-            placeholder={"Select Event's category"}
-          />
-          {errors.category && (
-            <p className="text-red-500 mb-2">{errors.category}</p>
-          )}
-          <label htmlFor="detail">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Detail
-            </Typography>
-          </label>
-          <TextEditor onchange={handleChangeContent} />
-          {errors.detail && (
-            <p className="text-red-500 mb-3">{errors.detail}</p>
-          )}
-          <Typography fontWeight="bold" fontSize="h3">
-            Datetime and Location
+    <div className="h-full bg-[#FAFAFA] w-full">
+      <div className="py-[113px] px-[255px]">
+       
+        <Button
+          className="!border-none"
+          leftIcon={
+            <Image
+              src={"/assets/icons/back.svg"}
+              alt={"go back icon"}
+              width={19}
+              height={10}
+            />
+          }
+        >
+          <Typography fontSize="h2" fontWeight="bold">
+            Create post
           </Typography>
-          <div className="flex gap-4 mt-5">
-            <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h4">
-                Start Date
-              </Typography>
-              <InputDate
-                className="border border-gray-200 w-[98%] mt-3 mb-3 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base"
-                onchange={handleStartDate}
-              />
-              {errors.startDate && (
-                <p className="text-red-500 mb-2">{errors.startDate}</p>
-              )}
+        </Button>
+
+        <form action={""} className="mt-[33px] flex flex-col gap-y-[25px]">
+          {/* Event name, category, detail section */}
+          <div className="py-[25px] px-[25px] bg-white rounded-[10px]">
+            {/* event name and category */}
+            <div className="flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="eventname">
+                  <Typography fontSize="h3">
+                    Event Name <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  id=""
+                  onChange={handleChange}
+                  name="name"
+                  type={"text"}
+                  placeholder="Event Name"
+                  className=" h-[50px] pl-6 border-1 border-gray-300"
+                />
+                {errors.name && (
+                  <p className="text-red-500 mb-2">{errors.name}</p>
+                )}
+              </div>
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="category">
+                  <Typography fontSize="h3">
+                    Category <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <Dropdown
+                  classname=" h-[50px] !border-1 border-gray-300 rounded-[10px]"
+                  options={options}
+                  onChange={handleSelectCategory}
+                  placeholder={"Category"}
+                />
+                {/* <Image className="absolute right-0" src={"assets/icons/dropdown.svg"} width={24} height={24} alt={""}/> */}
+                {errors.category && (
+                  <p className="text-red-500 mb-2">{errors.category}</p>
+                )}
+              </div>
             </div>
-            <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h4">
-                End Date
-              </Typography>
-              <InputDate
-                className={`border-2 w-[98%] mt-3 mb-3 p-4 rounded-lg outline-none text-xs text-gray-400 sm:text-base ${
-                  isEnddateValidate ? "border-gray-200" : "border-red-500"
-                }`}
-                onchange={handleEndDate}
-              />
-              {errors.endDate && (
-                <p className="text-red-500 mb-2">{errors.endDate}</p>
-              )}
-              {!isEnddateValidate && (
-                <p className="text-red-500 text-xs sm:text-sm">
-                  Please check the dates: The end date cannot be earlier than
-                  the start date.
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="flex gap-4 mt-5">
-            <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h4">
-                Start Time
-              </Typography>
-              <CustomTimePicker
-                onSelectTime={handleTimeSelect}
-                classname="w-[98%] mt-3 mb-3 border text-gray-400 border-gray-200 py-4 pl-5"
-              />
-              {errors.startTime && (
-                <p className="text-red-500 mb-2 ">{errors.startTime}</p>
-              )}
-            </div>
-            <div className="w-[50%]">
-              <Typography fontWeight="semibold" fontSize="h4">
-                End Time
-              </Typography>
-              <CustomTimePicker
-                onSelectTime={handleSelectEndTime}
-                classname="w-[98%] mt-3 mb-3 border text-gray-400 border-gray-200 py-4 pl-5"
-              />
-              {errors.endTime && (
-                <p className="text-red-500 mb-2">{errors.endTime}</p>
+
+            {/* Event detail */}
+            <div className="mt-5 w-full flex flex-col ">
+              <label htmlFor="detail">
+                <Typography fontSize="h3">
+                  Event&apos;s Detail <span className="text-red-500">*</span>
+                </Typography>
+              </label>
+              <TextEditor onchange={handleChangeContent} />
+              {errors.detail && (
+                <p className="text-red-500 mb-3">{errors.detail}</p>
               )}
             </div>
           </div>
-          <label htmlFor="location">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Location
+
+          {/* Datetime and location */}
+          <div className="py-[25px] px-[25px] bg-white rounded-[10px]">
+            <Typography fontSize="h2" fontWeight="bold">
+              Datetime and Location
             </Typography>
-          </label>
+            {/* start and end date */}
+            <div className="mt-[35px] flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="startDate">
+                  <Typography fontSize="h3">
+                    Start Date <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputDate
+                  placeholder="start Date"
+                  className="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onchange={handleStartDate}
+                />
+                {errors.startDate && (
+                  <p className="text-red-500 mb-2">{errors.startDate}</p>
+                )}
+              </div>
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="endDate">
+                  <Typography fontSize="h3">
+                    End Date <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputDate
+                  className={`h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300 ${
+                    isEnddateValidate ? "border-gray-200" : "border-red-500"
+                  }`}
+                  onchange={handleEndDate}
+                  
+                />
+                {errors.endDate && (
+                  <p className="text-red-500 mb-2">{errors.endDate}</p>
+                )}
+                {!isEnddateValidate && (
+                  <p className="text-red-500 text-xs sm:text-sm">
+                    Please check the dates: The end date cannot be earlier than
+                    the start date.
+                  </p>
+                )}
+              </div>
+            </div>
 
-          <Dropdown
-            classname="mt-3 mb-3 w-full"
-            options={locations}
-            onChange={handleSelectlocation}
-            placeholder={"Select Event's Location"}
-          />
-          {errors.location && (
-            <p className="text-red-500 mb-2">{errors.location}</p>
-          )}
+            {/* start and end time */}
+            <div className="mt-[35px] flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="startDate">
+                  <Typography fontSize="h3">
+                    Start Time <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <CustomTimePicker
+                  classname="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onSelectTime={handleTimeSelect}
+                />
+                {errors.startTime && (
+                  <p className="text-red-500 mb-2 ">{errors.startTime}</p>
+                )}
+              </div>
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="endTime">
+                  <Typography fontSize="h3">
+                    End Time <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <CustomTimePicker
+                  classname={`h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300`}
+                  onSelectTime={handleSelectEndTime}
+                />
+                {errors.endTime && (
+                  <p className="text-red-500 mb-2">{errors.endTime}</p>
+                )}
+               
+              </div>
+            </div>
 
-          {/* Address of event */}
+            {/* location */}
+            <div className="mt-[35px] flex flex-row justify-between gap-x-[35px] w-1/2">
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="startDate">
+                  <Typography fontSize="h3">
+                    Location <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <Dropdown
+                  classname=""
+                  options={locations}
+                  onChange={handleSelectlocation}
+                  placeholder={"Select Event's Location"}
+                />
+                {errors.location && (
+                  <p className="text-red-500 mb-2">{errors.location}</p>
+                )}
+              </div>
+            </div>
+          </div>
 
-          <Typography fontWeight="bold" fontSize="h3" className="mt-5 mb-5">
-            Address
+          {/* requirement */}
+          <div className="py-[25px] px-[25px] bg-white rounded-[10px]">
+            <Typography fontSize="h2" fontWeight="bold">
+              Requirements
+            </Typography>
+            {/* age and skill*/}
+            <div className="mt-[35px] flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="age">
+                  <Typography fontSize="h3">
+                    Age <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  placeholder="Your requirement"
+                  name="age"
+                  id="age"
+                  type="text"
+                  className="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onChange={handleChange}
+                />
+                {errors.age && (
+                  <p className="text-red-500 mb-2">{errors.age}</p>
+                )}
+              </div>
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="skill">
+                  <Typography fontSize="h3">
+                    Skill <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  placeholder="Your requirement"
+                  name="skill"
+                  id="skill"
+                  type="text"
+                  className="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onChange={handleChange}
+                />
+                {errors.skill && (
+                  <p className="text-red-500 mb-2">{errors.skill}</p>
+                )}
+              </div>
+            </div>
+
+            {/* language and commitment */}
+            <div className="mt-[35px] flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="language">
+                  <Typography fontSize="h3">Language</Typography>
+                </label>
+                <InputData
+                  placeholder="Your requirement"
+                  name="language"
+                  id="language"
+                  type="text"
+                  className="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onChange={handleChange}
+                />
+                {errors.language && (
+                  <p className="text-red-500 mb-2">{errors.language}</p>
+                )}
+              </div>
+              <div className="flex flex-col gap-y-5 w-full">
+                <label htmlFor="Time commitment">
+                  <Typography fontSize="h3">Time Commitment</Typography>
+                </label>
+                <InputData
+                  placeholder="Your requirement"
+                  id="timecommitment"
+                  name="timeCommitment"
+                  type="text"
+                  className="h-[50px] !w-full rounded-[10px] pl-6 border-1 border-gray-300"
+                  onChange={handleChange}
+                />
+                {errors.timeCommitment && (
+                  <p className="text-red-500 mb-2">{errors.timeCommitment}</p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* upload photo */}
+          <div className="flex flex-col gap-y-5">
+            <Typography fontSize="h2" fontWeight="bold">
+              Upload Photo <span className="text-red-500">*</span>
+            </Typography>
+            <FileInput onChange={handleFileUpload} />
+            {errors.imageSrc && (
+              <p className="text-red-500 mb-2">{errors.imageSrc}</p>
+            )}
+          </div>
+
+          {/* Map */}
+          <div className="flex flex-col gap-y-5">
+
+          <Typography fontWeight="bold" fontSize="h2">
+            Map
           </Typography>
           <MapBox />
-
-          {/* Requirements */}
-
-          <Typography fontWeight="bold" fontSize="h3" className="mt-5 mb-5">
-            Requirements
-          </Typography>
-          <label htmlFor="age">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Age
-            </Typography>
-          </label>
-          <InputData
-            onChange={handleChange}
-            name="age"
-            id="age"
-            type={"text"}
-            placeholder="Your Requirement"
-            className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
-          />
-          {errors.age && <p className="text-red-500 mb-2">{errors.age}</p>}
-          <label htmlFor="Language">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Language
-            </Typography>
-          </label>
-          <InputData
-            onChange={handleChange}
-            name="language"
-            id="language"
-            type={"text"}
-            placeholder="Your Requirement"
-            className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
-          />
-          {errors.language && (
-            <p className="text-red-500 mb-2">{errors.language}</p>
-          )}
-          <label htmlFor="Skill">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Skill
-            </Typography>
-          </label>
-          <InputData
-            onChange={handleChange}
-            name="skill"
-            id="skill"
-            type={"text"}
-            placeholder="Your Requirement"
-            className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
-          />
-          {errors.skill && <p className="text-red-500 mb-2">{errors.skill}</p>}
-          <label htmlFor="Time Commitment">
-            <Typography fontWeight="semibold" fontSize="h4">
-              Time Commitment
-            </Typography>
-          </label>
-          <InputData
-            onChange={handleChange}
-            name="timeCommitment"
-            id="Time Commitment"
-            type={"text"}
-            placeholder="Your Requirement"
-            className="w-full mt-3 mb-3 py-4 pl-5 border border-gray-200"
-          />
-          {errors.timeCommitment && (
-            <p className="text-red-500 mb-2">{errors.timeCommitment}</p>
-          )}
+          </div>
         </form>
-        <div className="flex justify-end my-5">
-          <Link href={"/create-post"}>
-            <Button
-              type="button"
-              size="h4"
-              round="md"
-              bgColor="primary"
-              colorScheme="White"
-              className="py-3 px-10"
-              onclick={handleSubmit}
-            >
-              Next
-            </Button>
-          </Link>
+
+        <div>
+          <div className="flex justify-end mt-[63px]">
+            <Link href={"/create-post"}>
+              <Button
+                type="button"
+                size="h4"
+                round="md"
+                bgColor="primary"
+                colorScheme="White"
+                className="py-2 px-[19px]"
+                onclick={handleSubmit}
+              >
+                Next
+              </Button>
+             
+            </Link>
+           
+          </div>
+          <div className="flex justify-end">
+
+          {errors && (
+                <p className="text-red-500">There might be unanswered question. <br /> Please go back and check it</p>
+          )}
+          </div>
         </div>
       </div>
     </div>
