@@ -95,7 +95,9 @@ const Homepage: React.FC<CardProps> = ({
             colorScheme="White"
             className="px-[24px] py-[16px] !rounded-[10px]"
           >
+            <Link href={"../applyForm"}>
             Apply Now
+            </Link>
           </Button>
         </div>
         {/* Event detail section */}
