@@ -28,6 +28,7 @@ const InputData: React.FC<InputDataProps> = ({
 
   return (
     <input
+      
       className={combinedClassName}
       type={type}
       placeholder={placeholder}
