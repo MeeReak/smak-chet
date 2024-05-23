@@ -9,6 +9,7 @@ import {
   StaticQuestion,
   ButtonIcon,
 } from "@/components";
+import Image from "next/image";
 
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +42,13 @@ interface FormData {
   questions: Question[];
 }
 
-const FormPost = ({ onNext, eventInfo }: { onNext: () => void, eventInfo: any }) => {
+const FormPost = ({
+  onNext,
+  eventInfo,
+}: {
+  onNext: () => void;
+  eventInfo: any;
+}) => {
   const [questions, setQuestions] = useState<Question[]>([
     {
       id: Math.random().toString(36).substring(2, 15),
@@ -49,33 +56,31 @@ const FormPost = ({ onNext, eventInfo }: { onNext: () => void, eventInfo: any })
       question: "",
       answer: "",
     },
-  
-    
   ]);
 
   const [formData, setFormData] = useState<FormData>({
     info: {
       id: Math.random().toString(36).substring(2, 15),
-      name: '',
-      imageSrc: '',
-      category: '',
-      detail: '',
-      startDate: '',
-      endDate: '',
-      startTime: '',
-      endTime: '',
-      location: '',
-      age: '',
-      language: '',
-      skill: '',
-      timeCommitment: '',
+      name: "",
+      imageSrc: "",
+      category: "",
+      detail: "",
+      startDate: "",
+      endDate: "",
+      startTime: "",
+      endTime: "",
+      location: "",
+      age: "",
+      language: "",
+      skill: "",
+      timeCommitment: "",
     },
     questions: [
       {
         id: Math.random().toString(36).substring(2, 15),
-        type: '',
-        question: '',
-        answer: '',
+        type: "",
+        question: "",
+        answer: "",
       },
     ],
   });
@@ -90,11 +95,11 @@ const FormPost = ({ onNext, eventInfo }: { onNext: () => void, eventInfo: any })
       prevQuestions.map((question) =>
         question.id === questionId
           ? {
-            ...question,
-            type: QAtype,
-            question: updatedQuestionText,
-            answer: updatedAnswer,
-          }
+              ...question,
+              type: QAtype,
+              question: updatedQuestionText,
+              answer: updatedAnswer,
+            }
           : question
       )
     );
@@ -124,144 +129,174 @@ const FormPost = ({ onNext, eventInfo }: { onNext: () => void, eventInfo: any })
         ...eventInfo, // Update info data with eventInfo props
       },
       questions: [...questions], // Update questions array
-    })
+    });
   };
   console.log(formData);
 
   // const BackButton = () => {
-  //   const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-  //   const handleBack = () => {
-  //     navigate(-1); // This will take you back to the previous page
-  //   };
+    // const handleBack = () => {
+    //   navigate(-1); // This will take you back to the previous page
+    // };
 
+  return (
+    <div className="h-full bg-[#FAFAFA] w-full">
+      <div className="py-[113px] px-[240px]">
+        <Button
+        // onclick={handleBack}
+          className="!border-none"
+          leftIcon={
+            <Image
+              src={"/assets/icons/back.svg"}
+              alt={"go back icon"}
+              width={19}
+              height={10}
+            />
+          }
+        >
+          <Typography fontSize="h2" fontWeight="bold">
+            Create Apply Form
+          </Typography>
+        </Button>
+        <form action={""} className="mt-[33px] flex flex-col gap-y-[25px]">
+          {/* Name, Email Phone number, address section */}
+          <div className="py-[25px] px-[25px] bg-white rounded-[10px]">
+            {/* Name & Email section */}
+            <div className="flex flex-row justify-between gap-x-[35px] ">
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="name">
+                  <Typography fontSize="h3">
+                    Name <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  id=""
+                  name="name"
+                  type={"text"}
+                  placeholder="Name"
+                  className=" h-[50px] pl-6 border-1 border-gray-300"
+                />
+              </div>
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="email">
+                  <Typography fontSize="h3">
+                    Email <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  id=""
+                  name="email"
+                  type={"email"}
+                  placeholder="Email"
+                  className=" h-[50px] pl-6 border-1 border-gray-300"
+                />
+              </div>
+            </div>
 
-
-    return (
-      <div className="xl:w-[1024px] w-screen m-auto space-y-5 z-10 mt-[100px] mb-20">
-        <div className="space-y-4  flex flex-col  px-3 lg:px-0 ">
-          <div className="lg:w-[1024px] h-[160px] bg-[#F8F8F8] rounded-[10px]">
-            <div className="lg:w-[1024px] h-[31px] bg-blue-600 rounded-t-lg"></div>
-            {/* Apply Form header` */}
-            <div className="mt-5 pl-5 space-y-4">
-              <Typography fontWeight="bold" className=" !text-2xl lg:text-4xl">
-                Apply Form
-              </Typography>
-              <Typography fontSize="h4" color="grey">
-                Fill in this form so we can get your information
-              </Typography>
+            {/* Phone number and address section */}
+            <div className="flex flex-row justify-between gap-x-[35px] mt-3">
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="phonenumber">
+                  <Typography fontSize="h3">
+                    Phone number <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  id=""
+                  name="phonenumber"
+                  type={"text"}
+                  placeholder="Phone number"
+                  className=" h-[50px] pl-6 border-1 border-gray-300"
+                />
+              </div>
+              <div className="flex flex-col w-full gap-y-5">
+                <label htmlFor="address">
+                  <Typography fontSize="h3">
+                    Address <span className="text-red-500">*</span>
+                  </Typography>
+                </label>
+                <InputData
+                  id=""
+                  name="address"
+                  type={"text"}
+                  placeholder="Address"
+                  className=" h-[50px] pl-6 border-1 border-gray-300"
+                />
+              </div>
             </div>
           </div>
-          {/* Full name */}
-          <div className="w-full h-auto bg-[#F8F8F8] rounded-[10px] ">
-            <div className="lg:space-y-3 space-y-2  py-[16px] ">
-              <Typography className="pl-4 text-base lg:text-xl">
-                Full Name<span className="text-base text-red-500">*</span>
-              </Typography>
-              <input
+
+          {/* 2nd question */}
+          <div className="py-[25px] px-[25px] bg-white rounded-[10px] flex flex-col gap-y-[45px]">
+            <div className="flex flex-col w-full gap-y-5">
+              <label htmlFor="name">
+                <Typography fontSize="h3">
+                  Why do you want to join Volunteer?{" "}
+                </Typography>
+              </label>
+              <InputData
+                id=""
                 name="name"
-                type="text"
-                className=" lg:w-[900px] w-2/3 mx-4 lg:py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500 bg-[#F8F8F8]"
-                placeholder="Short Answer"
+                type={"text"}
+                placeholder="Answer"
+                className=" h-[50px] pl-6 border-1 border-gray-300"
               />
+            </div>
+            <div className="flex flex-col w-full gap-y-5">
+              {/* <label htmlFor="name">
+                <Typography fontSize="h3">
+                  Have you joined volunteer before?{" "}
+                  <span className="text-red-500">*</span>
+                </Typography>
+              </label> */}
+              {questions.map((question) => (
+                <div key={question.id}>
+                  <QuestionForm
+                    question={question}
+                    removeQuestion={() => handleRemoveQuestion(question.id)}
+                    onQuestionChange={(
+                      updatedQuestionText,
+                      updatedAnswer,
+                      questionType
+                    ) =>
+                      handleQuestionChange(
+                        updatedQuestionText,
+                        updatedAnswer,
+                        question.id,
+                        questionType
+                      )
+                    }
+                  />
+                </div>
+              ))}
+
+              
+              <Button
+                type="button"
+                onclick={handleAddQuestion}
+                className="border-none"
+              >
+                <Typography fontSize="h5" color="blue">
+                  + Add more question
+                </Typography>
+              </Button>
             </div>
           </div>
+        </form>
 
-          {/* Address */}
-          <div className="w-full h-auto bg-[#F8F8F8] rounded-[10px] ">
-            <div className="lg:space-y-3 space-y-2  py-[16px]">
-              <Typography className="pl-4 text-base lg:text-xl" fontSize="h4">
-                Address<span className="lg:text-base text-red-500">*</span>
-              </Typography>
-              <input
-                name="address"
-                type="text"
-                className=" lg:w-[900px] w-2/3  mx-4 lg:py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500 bg-[#F8F8F8] "
-                placeholder="Short Answer"
-              />
-            </div>
-          </div>
-
-          {/* Email */}
-          <div className="w-full h-auto bg-[#F8F8F8] rounded-[10px] ">
-            <div className="lg:space-y-3 space-y-2  py-[16px]">
-              <Typography className="pl-4 text-base lg:text-xl" fontSize="h4">
-                Email<span className="lg:lg:text-base text-red-500">*</span>
-              </Typography>
-              <input
-                name="email"
-                type="text"
-                className="lg:w-[900px] w-2/3 mx-4 lg:py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500 bg-[#F8F8F8]"
-                placeholder="Short Answer"
-              />
-            </div>
-          </div>
-
-          {/* Phone Number */}
-          <div className="w-full h-auto bg-[#F8F8F8] rounded-[10px] ">
-            <div className="lg:space-y-3 space-y-2  py-[16px]">
-              <Typography className="pl-4 text-base lg:text-xl" fontSize="h4">
-                Phone number
-                <span className="lg:lg:text-base text-red-500">*</span>
-              </Typography>
-              <input
-                name="phonenumber"
-                type="text"
-                className="lg:w-[900px] w-2/3 mx-4 lg:py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500 bg-[#F8F8F8]"
-                placeholder="Short Answer"
-              />
-            </div>
-          </div>
-
-          {questions.map((question) => (
-            <div key={question.id}>
-              <QuestionForm
-                question={question}
-                removeQuestion={() => handleRemoveQuestion(question.id)}
-                onQuestionChange={(
-                  updatedQuestionText,
-                  updatedAnswer,
-                  questionType
-                ) =>
-                  handleQuestionChange(
-                    updatedQuestionText,
-                    updatedAnswer,
-                    question.id,
-                    questionType
-                  )
-                }
-              />
-            </div>
-          ))}
-
+        <div className="flex justify-end">
           <Button
             type="button"
-            onclick={handleAddQuestion}
-            className="border-none"
+            className="bg-[#207BFF] flex justify-center items-center w-[104px] h-[43px]"
+            onclick={handleSubmit}
           >
-            <Typography color="blue">+ Add More Questions</Typography>
+            <Typography color="white">Publish</Typography>
           </Button>
-          <div className="flex justify-between">
-            <Button
-              type="button"
-              className="bg-[#207BFF] p-3 flex justify-center items-center w-[150px] h-[48px]"
-              // onclick={handleBack}
-            >
-              <Typography color="white">Back</Typography>
-            </Button>
-            <Button
-              type="button"
-              className="bg-[#207BFF] p-3 flex justify-center items-center w-[150px] h-[48px]"
-              onclick={handleSubmit}
-            >
-              <Typography color="white">Publish</Typography>
-            </Button>
-          </div>
         </div>
       </div>
-    );
-  }
-
-    
+    </div>
+  );
+};
 
 export default FormPost;

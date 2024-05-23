@@ -18,7 +18,13 @@ const Page = () => {
       case 1:
         return <EventInfo onNext={handleNext}/>
       case 2:
-        return <FormPost eventInfo={info}  onNext={() => setStep((prevStep) => prevStep + 1)} />;
+        // return <FormPost eventInfo={info}  onNext={() => setStep((prevStep) => prevStep + 1)} />;
+        return (
+          <FormPost onNext={() => setStep((prevStep) => prevStep + 1)} eventInfo={info}/>
+        )
+        // return(
+        //   <div>hello</div>
+        // )
       default:
         return null;
     }
@@ -26,6 +32,7 @@ const Page = () => {
   return (
     <div>
        {renderForm()}
+  
     </div>
   )
 }
