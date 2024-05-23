@@ -30,6 +30,7 @@ interface EventInfoData {
   startTime: string;
   endTime: string;
   location: string;
+  address: any;
   age: string;
   language: string;
   skill: string;
@@ -53,6 +54,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
     startTime: "",
     endTime: "",
     location: "",
+    address: "",
     age: "",
     language: "",
     skill: "",
@@ -131,6 +133,11 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
   const handleChangeContent = (content: string) => {
     setInfo({ ...info, detail: content });
   };
+1
+  const handleAddress = (markers: any) => {
+    setInfo({ ...info, address: markers });
+  };
+
   return (
     <div className="lg:w-[855px] m-auto space-y-5 z-10 mt-20 w-screen mb-20">
       <Typography fontWeight="bold" fontSize="h3" className="max-[1030px]:ml-3">
@@ -183,7 +190,8 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
           {errors.detail && (
             <p className="text-red-500 mb-3">{errors.detail}</p>
           )}
-          <Typography fontWeight="bold" fontSize="h3">
+
+          <Typography fontWeight="bold" fontSize="h2">
             Datetime and Location
           </Typography>
           <div className="flex gap-4 mt-5">
@@ -267,7 +275,8 @@ const EventInfo: React.FC<EventInfoProps> = ({ onNext }) => {
           <Typography fontWeight="bold" fontSize="h3" className="mt-5 mb-5">
             Address
           </Typography>
-          <MapBox />
+
+          <MapBox onchange={handleAddress} />
 
           {/* Requirements */}
 

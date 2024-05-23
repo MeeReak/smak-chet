@@ -51,7 +51,7 @@ const QuestionForm: React.FC<QuestionFormProps> = ({
         />
         <Dropdown
           options={["Writing Answer", "Multi Choice", "Yes/No"]}
-          classname="w-[30%] h-[50px] bg-[#F8F8F8]"
+          classname="w-[30%] h-[50px] bg-white rounded-lg"
           placeholder="Type of Answer"
           onChange={handleSelectType}
         />
