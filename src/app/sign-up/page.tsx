@@ -1,17 +1,23 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext , useEffect} from "react";
 import Image from "next/image";
 import { ButtonIcon, InputData, Typography, Button } from "@/components";
 import Link from "next/link";
 import { SignUpProps } from "../../@types/auth";
-import { setLocalStorage } from "@/utils/localStorage";
+//import { setLocalStorage } from "@/utils/localStorage";
 import signUpschema from "@/utils/signUpSchema";
+import { useSearchParams } from 'next/navigation';
+import axios from "axios";
 
+  
 const Page = () => {
+  const searchParams = useSearchParams();
+  const searchValue = searchParams.get('role') || '';
   const [data, setData] = useState<SignUpProps>({
     username: "",
     email: "",
     password: "",
+    role:searchValue
   });
 
   const [errors, setErrors] = useState({
@@ -19,6 +25,7 @@ const Page = () => {
     email: "",
     password: "",
   });
+
 
   function handleChange(e: any) {
     const { name, value } = e.target;
@@ -28,24 +35,37 @@ const Page = () => {
 
   async function handleSubmit(e: any) {
     e.preventDefault();
-    try {
-      await signUpschema.validate(data, { abortEarly: false });
-      const isLogin = true;
-      setLocalStorage("isLogin", isLogin);
-    } catch (error: any | unknown) {
-      const fieldErrors: { [key: string]: string } = {};
+  try {
+    // Perform Yup validation
+    const validationResult = await signUpschema.validate(data, { abortEarly: false });
+    console.log("Validation successful:", validationResult); // Log successful validation
+    // Proceed with form submission logic (assuming validation passed)
 
-      // Error From Yup
-      error.inner.forEach((err: any) => {
-        fieldErrors[err.path] = err.message;
-      });
-      console.log("Field Error", fieldErrors);
-      setErrors((prev) => ({
-        ...prev,
-        ...fieldErrors,
-      }));
-      return;
+    await axios.post("http://localhost:3001/v1/auth/signup", data, {
+      
+    });
+    console.log("Signup successful!"); // Log successful signup (if applicable)
+    alert("Submitted!"); // Alert user of successful submission
+  } catch (error: any | unknown) {
+    if (error) { // Check if error exists
+      // Handle validation errors
+      if (error.name === "ValidationError") { // Check for Yup validation error
+        const fieldErrors: { [key: string]: string } = {};
+        error.inner.forEach((err: any) => {
+          fieldErrors[err.path] = err.message;
+        });
+        console.error("Validation Errors:", fieldErrors);
+        setErrors((prev) => ({
+          ...prev,
+          ...fieldErrors,
+        }));
+      } else { // Handle other potential errors (e.g., axios errors)
+        console.error("Error:", error); // Log the entire error object
+        // Display a generic error message to the user
+        setErrors({ ...errors });
+      }
     }
+  }
   }
 
   return (
@@ -72,7 +92,7 @@ const Page = () => {
         </Typography>
 
         {/* signup form */}
-        <form>
+        <form method="POST">
           {/* name */}
           <InputData
             name="username"
@@ -125,6 +145,7 @@ const Page = () => {
           <br />
           {/*  continue button */}
           <Button
+            type="submit"
             onclick={(e) => {
               handleSubmit(e);
             }}

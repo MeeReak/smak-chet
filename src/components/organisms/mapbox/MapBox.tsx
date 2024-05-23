@@ -9,7 +9,11 @@ import Map, {
   GeolocateControl,
 } from "react-map-gl";
 
-export default function MapBox() {
+interface MapboxProp{
+  onchange ?: (markers:any) => void; 
+}
+
+const MapBox:React.FC<MapboxProp> = ({onchange}) => {
   const [markers, setMarkers] = useState<
     { longitude: number; latitude: number }[]
   >([]);
@@ -21,6 +25,9 @@ export default function MapBox() {
       latitude: lngLat.lat,
     };
     setMarkers([newMarker]);
+    if(onchange){
+      onchange([newMarker]);
+    }
   };
 
   return (
@@ -47,3 +54,5 @@ export default function MapBox() {
     </main>
   );
 }
+
+export default MapBox;
