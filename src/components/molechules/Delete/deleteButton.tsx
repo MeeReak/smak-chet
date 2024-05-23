@@ -16,7 +16,7 @@ const DeleteButton: React.FC<FilterButtonProps> = ({ className, id }) => {
     <div className="relative">
       <ButtonIcon
         onclick={() => setModalState(true)}
-        className="border-[2px] border-[#207BFF] rounded-md hidden group-hover:flex hover:border-[3px] hover:bg-[#D2E5FF] transition-all !h-10 !w-[40px] "
+        className="border-[1px] border-[#FF2020] rounded-md hidden group-hover:flex hover:border-[2px] transition-all !h-10 !w-[40px] "
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ const DeleteButton: React.FC<FilterButtonProps> = ({ className, id }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6 text-[#207BFF]"
+            className="w-6 h-6 text-[#FF2020]"
           >
             <path
               strokeLinecap="round"

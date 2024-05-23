@@ -21,7 +21,7 @@ const page = () => {
           </div>
           <div className=" w-[40%]">
             <Image
-              src={"/assets/image/contact-us.svg"}
+              src={"/assets/image/contactus.svg"}
               alt={"contact us"}
               width={353}
               height={323}

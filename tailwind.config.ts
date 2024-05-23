@@ -21,6 +21,9 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow:{
+        'custom': '0px 3px 21px 0px #4542421A',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -54,7 +57,8 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
+        }
+       
       },
       borderRadius: {
         lg: "var(--radius)",
