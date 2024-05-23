@@ -20,12 +20,13 @@ export interface CardUser {
   date: string;
   gmail: string;
   profile: string;     
-  status: string
+  status: string;
+  phone: string;
+  location: string;
 }
 
 interface CardContextProp {
   children: ReactNode;
-
 }
 
 interface ContextProps {
@@ -118,6 +119,9 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "pengmaleap@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Phnom Penh",
+      phone: "012 256 885"
+    
     },
     {
       id: "2",
@@ -126,6 +130,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "kimlarng@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Siem Reap",
+      phone: "011 888 456"
     },
     {
       id: "3",
@@ -134,6 +140,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "sarun@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Takeo",
+      phone: "077 789 852"
     },
     {
       id: "4",
@@ -142,6 +150,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "reak@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Phnom Penh",
+      phone: "015 623 111"
     },
     {
       id: "5",
@@ -150,6 +160,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "nith@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Kompot",
+      phone: "015 555 566"
     },
     {
       id: "6",
@@ -158,6 +170,8 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       gmail: "helloo@gmail.com",
       profile: "/assets/image/leap.svg",
       status: "Pending",
+      location: "Phnom penh",
+      phone: "017 861 445"
     },
   ]);
 

@@ -9,14 +9,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ApplicantProps } from "@/@types/applicant";
 
-const Applicant: React.FC<ApplicantProps> = ({
+const Applicant: React.FC<ApplicantProps> = (
+  {
   id,
   date,
   gmail,
   name,
   profile,
-  status,
-}) => {
+  status}
+) => {
   const { CardUser, setAccept, setDecline } = useContext(MyContext);
   const route = useParams();
   // const applicantId = route.applicantDetail;
@@ -131,7 +132,7 @@ const Applicant: React.FC<ApplicantProps> = ({
                     height={16}
                     alt="phone-outline-blue"
                   />
-                  <Typography>01234567</Typography>
+                  <Typography>{Detailapplicant?.phone}</Typography>
                 </div>
                 <div className="flex flex-row gap-x-2">
                   <Image
@@ -140,7 +141,7 @@ const Applicant: React.FC<ApplicantProps> = ({
                     height={16}
                     alt="address-outline-blue"
                   />
-                  <Typography>Phnom Penh</Typography>
+                  <Typography>{Detailapplicant?.location}</Typography>
                 </div>
               </div>
             </div>
